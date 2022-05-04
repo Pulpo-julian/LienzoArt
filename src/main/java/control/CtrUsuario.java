@@ -9,6 +9,7 @@ import modelos.Usuario;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import dao.DaoUsuario;
 
@@ -67,6 +68,8 @@ public class CtrUsuario extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		
+		
 		String decision = request.getParameter("crud");
 
 		PrintWriter out = response.getWriter();
@@ -95,7 +98,75 @@ public class CtrUsuario extends HttpServlet {
 			
 		}
 		
+		if (decision.equals("eliminar")) {
+			
+			String cedula = request.getParameter("cedula");
+			
+			
+			try {
 
+				List<Usuario> lista;
+				
+				DaoUsuario daoUsuario = new DaoUsuario();
+				daoUsuario.borrarUsuario(cedula);
+				
+				//getServletContext().getRequestDispatcher("CrudNuevoLienzoArto/usuarioCrud/usuarioFormulario.jsp").forward(request, response);
+
+				
+			} catch (Exception e) {
+				e.printStackTrace(System.out);
+			}
+			
+			
+			//super.doPost(req, resp);
+		}
+		
+		
+		if(decision.equals("listar")) {
+			
+			try {
+
+				
+				DaoUsuario daoUsuario = new DaoUsuario();
+				List<Usuario> listaU = daoUsuario.listar();
+				
+				request.setAttribute("listUsuarios", listaU);
+				
+				getServletContext().getRequestDispatcher("/usuarioCrud/listarUsuarios.jsp").forward(request, response);
+
+				
+			} catch (Exception e) {
+				e.printStackTrace(System.out);
+			}
+			
+		}
+		
+		
+		
+		if(decision.equals("actualizar")) {
+			
+			try {
+				
+				String cedula = request.getParameter("cedula");
+				String nombres = request.getParameter("nombre");
+				String apellidos = request.getParameter("apellidos");
+				String correo = request.getParameter("correo");
+				
+				
+				DaoUsuario daoUsuario = new DaoUsuario();
+				daoUsuario.actualizarUsuario(cedula, nombres, apellidos, correo);
+				
+			} catch (Exception e) {
+				
+				e.printStackTrace(System.out);
+				
+			}
+			
+		}
+		
+		
+		
+		
 			
 			
 		
@@ -116,8 +187,7 @@ public class CtrUsuario extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace(System.out);
 		}	
-		*/		
-			
+		*/
 
 		
 		//doGet(request, response);

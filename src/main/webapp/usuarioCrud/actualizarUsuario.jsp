@@ -72,6 +72,8 @@
 			</div>
 
 			<div>
+			
+			
 				<label>Correo</label> <input type="text" placeholder="su correo"
 					id="correo" name="correo">
 
@@ -80,7 +82,6 @@
 				<h5>
 					<% out.print(errores.get("correo")); %>
 				</h5>
-
 
 				<%} %>
 
