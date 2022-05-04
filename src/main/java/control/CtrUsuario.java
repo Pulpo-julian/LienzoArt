@@ -156,6 +156,9 @@ public class CtrUsuario extends HttpServlet {
 				DaoUsuario daoUsuario = new DaoUsuario();
 				daoUsuario.actualizarUsuario(cedula, nombres, apellidos, correo);
 				
+				
+				
+				
 			} catch (Exception e) {
 				
 				e.printStackTrace(System.out);
@@ -164,6 +167,30 @@ public class CtrUsuario extends HttpServlet {
 			
 		}
 		
+		if(decision.equals("mostrar")) {
+			
+			try {
+				
+				String cedula = request.getParameter("cedula");
+				
+				
+				
+				DaoUsuario daoUsuario = new DaoUsuario();
+				Usuario usuario = daoUsuario.buscarUsuario(cedula);
+				
+				request.setAttribute("usuario", usuario);
+				
+				getServletContext().getRequestDispatcher("/usuarioCrud/listarUsuarios.jsp").forward(request, response);
+				
+				
+				
+			} catch (Exception e) {
+				
+				e.printStackTrace(System.out);
+				
+			}
+			
+		}
 		
 		
 		
