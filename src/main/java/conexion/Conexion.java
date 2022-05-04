@@ -10,7 +10,7 @@ import java.sql.Statement;
 public class Conexion {
 	private static final String DB_URL = "jdbc:mysql://localhost:3306/lienzoart";
 	private static final String DB_USER = "root";
-	private static final String DB_PASSWORD = "el_pulpo";
+	private static final String DB_PASSWORD = "";
 	
 	public static Connection getConnection() throws SQLException, ClassNotFoundException{
 		

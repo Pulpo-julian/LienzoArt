@@ -22,7 +22,7 @@
 
 
 		<h1>Buscar Usuario</h1>
-		<form action="/CrudNuevoLienzoArt/formulariousuario" method="get" class="form_usuario">
+		<form action="/CrudNuevoLienzoArt/formulariousuario" method="post" class="form_usuario">
 
 			<div>
 				<label>Cedula</label> <input type="text" placeholder="su cedula"
@@ -42,7 +42,7 @@
 
 
 
-			<input type="submit" value="enviar" class="boton_mov">
+			<input type="submit" name="crud" value="mostrar" class="boton_mov">
 
 		</form>
 

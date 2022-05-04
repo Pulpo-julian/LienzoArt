@@ -170,7 +170,7 @@
 
 			</div>
 
-			<input type="submit" value="enviar" class="boton_mov">
+			<input type="submit" name="crud" value="crear" class="boton_mov">
 
 		</form>
 

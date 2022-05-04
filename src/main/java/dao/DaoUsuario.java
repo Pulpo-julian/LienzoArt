@@ -79,7 +79,7 @@ public class DaoUsuario {
 			
 			conn = Conexion.getConnection();
 			stmt = conn.prepareStatement(SQL_SELECT_DOCID);
-			stmt.setString(0, doc);
+			stmt.setString(1, doc);
 			rs = stmt.executeQuery();
 			
 			rs.next();
