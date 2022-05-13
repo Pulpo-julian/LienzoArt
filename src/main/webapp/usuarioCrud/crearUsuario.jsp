@@ -126,7 +126,7 @@
 					<option value="05440">Marinilla</option>
 					<option value="05541">El Peñol</option>
 					<option value="05615">Rionegro</option>
-					<option value="05649">Rionegro</option>
+					<option value="05649">San carlos</option>
 					<option value="05656">San Jerónimo</option>
 					<option value="05667">San Rafael</option>
 				</select>

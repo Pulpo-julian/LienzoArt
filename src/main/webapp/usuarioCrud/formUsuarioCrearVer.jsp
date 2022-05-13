@@ -159,6 +159,7 @@
 			<div>
 				<label>Direccion</label> <input type="text"
 					placeholder="su direccion" id="codigoPostal" name="direccion">
+					
 				<%if(errores != null && errores.containsKey("direccion")){%>
 
 				<h5>

@@ -180,7 +180,7 @@ public class CtrUsuario extends HttpServlet {
 				
 				request.setAttribute("usuario", usuario);
 				
-				getServletContext().getRequestDispatcher("/usuarioCrud/listarUsuarios.jsp").forward(request, response);
+				getServletContext().getRequestDispatcher("/usuarioCrud/verUsuario.jsp").forward(request, response);
 				
 				
 				
