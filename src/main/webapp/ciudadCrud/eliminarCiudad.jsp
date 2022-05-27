@@ -19,8 +19,7 @@
 <body>
 
 	<div>
-
-
+	
 		<h1>Eliminar Ciudad</h1>
 		<form action="/CrudNuevoLienzoArt/formulariousuario" method="delete" class="form_usuario">
 		

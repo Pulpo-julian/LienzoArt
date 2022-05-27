@@ -19,4 +19,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>CtrIndex</display-name>
+    <servlet-name>CtrIndex</servlet-name>
+    <servlet-class>control.CtrIndex</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CtrIndex</servlet-name>
+    <url-pattern>/CtrIndex</url-pattern>
+  </servlet-mapping>
 </web-app>
