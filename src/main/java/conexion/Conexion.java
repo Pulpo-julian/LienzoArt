@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Conexion {
+	
 	private static final String DB_URL = "jdbc:mysql://localhost:3306/lienzoart";
 	private static final String DB_USER = "root";
 	private static final String DB_PASSWORD = "el_pulpo";

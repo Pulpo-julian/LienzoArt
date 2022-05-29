@@ -15,7 +15,6 @@ public class Producto {
 	//constructors
 	public Producto(int codigo, String nombre, String fechaPublicacion, String descripcion, int precio, int existencia,
 			String estado, String categoria, String tienda) {
-		super();
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.fechaPublicacion = fechaPublicacion;
