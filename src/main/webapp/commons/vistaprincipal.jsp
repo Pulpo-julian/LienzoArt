@@ -2,7 +2,9 @@
     pageEncoding="UTF-8"%>
     
 <%@ page import="java.util.List"%>
-<% List<String> fechas = (List<String>) request.getAttribute("fechas"); %>
+<%@ page import="modelos.Producto"%>
+
+<% List<Producto> productos = (List<Producto>) request.getAttribute("productos"); %>
     
 <!DOCTYPE html>
 <html lang="en">
@@ -80,12 +82,34 @@
 
 		<div class="principal">
 		
-	    	<main class="principal">
+	    	<main class="seccion">
     
-	    		<%if (fechas != null && fechas.size() > 0) {%>
+	    		<%if (productos != null && productos.size() > 0) {%>
 			
-					<% for(String fecha: fechas){ %>
-						<h4><% out.print(fecha);%></h4>
+					<% for(Producto producto: productos){ %>
+					
+						<div class="producto">
+							
+							<div class="muestra">
+								<img alt="#" src="">
+								<h3><% out.print(producto.getNombre());%></h3>
+							</div>
+							
+							<div class="informacion">
+							
+								<ul class="listaproducto">
+									
+									<li> <h5>Categoria: <% out.print(producto.getCategoria()); %></h5> </li>
+									<li> <h5>Estado: <% out.print(producto.getEstado()); %></h5> </li>
+									<li> <h5>Existencia: <% out.print(producto.getExistencia()); %></h5> </li>
+									<li> <h5>Tienda: <a href="#"><% out.print(producto.getTienda()); %></a> </h5> </li>
+									
+								</ul>
+							
+							</div>
+							
+						</div>
+						
 					<%} %>
 				
 			

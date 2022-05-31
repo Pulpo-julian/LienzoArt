@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import modelos.Producto;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -14,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import conexion.Conexion;
+import dao.DaoProducto;
 
 /**
  * Servlet implementation class CtrIndex
@@ -36,11 +39,20 @@ public class CtrIndex extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		/*
+		
 		try {
-			List<Producto> productos = daoPro.listar
+			
+			DaoProducto daoPro = new DaoProducto();
+			List<Producto> productos = daoPro.listar();
+			
+			request.setAttribute("productos", productos);
+			
+			getServletContext().getRequestDispatcher("/commons/vistaprincipal.jsp").forward(request, response);
+			
+		} catch (Exception e) {
+			e.printStackTrace(System.out);
 		}
-		*/
+		
 		
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
