@@ -7,7 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import conexion.Conexion;
-import modelos.Usuario;
+import modelos.Producto;
 
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -16,13 +16,54 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Connection;
 
-public class DaoUsuario {
+public class DaoProducto {
 	
-	private static final String SQL_SELECT = "SELECT docid, nombres, apellidos, correo FROM tblusuario;";
+	private static final String SQL_SELECT = "SELECT\n"
+			+ "\n"
+			+ "    tp.codproducto,\n"
+			+ "    tp.nombre,\n"
+			+ "    tp.fechapublicacion,\n"
+			+ "    tp.descripcion,\n"
+			+ "    tp.precio,\n"
+			+ "    tp.existencia,\n"
+			+ "    te.nombre,\n"
+			+ "    tc.nombre,\n"
+			+ "    tt.nombre\n"
+			+ "\n"
+			+ "FROM \n"
+			+ "\n"
+			+ "    tblproducto AS tp\n"
+			+ "    INNER JOIN tblestadoproducto AS te ON tp.estado = te.codestado\n"
+			+ "    INNER JOIN tblcategoria AS tc ON tc.codigo = tp.categoria\n"
+			+ "    INNER JOIN tbltienda AS tt ON tt.codigo = tp.tienda;";
 	
-	private static final String SQL_SELECT_DOCID = "SELECT docid, nombres, apellidos, correo FROM tblusuario WHERE docid = ?;";
 	
-	private static final String SQL_INSERT = "INSERT INTO tblusuario VALUES(?,?,?,?,?,?,?,?,?,?);";
+	
+	
+	private static final String SQL_SELECT_DOCID = "SELECT\n"
+			+ "\n"
+			+ "    tp.codproducto,\n"
+			+ "    tp.nombre,\n"
+			+ "    tp.fechapublicacion,\n"
+			+ "    tp.descripcion,\n"
+			+ "    tp.precio,\n"
+			+ "    tp.existencia,\n"
+			+ "    te.nombre,\n"
+			+ "    tc.nombre,\n"
+			+ "    tt.nombre\n"
+			+ "\n"
+			+ "FROM \n"
+			+ "\n"
+			+ "    tblproducto AS tp\n"
+			+ "    INNER JOIN tblestadoproducto AS te ON tp.estado = te.codestado\n"
+			+ "    INNER JOIN tblcategoria AS tc ON tc.codigo = tp.categoria\n"
+			+ "    INNER JOIN tbltienda AS tt ON tt.codigo = tp.tienda\n"
+			+ "\n"
+			+ "WHERE \n"
+			+ "\n"
+			+ "    tp.codproducto = ?;";
+	
+	private static final String SQL_INSERT = "INSERT INTO tblproducto VALUES(?,?,?,?,?,?,?,?,?);";
 	
 	private static final String SQL_UPDATE = "UPDATE tblusuario SET nombres = ?, apellidos = ?, correo = ? WHERE docid = ?;";
 	
@@ -30,11 +71,11 @@ public class DaoUsuario {
 
 	
 	
-	public List<Usuario> listar(){
+	public List<Producto> listar(){
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		List<Usuario> usuarios = new ArrayList<Usuario>();
+		List<Producto> productos = new ArrayList<Producto>();
 		
 		try {
 			
@@ -44,12 +85,18 @@ public class DaoUsuario {
 			
 			while(rs.next()) {
 				
-				String docid = rs.getString(1);
-				String nombres = rs.getString(2);
-				String apellidos = rs.getString(3);
-				String correo = rs.getString(4);
+				int codProducto = rs.getInt(1);
+				String nombre = rs.getString(2);
+				String fechaPub = rs.getString(3);
+				String descripcion = rs.getString(4);
+				int precio = rs.getInt(5);
+				int existencia = rs.getInt(6);
+				String estado = rs.getString(7);
+				String categoria = rs.getString(8);
+				String tienda = rs.getString(9);
 				
-				usuarios.add(new Usuario(docid, nombres, apellidos, correo));
+				productos.add(new Producto(codProducto, nombre, fechaPub, descripcion, 
+						precio, existencia, estado, categoria, tienda));
 				
 			}
 			
@@ -64,31 +111,38 @@ public class DaoUsuario {
 			Conexion.closeConnection(conn);
 		}
 		
-		return usuarios;
+		return productos;
 		
 	}
 	
 	//CRUD functions
-	public Usuario buscarUsuario(String doc){
+	public Producto buscarProducto(int codigoProducto){
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		Usuario usuario = null;
+		Producto producto = null;
 		
 		try {
 			
 			conn = Conexion.getConnection();
 			stmt = conn.prepareStatement(SQL_SELECT_DOCID);
-			stmt.setString(1, doc);
+			stmt.setInt(1, codigoProducto);
 			rs = stmt.executeQuery();
 			
 			rs.next();
-			String docid = rs.getString(1);
-			String nombres = rs.getString(2);
-			String apellidos = rs.getString(3);
-			String correo = rs.getString(4);
 			
-			usuario = new Usuario(docid, nombres, apellidos, correo);
+			int codProducto = rs.getInt(1);
+			String nombre = rs.getString(2);
+			String fechaPub = rs.getString(3);
+			String descripcion = rs.getString(4);
+			int precio = rs.getInt(5);
+			int existencia = rs.getInt(6);
+			String estado = rs.getString(7);
+			String categoria = rs.getString(8);
+			String tienda = rs.getString(9);
+			
+			producto = new Producto(codProducto, nombre, fechaPub, descripcion, 
+					precio, existencia, estado, categoria, tienda);
 				
 			
 			
@@ -103,11 +157,12 @@ public class DaoUsuario {
 			Conexion.closeConnection(conn);
 		}
 		
-		return usuario;
+		return producto;
 		
 	}
-
-	public void insertarUsuario(String docid, String nombres, String apellidos, 
+	
+	/*
+	public void insertarUsuario(int codigoProducto, String nombre, String apellidos, 
 			String correo, int perfil, String clave, String telefono,
 			String ciudad, String codigoPost, String direccion) {
 		
@@ -199,8 +254,19 @@ public class DaoUsuario {
 		}
 		
 	}
+	*/
 	
-	
+	/*
+	public static void main(String[] args) {
+		DaoProducto daoPro = new DaoProducto();
+		List<Producto> productos = daoPro.listar();
+		
+		for(Producto pro: productos) {
+			System.out.println(pro);
+		}
+		
+	}
+	*/
 	
 	
 }

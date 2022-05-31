@@ -2,7 +2,8 @@
 	pageEncoding="UTF-8"%>
 
 <%@ page import="java.util.Map"%>
-<% Map<String, String> errores = (Map<String, String>)request.getAttribute("errores"); %>
+<%@ page import="modelos.Usuario"%>
+<% Usuario usuario = (Usuario) request.getAttribute("usuario"); %>
 
 <!DOCTYPE html>
 <html>
@@ -22,29 +23,51 @@
 
 
 		<h1>Buscar Usuario</h1>
-		<form action="/CrudNuevoLienzoArt/formulariousuario" method="get" class="form_usuario">
+		<form action="/CrudNuevoLienzoArt/formulariousuario" method="post" class="form_usuario">
 
 			<div>
 				<label>Cedula</label> <input type="text" placeholder="su cedula"
 					id="cedula" name="cedula">
 
-				<%if(errores != null && errores.containsKey("cedula")){%>
-
-				<h5>
-					<% out.print(errores.get("cedula")); %>
-				</h5>
-
-
-				<%} %>
+				
 
 			</div>
 
 
 
 
-			<input type="submit" value="enviar" class="boton_mov">
+			<input type="submit" name="crud" value="mostrar" class="boton_mov">
 
 		</form>
+		
+		<%if(usuario != null){%>
+
+					<h1>cedula del usuario:</h1>
+
+					<h5>
+						<% out.print(usuario.getDocid()); %>
+					</h5>
+					
+					<h1>Nombres del usuario:</h1>
+
+					<h5>
+						<% out.print(usuario.getNombres()); %>
+					</h5>
+					
+					<h1>apellidos del usuario:</h1>
+
+					<h5>
+						<% out.print(usuario.getApellidos()); %>
+					</h5>
+					
+					<h1>correo del usuario:</h1>
+
+					<h5>
+						<% out.print(usuario.getCorreo()); %>
+					</h5>
+
+
+		<%} %>
 
 
 

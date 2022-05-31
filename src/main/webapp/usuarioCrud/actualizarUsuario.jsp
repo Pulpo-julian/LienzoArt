@@ -22,7 +22,7 @@
 
 
 		<h1>Actualizar Usuario</h1>
-		<form action="/CrudNuevoLienzoArt/formulariousuario" method="put" class="form_usuario">
+		<form action="/CrudNuevoLienzoArt/formulariousuario" method="post" class="form_usuario">
 
 			<div>
 				<label>Cedula</label> <input type="text" placeholder="su cedula"
@@ -72,6 +72,8 @@
 			</div>
 
 			<div>
+			
+			
 				<label>Correo</label> <input type="text" placeholder="su correo"
 					id="correo" name="correo">
 
@@ -80,7 +82,6 @@
 				<h5>
 					<% out.print(errores.get("correo")); %>
 				</h5>
-
 
 				<%} %>
 
@@ -93,7 +94,7 @@
 
 
 
-			<input type="submit" value="enviar" class="boton_mov">
+			<input type="submit" name="crud" value="actualizar" class="boton_mov">
 
 		</form>
 

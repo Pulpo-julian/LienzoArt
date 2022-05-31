@@ -9,6 +9,7 @@ import modelos.Usuario;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import dao.DaoUsuario;
 
@@ -36,7 +37,7 @@ public class CtrUsuario extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		/*
 		String cedula = request.getParameter("cedula");
 		
 		PrintWriter out = response.getWriter();
@@ -56,6 +57,7 @@ public class CtrUsuario extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace(System.out);
 		}	
+		*/
 		
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
@@ -67,9 +69,14 @@ public class CtrUsuario extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		
+		
+		String decision = request.getParameter("crud");
 
 		PrintWriter out = response.getWriter();
-
+		
+		
+		
+		if(decision.equals("crear")) {
 			
 			String cedula = request.getParameter("cedula");
 			String nombre = request.getParameter("nombre");
@@ -87,26 +94,127 @@ public class CtrUsuario extends HttpServlet {
 				//getServletContext().getRequestDispatcher("CrudNuevoLienzoArto/usuarioCrud/usuarioFormulario.jsp").forward(request, response);
 			} catch (Exception e) {
 				e.printStackTrace(System.out);
-			}			
+			}
 			
-	
+		}
+		
+		if (decision.equals("eliminar")) {
+			
+			String cedula = request.getParameter("cedula");
+			
+			
+			try {
 
+				List<Usuario> lista;
+				
+				DaoUsuario daoUsuario = new DaoUsuario();
+				daoUsuario.borrarUsuario(cedula);
+				
+				//getServletContext().getRequestDispatcher("CrudNuevoLienzoArto/usuarioCrud/usuarioFormulario.jsp").forward(request, response);
+
+				
+			} catch (Exception e) {
+				e.printStackTrace(System.out);
+			}
+			
+			
+			//super.doPost(req, resp);
+		}
+		
+		
+		if(decision.equals("listar")) {
+			
 			try {
 
 				
 				DaoUsuario daoUsuario = new DaoUsuario();
-				Usuario usuario = daoUsuario.buscarUsuario(cedula);
-				//getServletContext().getRequestDispatcher("CrudNuevoLienzoArto/usuarioCrud/usuarioFormulario.jsp").forward(request, response);
+				List<Usuario> listaU = daoUsuario.listar();
 				
-				out.print("la cedula del usuario es: " + usuario.getDocid());
-				out.print("el nombre del usuario es: " + usuario.getNombres());
-				out.print("los apellidos del usuario son: " + usuario.getApellidos());
-				out.print("el correo del usuario es: " + usuario.getCorreo());
+				request.setAttribute("listUsuarios", listaU);
+				
+				getServletContext().getRequestDispatcher("/usuarioCrud/listarUsuarios.jsp").forward(request, response);
+
 				
 			} catch (Exception e) {
 				e.printStackTrace(System.out);
-			}			
+			}
 			
+		}
+		
+		
+		
+		if(decision.equals("actualizar")) {
+			
+			try {
+				
+				String cedula = request.getParameter("cedula");
+				String nombres = request.getParameter("nombre");
+				String apellidos = request.getParameter("apellidos");
+				String correo = request.getParameter("correo");
+				
+				
+				DaoUsuario daoUsuario = new DaoUsuario();
+				daoUsuario.actualizarUsuario(cedula, nombres, apellidos, correo);
+				
+				
+				
+				
+			} catch (Exception e) {
+				
+				e.printStackTrace(System.out);
+				
+			}
+			
+		}
+		
+		if(decision.equals("mostrar")) {
+			
+			try {
+				
+				String cedula = request.getParameter("cedula");
+				
+				
+				
+				DaoUsuario daoUsuario = new DaoUsuario();
+				Usuario usuario = daoUsuario.buscarUsuario(cedula);
+				
+				request.setAttribute("usuario", usuario);
+				
+				getServletContext().getRequestDispatcher("/usuarioCrud/verUsuario.jsp").forward(request, response);
+				
+				
+				
+			} catch (Exception e) {
+				
+				e.printStackTrace(System.out);
+				
+			}
+			
+		}
+		
+		
+		
+			
+			
+		
+
+		/*
+		try {
+
+			
+			DaoUsuario daoUsuario = new DaoUsuario();
+			Usuario usuario = daoUsuario.buscarUsuario(cedula);
+			//getServletContext().getRequestDispatcher("CrudNuevoLienzoArto/usuarioCrud/usuarioFormulario.jsp").forward(request, response);
+			
+			out.print("la cedula del usuario es: " + usuario.getDocid());
+			out.print("el nombre del usuario es: " + usuario.getNombres());
+			out.print("los apellidos del usuario son: " + usuario.getApellidos());
+			out.print("el correo del usuario es: " + usuario.getCorreo());
+			
+		} catch (Exception e) {
+			e.printStackTrace(System.out);
+		}	
+		*/
 
 		
 		//doGet(request, response);
@@ -115,7 +223,7 @@ public class CtrUsuario extends HttpServlet {
 	@Override
 	protected void doTrace(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		/*
 		String cedula = request.getParameter("cedula");
 		
 		PrintWriter out = response.getWriter();
@@ -134,7 +242,8 @@ public class CtrUsuario extends HttpServlet {
 			
 		} catch (Exception e) {
 			e.printStackTrace(System.out);
-		}	
+		}
+		*/	
 		
 		//super.doTrace(arg0, arg1);
 	}
@@ -144,7 +253,7 @@ public class CtrUsuario extends HttpServlet {
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		// TODO Auto-generated method stub
-		
+		/*
 		String cedula = request.getParameter("cedula");
 		
 		PrintWriter out = response.getWriter();
@@ -154,12 +263,14 @@ public class CtrUsuario extends HttpServlet {
 			
 			DaoUsuario daoUsuario = new DaoUsuario();
 			daoUsuario.borrarUsuario(cedula);
+			
 			//getServletContext().getRequestDispatcher("CrudNuevoLienzoArto/usuarioCrud/usuarioFormulario.jsp").forward(request, response);
 
 			
 		} catch (Exception e) {
 			e.printStackTrace(System.out);
 		}
+		*/
 		
 		//super.doDelete(req, resp);
 	}
@@ -168,6 +279,7 @@ public class CtrUsuario extends HttpServlet {
 	@Override
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		/*
 		String cedula = request.getParameter("cedula");
 		String nombres = request.getParameter("nombre");
 		String apellidos = request.getParameter("apellidos");
@@ -187,6 +299,7 @@ public class CtrUsuario extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace(System.out);
 		}
+		*/
 		
 		
 		

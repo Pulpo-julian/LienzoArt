@@ -84,6 +84,17 @@ public class Producto {
 	public void setTienda(String tienda) {
 		this.tienda = tienda;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "Producto [codigo=" + codigo + ", nombre=" + nombre + ", fechaPublicacion=" + fechaPublicacion
+				+ ", descripcion=" + descripcion + ", precio=" + precio + ", existencia=" + existencia + ", estado="
+				+ estado + ", categoria=" + categoria + ", tienda=" + tienda + "]";
+	}
+	
+	
 	
 	
 	

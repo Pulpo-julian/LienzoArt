@@ -7,6 +7,13 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import conexion.Conexion;
 
 /**
  * Servlet implementation class CtrIndex
@@ -29,9 +36,11 @@ public class CtrIndex extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		PrintWriter out = response.getWriter();
-		
-		out.print("servidor: controlprincipal");
+		/*
+		try {
+			List<Producto> productos = daoPro.listar
+		}
+		*/
 		
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
