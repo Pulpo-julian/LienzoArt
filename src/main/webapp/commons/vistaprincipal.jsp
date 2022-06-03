@@ -81,6 +81,13 @@
 
 
 		<div class="principal">
+			
+			<aside class="categorias">
+				
+				
+			
+			</aside>		
+		
 		
 	    	<main class="seccion">
     

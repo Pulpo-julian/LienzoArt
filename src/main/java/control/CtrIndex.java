@@ -47,6 +47,8 @@ public class CtrIndex extends HttpServlet {
 			
 			request.setAttribute("productos", productos);
 			
+			
+			
 			getServletContext().getRequestDispatcher("/commons/vistaprincipal.jsp").forward(request, response);
 			
 		} catch (Exception e) {
