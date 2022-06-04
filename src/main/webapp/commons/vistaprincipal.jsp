@@ -82,6 +82,8 @@
 
 		<div class="principal">
 		
+			
+		
 	    	<main class="seccion">
     
 	    		<%if (productos != null && productos.size() > 0) {%>
