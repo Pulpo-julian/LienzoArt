@@ -2,6 +2,11 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
+}
+
+.header {
+	margin-top: 25px;
 }
 
 .container {
@@ -55,11 +60,31 @@
     display: flex;
 }
 
+.principal {
+	display: grid;
+	grid-template-columns: 20% 80%;
+}
+
+.categorias {
+	padding: 50px;
+}
+
+.categorias .categoria h4 {
+	margin: 15px;
+}
+
+.usuario p:hover{
+	cursor: pointer;
+	color: blue;
+}
+
 /* lista de productos */
 .seccion {
     display: grid;
     padding: 50px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
 }
 
 .producto {
@@ -79,8 +104,49 @@
 	
 }
 
+/* estilos para el FOOTER */
+
+footer {
+    /* da un espacio hacia arriba en el footer */
+    margin-top: 100px;
+    /* divide el footer en 3 secciones */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* le da un fondo gris al footer */
+    background-color: rgb(104, 104, 104);
+}
+
+/* estiliza la primer seccion del footer */
+
+footer .item {
+    margin: 50px;
+    text-align: center;
+}
+
+/* estiliza el titulo de la segunda seccion del footer */
+
+.item1 .containt h1 {
+    text-align: center;
+}
+
+/* quita el subrayado de las etiquetas a */
+
+.item1 .containt a {
+    text-decoration: none;
+}
+
+/* alinea el texto hacia la derecha */
+
+footer .item1 {
+    margin: 50px;
+    text-align: left;
+}
 
 
+/* estiliza la tercera parte del footer */
 
-
+footer .item2 {
+    margin: 50px;
+    text-align: center;
+}
 
