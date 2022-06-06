@@ -29,4 +29,14 @@
     <servlet-name>CtrIndex</servlet-name>
     <url-pattern>/CtrIndex</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CtrSesion</display-name>
+    <servlet-name>CtrSesion</servlet-name>
+    <servlet-class>control.CtrSesion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CtrSesion</servlet-name>
+    <url-pattern>/CtrSesion</url-pattern>
+  </servlet-mapping>
 </web-app>

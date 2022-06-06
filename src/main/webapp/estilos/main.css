@@ -1,4 +1,6 @@
-* {
+* {/**
+ * 
+ */
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -73,7 +75,12 @@
 	margin: 15px;
 }
 
-.usuario p:hover{
+.usuario {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.usuario h5:hover{
 	cursor: pointer;
 	color: blue;
 }
