@@ -25,14 +25,15 @@
 		<form action="/CrudNuevoLienzoArt/formulariousuario" method="post" class="form_usuario">
 
 			<div>
+			
 				<label>Cedula</label> <input type="text" placeholder="su cedula"
 					id="cedula" name="cedula">
 
 				<%if(errores != null && errores.containsKey("cedula")){%>
 
-				<h5>
-					<% out.print(errores.get("cedula")); %>
-				</h5>
+					<h5>
+						<% out.print(errores.get("cedula")); %>
+					</h5>
 
 
 				<%} %>
@@ -48,9 +49,9 @@
 
 				<%if(errores != null && errores.containsKey("nombre")){%>
 
-				<h5>
-					<% out.print(errores.get("nombre")); %>
-				</h5>
+					<h5>
+						<% out.print(errores.get("nombre")); %>
+					</h5>
 
 
 				<%} %>
@@ -62,9 +63,9 @@
 					placeholder="sus apellidos" id="apellidos" name="apellidos">
 				<%if(errores != null && errores.containsKey("apellidos")){%>
 
-				<h5>
-					<% out.print(errores.get("apellidos")); %>
-				</h5>
+					<h5>
+						<% out.print(errores.get("apellidos")); %>
+					</h5>
 
 
 				<%} %>
@@ -77,9 +78,9 @@
 
 				<%if(errores != null && errores.containsKey("correo")){%>
 
-				<h5>
-					<% out.print(errores.get("correo")); %>
-				</h5>
+					<h5>
+						<% out.print(errores.get("correo")); %>
+					</h5>
 
 
 				<%} %>
@@ -92,9 +93,9 @@
 					placeholder="contraseña" id="password" name="password">
 				<%if(errores != null && errores.containsKey("password")){%>
 
-				<h5>
-					<% out.print(errores.get("password")); %>
-				</h5>
+					<h5>
+						<% out.print(errores.get("password")); %>
+					</h5>
 
 
 				<%} %>
@@ -106,9 +107,9 @@
 					id="telefono" name="telefono">
 				<%if(errores != null && errores.containsKey("telefono")){%>
 
-				<h5>
-					<% out.print(errores.get("telefono")); %>
-				</h5>
+					<h5>
+						<% out.print(errores.get("telefono")); %>
+					</h5>
 
 
 				<%} %>
@@ -132,9 +133,9 @@
 				</select>
 				<%if(errores != null && errores.containsKey("ciudades")){%>
 
-				<h5>
-					<% out.print(errores.get("ciudades")); %>
-				</h5>
+					<h5>
+						<% out.print(errores.get("ciudades")); %>
+					</h5>
 
 
 				<%} %>
@@ -147,9 +148,9 @@
 					name="codigoPostal">
 				<%if(errores != null && errores.containsKey("codigoPostal")){%>
 
-				<h5>
-					<% out.print(errores.get("codigoPostal")); %>
-				</h5>
+					<h5>
+						<% out.print(errores.get("codigoPostal")); %>
+					</h5>
 
 
 				<%} %>
@@ -161,9 +162,9 @@
 					placeholder="su direccion" id="codigoPostal" name="direccion">
 				<%if(errores != null && errores.containsKey("direccion")){%>
 
-				<h5>
-					<% out.print(errores.get("direccion")); %>
-				</h5>
+					<h5>
+						<% out.print(errores.get("direccion")); %>
+					</h5>
 
 
 				<%} %>

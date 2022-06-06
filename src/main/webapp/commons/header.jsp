@@ -45,7 +45,7 @@
         
                 <div class="usuario">
                     <img src="img/user.png" alt="USER">
-                    <a href="vistas/sesion.jsp">iniciar Sesion</a>
+                    <a href="controlsesion">iniciar Sesion</a>
                 </div>
         
         

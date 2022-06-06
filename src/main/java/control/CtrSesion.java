@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * Servlet implementation class CtrSesion
@@ -27,6 +28,14 @@ public class CtrSesion extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		//PrintWriter out = response.getWriter();
+		
+		//out.print("que mas ps");
+		
+		getServletContext().getRequestDispatcher("/vistas/sesion.jsp").forward(request, response);
+		
+		
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -39,7 +48,7 @@ public class CtrSesion extends HttpServlet {
 		
 		
 		
-		//getServletContext().getRequestDispatcher("/vistas/sesion.jsp").forward(request, response);
+		
 		
 		//response.sendRedirect("/vistas/sesion.jsp");
 		

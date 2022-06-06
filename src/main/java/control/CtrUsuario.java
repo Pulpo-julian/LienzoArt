@@ -9,7 +9,9 @@ import modelos.Usuario;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import dao.DaoUsuario;
 
@@ -78,25 +80,105 @@ public class CtrUsuario extends HttpServlet {
 		
 		if(decision.equals("crear")) {
 			
-			String cedula = request.getParameter("cedula");
-			String nombre = request.getParameter("nombre");
-			String apellidos = request.getParameter("apellidos");
-			String correo = request.getParameter("correo");
-			String password = request.getParameter("password");
-			String telefono = request.getParameter("telefono");
-			String ciudad = request.getParameter("ciudades");
-			String codigoPostal = request.getParameter("codigoPostal");
-			String direccion = request.getParameter("direccion");
 			
-			try {
-				DaoUsuario daoUsuario = new DaoUsuario();
-				daoUsuario.insertarUsuario(cedula, nombre, apellidos, correo, 1, password, telefono, ciudad, codigoPostal, direccion);
-				//getServletContext().getRequestDispatcher("CrudNuevoLienzoArto/usuarioCrud/usuarioFormulario.jsp").forward(request, response);
-			} catch (Exception e) {
-				e.printStackTrace(System.out);
+			
+			Map<String, String> errores = new HashMap<String, String>();
+			
+			//validar cedula
+			String cedula = request.getParameter("cedula");
+			
+			if(cedula == null || cedula.isEmpty()) {
+				errores.put("cedula", "la cedula es requerida");
 			}
 			
+			//validar nombre
+			String nombre = request.getParameter("nombre");
+			
+			if(nombre == null || nombre.isBlank()) {
+				errores.put("nombre", "el nombre es requerido");
+			}
+			
+			//validar apellidos
+			String apellidos = request.getParameter("apellidos");
+			
+			if(apellidos == null || apellidos.isBlank()) {
+				errores.put("apellidos", "el apellido es requerido");
+			}
+			
+			//validar correo
+			String correo = request.getParameter("correo");
+			
+			if(correo == null || correo.isBlank()) {
+				errores.put("correo", "el correo es requerido");
+			} else if(!correo.contains("@")) {
+				errores.put("correo", "el correo debe tener caracter \"@\"");
+			}
+			
+			//validar password
+			String password = request.getParameter("password");
+			
+			if(password == null || password.isBlank()) {
+				errores.put("password", "la contraseña es requerida");
+			}
+			
+			//validar telefono
+			String telefono = request.getParameter("telefono");
+			
+			if(telefono == null || telefono.isBlank()) {
+				errores.put("telefono", "el telefono es requerido");
+			}
+			
+			//validar ciudad
+			String ciudad = request.getParameter("ciudades");
+			
+			if(ciudad == null || ciudad.isBlank()) {
+				errores.put("ciudades", "la ciudad es requrida");
+			}
+			
+			//validar codigoPostal
+			String codigoPostal = request.getParameter("codigoPostal");
+			
+			if(codigoPostal == null || codigoPostal.isBlank()) {
+				errores.put("codigoPostal", "debe ingresar codigo postal");
+			}
+			
+			//validar direccion
+			String direccion = request.getParameter("direccion");
+			
+			if(direccion == null || direccion.isBlank()) {
+				errores.put("direccion", "debe ingresar la direccion");
+			}
+			
+			
+			if(errores.isEmpty()) {
+				
+				try {
+					DaoUsuario daoUsuario = new DaoUsuario();
+					daoUsuario.insertarUsuario(cedula, nombre, apellidos, correo, 1, password, telefono, ciudad, codigoPostal, direccion);
+					//getServletContext().getRequestDispatcher("CrudNuevoLienzoArto/usuarioCrud/usuarioFormulario.jsp").forward(request, response);
+					out.print("el usuario se ha creado correctamente");
+				} catch (Exception e) {
+					e.printStackTrace(System.out);
+				}
+				
+			} else {
+				
+				request.setAttribute("errores", errores);
+				
+				getServletContext().getRequestDispatcher("CrudNuevoLienzoArto/usuarioCrud/crearUsuario.jsp").forward(request, response);
+				
+			}
+			
+			
+			
+			
+			
+			
+			
 		}
+		
+		
+		
 		
 		if (decision.equals("eliminar")) {
 			
