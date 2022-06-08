@@ -11,8 +11,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../estilos/principal.css">
-<script defer src="../scripts/main.js"></script>
+<link rel="stylesheet" href="estilos/principal.css">
+<script defer src="scripts/main.js"></script>
 <title>Registrate en LienzoArt</title>
 </head>
 
@@ -159,7 +159,7 @@
 
 			<div>
 				<label>Direccion</label> <input type="text"
-					placeholder="su direccion" id="codigoPostal" name="direccion">
+					placeholder="su direccion" id="direccion" name="direccion">
 				<%if(errores != null && errores.containsKey("direccion")){%>
 
 					<h5>

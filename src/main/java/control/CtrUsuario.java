@@ -118,7 +118,7 @@ public class CtrUsuario extends HttpServlet {
 			String password = request.getParameter("password");
 			
 			if(password == null || password.isBlank()) {
-				errores.put("password", "la contraseña es requerida");
+				errores.put("password", "la contraseï¿½a es requerida");
 			}
 			
 			//validar telefono
@@ -155,7 +155,7 @@ public class CtrUsuario extends HttpServlet {
 				try {
 					DaoUsuario daoUsuario = new DaoUsuario();
 					daoUsuario.insertarUsuario(cedula, nombre, apellidos, correo, 1, password, telefono, ciudad, codigoPostal, direccion);
-					//getServletContext().getRequestDispatcher("CrudNuevoLienzoArto/usuarioCrud/usuarioFormulario.jsp").forward(request, response);
+					//getServletContext().getRequestDispatcher("CrudNuevoLienzoArt/usuarioCrud/usuarioFormulario.jsp").forward(request, response);
 					out.print("el usuario se ha creado correctamente");
 				} catch (Exception e) {
 					e.printStackTrace(System.out);
@@ -165,7 +165,7 @@ public class CtrUsuario extends HttpServlet {
 				
 				request.setAttribute("errores", errores);
 				
-				getServletContext().getRequestDispatcher("CrudNuevoLienzoArto/usuarioCrud/crearUsuario.jsp").forward(request, response);
+				getServletContext().getRequestDispatcher("/usuarioCrud/crearUsuario.jsp").forward(request, response);
 				
 			}
 			
@@ -214,7 +214,7 @@ public class CtrUsuario extends HttpServlet {
 				
 				request.setAttribute("listUsuarios", listaU);
 				
-				getServletContext().getRequestDispatcher("/usuarioCrud/listarUsuarios.jsp").forward(request, response);
+				request.getRequestDispatcher("/usuarioCrud/listarUsuarios.jsp").forward(request, response);
 
 				
 			} catch (Exception e) {
@@ -262,7 +262,7 @@ public class CtrUsuario extends HttpServlet {
 				
 				request.setAttribute("usuario", usuario);
 				
-				getServletContext().getRequestDispatcher("/usuarioCrud/verUsuario.jsp").forward(request, response);
+				request.getRequestDispatcher("/usuarioCrud/verUsuario.jsp").forward(request, response);
 				
 				
 				
