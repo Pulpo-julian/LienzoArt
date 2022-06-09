@@ -45,7 +45,7 @@
         
                 <div class="usuario">
                     <img src="img/user.png" alt="USER">
-                    <a href="controlsesion">iniciar Sesion</a>
+                    <a href="/CrudNuevoLienzoArt/controlsesion">iniciar Sesion</a>
                 </div>
         
         

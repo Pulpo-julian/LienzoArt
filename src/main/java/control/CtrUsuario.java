@@ -118,7 +118,7 @@ public class CtrUsuario extends HttpServlet {
 			String password = request.getParameter("password");
 			
 			if(password == null || password.isBlank()) {
-				errores.put("password", "la contraseï¿½a es requerida");
+				errores.put("password", "la contraseña es requerida");
 			}
 			
 			//validar telefono
@@ -165,7 +165,7 @@ public class CtrUsuario extends HttpServlet {
 				
 				request.setAttribute("errores", errores);
 				
-				getServletContext().getRequestDispatcher("/usuarioCrud/crearUsuario.jsp").forward(request, response);
+				getServletContext().getRequestDispatcher("/CrudNuevoLienzoArt/usuarioCrud/crearUsuario.jsp").forward(request, response);
 				
 			}
 			
