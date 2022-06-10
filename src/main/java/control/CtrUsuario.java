@@ -165,7 +165,7 @@ public class CtrUsuario extends HttpServlet {
 				
 				request.setAttribute("errores", errores);
 				
-				getServletContext().getRequestDispatcher("/CrudNuevoLienzoArt/usuarioCrud/crearUsuario.jsp").forward(request, response);
+				getServletContext().getRequestDispatcher("/usuarioCrud/crearUsuario.jsp").forward(request, response);
 				
 			}
 			

@@ -42,10 +42,19 @@
                         </li>
                     </ul>
                 </div>
+                
+
         
                 <div class="usuario">
-                    <img src="img/user.png" alt="USER">
-                    <a href="/CrudNuevoLienzoArt/controlsesion">iniciar Sesion</a>
+                
+	                <form action="/CrudNuevoLienzoArt/controlsesion" method="post">
+                		
+                		<img src="img/user.png" alt="USER">
+                		
+                		<input type="submit" name="sesion" value="iniciar sesión">
+
+                	</form>                                
+                    
                 </div>
         
         
