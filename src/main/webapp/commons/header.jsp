@@ -42,10 +42,24 @@
                         </li>
                     </ul>
                 </div>
+                
+
         
                 <div class="usuario">
+<<<<<<< HEAD
                     <img src="img/user.png" alt="USER">
                     <a href="/CrudNuevoLienzoArt/vistas/sesion.jsp">iniciar Sesion</a>
+=======
+                
+	                <form action="/CrudNuevoLienzoArt/controlsesion" method="post">
+                		
+                		<img src="img/user.png" alt="USER">
+                		
+                		<input type="submit" name="sesion" value="iniciar sesión">
+
+                	</form>                                
+                    
+>>>>>>> a32c61e672620ff4def7b31c5a4511e797bccf8f
                 </div>
         
         

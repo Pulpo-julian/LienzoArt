@@ -63,6 +63,11 @@ public class CtrIndex extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		
+<<<<<<< HEAD
+=======
+		//response.setContentType("text/html");
+		//response.setCharacterEncoding("UTF-8");
+>>>>>>> a32c61e672620ff4def7b31c5a4511e797bccf8f
 		
 		
 		try {

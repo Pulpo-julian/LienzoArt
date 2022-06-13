@@ -33,7 +33,9 @@ public class CtrSesion extends HttpServlet {
 		
 		//out.print("que mas ps");
 		
-		getServletContext().getRequestDispatcher("/vistas/sesion.jsp").forward(request, response);
+
+		
+		
 		
 		
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
@@ -46,7 +48,19 @@ public class CtrSesion extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		
+		String validar = request.getParameter("sesion");
 		
+		if(validar.equalsIgnoreCase("iniciar sesión")) {
+			
+			getServletContext().getRequestDispatcher("/vistas/sesion.jsp").forward(request, response);
+			
+		}
+		
+		if(validar.equalsIgnoreCase("Registrate")) {
+			
+			getServletContext().getRequestDispatcher("/usuarioCrud/crearUsuario.jsp").forward(request, response);
+			
+		}
 		
 		
 		
