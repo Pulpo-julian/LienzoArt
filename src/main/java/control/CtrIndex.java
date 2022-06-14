@@ -1,5 +1,7 @@
 package control;
 
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -25,6 +27,9 @@ import dao.DaoProducto;
  */
 @WebServlet("/controlprincipal")
 public class CtrIndex extends HttpServlet {
+	
+	private ServletContext sc;
+	
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -33,7 +38,23 @@ public class CtrIndex extends HttpServlet {
     public CtrIndex() {
         super();
         // TODO Auto-generated constructor stub
+        
     }
+    
+    
+    
+
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+		super.init();
+		
+		sc= config.getServletContext();
+		
+	}
+
+
+
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -42,12 +63,14 @@ public class CtrIndex extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		
-		
+
+
 		
 		String accion = request.getParameter("accion");
 		
 		if(accion == null) {
 			
+
 			try {
 				
 				DaoProducto daoPro = new DaoProducto();
@@ -67,11 +90,21 @@ public class CtrIndex extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace(System.out);
 			}
+
+
+
 			
+			
+			
+			
+			sc.getRequestDispatcher("/vistas/vistaprincipal.jsp").forward(request, response);
+			
+					
 		
 		// cuando se elija la categoria entra en este else
 		} else  {
 			
+
 			try {
 				
 				int codigoCategoria = Integer.parseInt(request.getParameter("idcategoria"));
@@ -95,6 +128,7 @@ public class CtrIndex extends HttpServlet {
 				e.printStackTrace(System.out);
 				
 			} 
+
 			
 		}
 		

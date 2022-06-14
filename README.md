@@ -1,2 +1,0 @@
-# CrudProyectoLienzoArt
-CRUD

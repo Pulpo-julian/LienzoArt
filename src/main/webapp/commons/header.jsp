@@ -46,6 +46,10 @@
 
         
                 <div class="usuario">
+
+                    <img src="img/user.png" alt="USER">
+                    <a href="/CrudNuevoLienzoArt/vistas/sesion.jsp">iniciar Sesion</a>
+
                 
 	                <form action="/CrudNuevoLienzoArt/controlsesion" method="post">
                 		
@@ -55,6 +59,7 @@
 
                 	</form>                                
                     
+
                 </div>
         
         
