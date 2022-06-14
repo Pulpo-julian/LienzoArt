@@ -40,35 +40,74 @@ public class CtrIndex extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+
 		
 		
-		//response.setContentType("text/html");
-		//response.setCharacterEncoding("UTF-8");
 		
+		String accion = request.getParameter("accion");
 		
-		try {
+		if(accion == null) {
 			
-			DaoProducto daoPro = new DaoProducto();
-			DaoCategoria daoCat = new DaoCategoria();
+			try {
+				
+				DaoProducto daoPro = new DaoProducto();
+				DaoCategoria daoCat = new DaoCategoria();
+				
+				
+				List<Producto> productos = daoPro.listar();
+				List<Categoria> categorias = daoCat.listar();
+				
+				request.setAttribute("productos", productos);
+				request.setAttribute("categorias", categorias);
+				
+				
+				
+				getServletContext().getRequestDispatcher("/vistas/vistaprincipal.jsp").forward(request, response);
+				
+			} catch (Exception e) {
+				e.printStackTrace(System.out);
+			}
 			
+		
+		// cuando se elija la categoria entra en este else
+		} else  {
 			
-			List<Producto> productos = daoPro.listar();
-			List<Categoria> categorias = daoCat.listar();
+			try {
+				
+				int codigoCategoria = Integer.parseInt(request.getParameter("idcategoria"));
+								
+				DaoProducto daoPro = new DaoProducto();
+				DaoCategoria daoCat = new DaoCategoria();
+				
+				List<Producto> productos = daoPro.listarPorCategoria(codigoCategoria);
+				List<Categoria> categorias = daoCat.listar();
+				
+				request.setAttribute("categorias", categorias);
+				request.setAttribute("productos", productos);
+				request.setAttribute("accion", accion);
+				
+				getServletContext().getRequestDispatcher("/vistas/vistaprincipal.jsp").forward(request, response);
+				
+				
+				
+			} catch (Exception e) {
+				
+				e.printStackTrace(System.out);
+				
+			} 
 			
-			request.setAttribute("productos", productos);
-			request.setAttribute("categorias", categorias);
-			
-			
-			
-			getServletContext().getRequestDispatcher("/vistas/vistaprincipal.jsp").forward(request, response);
-			
-		} catch (Exception e) {
-			e.printStackTrace(System.out);
 		}
+		
+		
+
 		
 		
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
+	
+	
+	
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

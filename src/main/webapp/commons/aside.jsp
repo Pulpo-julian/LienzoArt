@@ -5,14 +5,26 @@
 
 	<h1>Categorias</h1>
 
-	<%for(Categoria categoria: categorias) { %>
+
 	
 		<blockquote class="categoria">
 		
-			<h4><% out.print(categoria.getNombre()); %></h4>
+		
+		
+			<ul class="lista">
+				<%for(Categoria categoria: categorias) { %>			
+					<li>
+						<a href="/CrudNuevoLienzoArt/controlprincipal?idcategoria=<% out.print(categoria.getCodigo()); %>&accion=listarporcategoria"><% out.print(categoria.getNombre()); %></a>				
+					</li>
+				<%} %>		
+			</ul>
+		
+
+			
+			
 		
 		</blockquote>
 	
-	<%} %>
+	
 
 </aside>

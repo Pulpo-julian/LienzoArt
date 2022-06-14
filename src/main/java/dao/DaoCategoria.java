@@ -15,7 +15,7 @@ public class DaoCategoria {
 	
 	private static final String SQL_SELECT = "SELECT *  FROM tblcategoria;";
 	
-	//private static final String SQL_SELECT_DOCID = "SELECT *  FROM tblcategoria WHERE codigo = ?;";
+	private static final String SQL_SELECT_CODIGO = "SELECT * FROM tblcategoria WHERE codigo = ?;";
 	
 	//private static final String SQL_INSERT = "INSERT INTO tblusuario VALUES(?,?,?,?,?,?,?,?,?,?);";
 	
@@ -66,27 +66,25 @@ public class DaoCategoria {
 	
 	
 	//CRUD functions
-	/*
-	public Usuario buscarUsuario(String doc){
+	
+	public Categoria buscarCategoria(int codigo){
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		Usuario usuario = null;
+		Categoria categoria = null;
 		
 		try {
 			
 			conn = Conexion.getConnection();
-			stmt = conn.prepareStatement(SQL_SELECT_DOCID);
-			stmt.setString(1, doc);
+			stmt = conn.prepareStatement(SQL_SELECT_CODIGO);
+			stmt.setInt(1, codigo);
 			rs = stmt.executeQuery();
 			
 			rs.next();
-			String docid = rs.getString(1);
-			String nombres = rs.getString(2);
-			String apellidos = rs.getString(3);
-			String correo = rs.getString(4);
+			int cod = rs.getInt(1);
+			String nombreCategoria = rs.getString(2);
 			
-			usuario = new Usuario(docid, nombres, apellidos, correo);
+			categoria = new Categoria(cod, nombreCategoria);
 				
 			
 			
@@ -101,10 +99,11 @@ public class DaoCategoria {
 			Conexion.closeConnection(conn);
 		}
 		
-		return usuario;
+		return categoria;
 		
 	}
 
+	/*
 	public void insertarUsuario(String docid, String nombres, String apellidos, 
 			String correo, int perfil, String clave, String telefono,
 			String ciudad, String codigoPost, String direccion) {
