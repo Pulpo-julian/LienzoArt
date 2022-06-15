@@ -50,7 +50,7 @@ public class CtrSesion extends HttpServlet {
 		
 		String validar = request.getParameter("sesion");
 		
-		if(validar.equalsIgnoreCase("iniciar sesiÃ³n")) {
+		if(validar.equalsIgnoreCase("iniciar sesión")) {
 			
 			getServletContext().getRequestDispatcher("/vistas/sesion.jsp").forward(request, response);
 			
