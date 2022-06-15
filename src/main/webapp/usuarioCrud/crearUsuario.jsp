@@ -23,7 +23,7 @@
 	<div class="formulario">
 
 
-		<h1>Crear Usuario</h1>
+		<h1>Registro</h1>
 		<form action="/CrudNuevoLienzoArt/formulariousuario" method="post" class="form_usuario">
 
 			<div>
