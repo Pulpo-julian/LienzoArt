@@ -11,14 +11,16 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="estilos/principal.css">
+<link rel="stylesheet" href="estilos/formularios.css">
+<!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 <script defer src="scripts/main.js"></script>
 <title>Registrate en LienzoArt</title>
 </head>
 
 <body>
 
-	<div>
+	<div class="formulario">
 
 
 		<h1>Crear Usuario</h1>
@@ -26,7 +28,7 @@
 
 			<div>
 			
-				<label>Cedula</label> <input type="text" placeholder="su cedula"
+				<label class="form-label">Cédula</label> <input class="form-control" type="text" placeholder="Número de cédula"
 					id="cedula" name="cedula">
 
 				<%if(errores != null && errores.containsKey("cedula")){%>
@@ -44,7 +46,7 @@
 
 
 			<div>
-				<label>Nombres</label> <input type="text" placeholder="su nombre"
+				<label>Nombres</label> <input class="form-control" type="text" placeholder="Juan"
 					id="nombre" name="nombre">
 
 				<%if(errores != null && errores.containsKey("nombre")){%>
@@ -59,8 +61,8 @@
 			</div>
 
 			<div>
-				<label>apellidos</label> <input type="text"
-					placeholder="sus apellidos" id="apellidos" name="apellidos">
+				<label class="form-label">Apellidos</label> <input class="form-control" type="text"
+					placeholder="Pérez lópez" id="apellidos" name="apellidos">
 				<%if(errores != null && errores.containsKey("apellidos")){%>
 
 					<h5>
@@ -73,7 +75,7 @@
 			</div>
 
 			<div>
-				<label>Correo</label> <input type="text" placeholder="su correo"
+				<label class="form-label">Correo electrónico</label> <input class="form-control" type="text" placeholder="mrcatsiames@gmail.com"
 					id="correo" name="correo">
 
 				<%if(errores != null && errores.containsKey("correo")){%>
@@ -89,8 +91,8 @@
 			</div>
 
 			<div>
-				<label>Contraseña</label> <input type="password"
-					placeholder="contraseña" id="password" name="password">
+				<label class="form-label">Contraseña</label> <input class="form-control" type="password"
+					placeholder="Contraseña" id="password" name="password">
 				<%if(errores != null && errores.containsKey("password")){%>
 
 					<h5>
@@ -103,7 +105,7 @@
 			</div>
 
 			<div>
-				<label>Telefono</label> <input type="text" placeholder="su telefono"
+				<label class="form-label">Número de contacto</label> <input class="form-control" type="text" placeholder="3100000000"
 					id="telefono" name="telefono">
 				<%if(errores != null && errores.containsKey("telefono")){%>
 
@@ -118,8 +120,8 @@
 
 			<div class="p_ciudades">
 				<p>Seleccione su Ciudad</p>
-				<select name="ciudades" id="" class="ciudades">
-					<option value="">Seleccione..</option>
+				<select name="ciudades" id="" class="form-select">
+					<option value="">Seleccionar:</option>
 					<option value="05001">Medellin</option>
 					<option value="05318">Guarne</option>
 					<option value="05321">Guatape</option>
@@ -143,8 +145,8 @@
 			</div>
 
 			<div>
-				<label>Codigo Postal</label> <input type="text"
-					placeholder="su codigo postal" id="codigoPostal"
+				<label class="form-label">Código postal</label> <input class="form-control" type="text"
+					placeholder="050000" id="codigoPostal"
 					name="codigoPostal">
 				<%if(errores != null && errores.containsKey("codigoPostal")){%>
 
@@ -158,8 +160,8 @@
 			</div>
 
 			<div>
-				<label>Direccion</label> <input type="text"
-					placeholder="su direccion" id="direccion" name="direccion">
+				<label class="form-label">Dirección</label> <input class="form-control" type="text"
+					placeholder="cra x #xx-xx" id="direccion" name="direccion">
 				<%if(errores != null && errores.containsKey("direccion")){%>
 
 					<h5>
@@ -171,7 +173,7 @@
 
 			</div>
 
-			<input type="submit" name="crud" value="crear" class="boton_mov">
+			<input type="submit" name="crud" value="Crear" class="boton_mov col-12">
 
 		</form>
 
