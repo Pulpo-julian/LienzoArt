@@ -93,6 +93,10 @@
     row-gap: 20px;
 }
 
+.titulocategoria {
+	grid-column: 1/6;
+}
+
 .producto {
 	
     border: 1px solid black;

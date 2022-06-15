@@ -28,7 +28,7 @@ import dao.DaoProducto;
 @WebServlet("/controlprincipal")
 public class CtrIndex extends HttpServlet {
 	
-	private ServletContext sc;
+
 	
 	private static final long serialVersionUID = 1L;
        
@@ -44,14 +44,7 @@ public class CtrIndex extends HttpServlet {
     
     
 
-	@Override
-	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub
-		super.init();
-		
-		sc= config.getServletContext();
-		
-	}
+	
 
 
 
@@ -97,7 +90,7 @@ public class CtrIndex extends HttpServlet {
 			
 			
 			
-			sc.getRequestDispatcher("/vistas/vistaprincipal.jsp").forward(request, response);
+			
 			
 					
 		

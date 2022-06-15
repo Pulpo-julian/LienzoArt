@@ -3,21 +3,32 @@
 <% List<Producto> productos = (List<Producto>) request.getAttribute("productos"); %>
 <% String accion = (String) request.getAttribute("accion"); %>
 
-<%if (accion != null && productos.size() > 0) {%>
 
-	<h1>Productos de Categoria: "<% out.print(productos.get(0).getCategoria()); %>"</h1>
-
-<%} else if (productos.size() == 0){ %>
-	
-	<h1>Por el momento no hay productos de esta Categoria</h1>
-
-<%} %>
 
 <main class="seccion">
+
+	<%if (accion != null && productos.size() > 0) {%>
+	
+		<div class="titulocategoria">
+			
+			<h1 >Productos de Categoria: "<% out.print(productos.get(0).getCategoria()); %>"</h1>	
+			
+		</div>
+
+	<%} else if (productos.size() == 0){ %>
+	
+		<div class="titulocategoria">
+			
+			<h1>Por el momento no hay productos de esta Categoria</h1>
+		
+		</div>
+		
+	<%} %>
+
+
+
     
 	<%if (productos != null && productos.size() > 0) {%>
-	
-
 	
 		<% for(Producto producto: productos){ %>
 		
