@@ -24,11 +24,11 @@
 
 
 		<h1>Registro</h1>
-		<form action="/CrudNuevoLienzoArt/formulariousuario" method="post" class="form_usuario">
+		<form action="/CrudNuevoLienzoArt/formulariousuario" method="post" class="form_usuario" novalidate>
 
 			<div>
 			
-				<label class="form-label">Cédula</label> <input class="form-control" type="text" placeholder="Número de cédula"
+				<label class="form-label mt-4">Cédula</label> <input class="form-control" type="text" placeholder="Número de cédula"
 					id="cedula" name="cedula">
 
 				<%if(errores != null && errores.containsKey("cedula")){%>
@@ -46,7 +46,7 @@
 
 
 			<div>
-				<label>Nombres</label> <input class="form-control" type="text" placeholder="Juan"
+				<label class="form-label mt-3">Nombres</label> <input class="form-control" type="text" placeholder="Juan"
 					id="nombre" name="nombre">
 
 				<%if(errores != null && errores.containsKey("nombre")){%>
@@ -61,7 +61,7 @@
 			</div>
 
 			<div>
-				<label class="form-label">Apellidos</label> <input class="form-control" type="text"
+				<label class="form-label mt-3">Apellidos</label> <input class="form-control" type="text"
 					placeholder="Pérez lópez" id="apellidos" name="apellidos">
 				<%if(errores != null && errores.containsKey("apellidos")){%>
 
@@ -75,7 +75,7 @@
 			</div>
 
 			<div>
-				<label class="form-label">Correo electrónico</label> <input class="form-control" type="text" placeholder="mrcatsiames@gmail.com"
+				<label class="form-label mt-3">Correo electrónico</label> <input class="form-control" type="text" placeholder="mrcatsiames@gmail.com"
 					id="correo" name="correo">
 
 				<%if(errores != null && errores.containsKey("correo")){%>
@@ -91,7 +91,7 @@
 			</div>
 
 			<div>
-				<label class="form-label">Contraseña</label> <input class="form-control" type="password"
+				<label class="form-label mt-3">Contraseña</label> <input class="form-control" type="password"
 					placeholder="Contraseña" id="password" name="password">
 				<%if(errores != null && errores.containsKey("password")){%>
 
@@ -105,7 +105,7 @@
 			</div>
 
 			<div>
-				<label class="form-label">Número de contacto</label> <input class="form-control" type="text" placeholder="3100000000"
+				<label class="form-label mt-3">Número de contacto</label> <input class="form-control" type="text" placeholder="3100000000"
 					id="telefono" name="telefono">
 				<%if(errores != null && errores.containsKey("telefono")){%>
 
@@ -119,7 +119,7 @@
 			</div>
 
 			<div class="p_ciudades">
-				<p>Seleccione su Ciudad</p>
+				<p class="form-label mt-3">Seleccione su Ciudad</p>
 				<select name="ciudades" id="" class="form-select">
 					<option value="">Seleccionar:</option>
 					<option value="05001">Medellin</option>
@@ -145,7 +145,7 @@
 			</div>
 
 			<div>
-				<label class="form-label">Código postal</label> <input class="form-control" type="text"
+				<label class="form-label mt-3">Código postal</label> <input class="form-control" type="text"
 					placeholder="050000" id="codigoPostal"
 					name="codigoPostal">
 				<%if(errores != null && errores.containsKey("codigoPostal")){%>
@@ -160,7 +160,7 @@
 			</div>
 
 			<div>
-				<label class="form-label">Dirección</label> <input class="form-control" type="text"
+				<label class="form-label mt-3">Dirección</label> <input class="form-control" type="text"
 					placeholder="cra x #xx-xx" id="direccion" name="direccion">
 				<%if(errores != null && errores.containsKey("direccion")){%>
 
@@ -173,7 +173,7 @@
 
 			</div>
 
-			<input type="submit" name="crud" value="Crear" class="boton_mov col-12">
+			<input type="submit" name="crud" value="Crear" class="boton_mov col-12 mt-3">
 
 		</form>
 

@@ -78,7 +78,7 @@ public class CtrUsuario extends HttpServlet {
 		
 		
 		
-		if(decision.equals("crear")) {
+		if(decision.equals("Crear")) {
 			
 			
 			
@@ -88,65 +88,65 @@ public class CtrUsuario extends HttpServlet {
 			String cedula = request.getParameter("cedula");
 			
 			if(cedula == null || cedula.isEmpty()) {
-				errores.put("cedula", "la cedula es requerida");
+				errores.put("cedula", "Debe ingresar su cédula");
 			}
 			
 			//validar nombre
 			String nombre = request.getParameter("nombre");
 			
 			if(nombre == null || nombre.isBlank()) {
-				errores.put("nombre", "el nombre es requerido");
+				errores.put("nombre", "Debe ingresar su nombre");
 			}
 			
 			//validar apellidos
 			String apellidos = request.getParameter("apellidos");
 			
 			if(apellidos == null || apellidos.isBlank()) {
-				errores.put("apellidos", "el apellido es requerido");
+				errores.put("apellidos", "Debe ingresar sus apellidos");
 			}
 			
 			//validar correo
 			String correo = request.getParameter("correo");
 			
 			if(correo == null || correo.isBlank()) {
-				errores.put("correo", "el correo es requerido");
+				errores.put("correo", "Debe ingresar su correo");
 			} else if(!correo.contains("@")) {
-				errores.put("correo", "el correo debe tener caracter \"@\"");
+				errores.put("correo", "El correo debe contener caracter \"@\"");
 			}
 			
 			//validar password
 			String password = request.getParameter("password");
 			
 			if(password == null || password.isBlank()) {
-				errores.put("password", "la contraseña es requerida");
+				errores.put("password", "Debe ingresar una contraseña");
 			}
 			
 			//validar telefono
 			String telefono = request.getParameter("telefono");
 			
 			if(telefono == null || telefono.isBlank()) {
-				errores.put("telefono", "el telefono es requerido");
+				errores.put("telefono", "Debe ingresar su teléfono");
 			}
 			
 			//validar ciudad
 			String ciudad = request.getParameter("ciudades");
 			
 			if(ciudad == null || ciudad.isBlank()) {
-				errores.put("ciudades", "la ciudad es requrida");
+				errores.put("ciudades", "Seleccione una opción");
 			}
 			
 			//validar codigoPostal
 			String codigoPostal = request.getParameter("codigoPostal");
 			
 			if(codigoPostal == null || codigoPostal.isBlank()) {
-				errores.put("codigoPostal", "debe ingresar codigo postal");
+				errores.put("codigoPostal", "Debe ingresar su código postal");
 			}
 			
 			//validar direccion
 			String direccion = request.getParameter("direccion");
 			
 			if(direccion == null || direccion.isBlank()) {
-				errores.put("direccion", "debe ingresar la direccion");
+				errores.put("direccion", "Debe ingresar su dirección");
 			}
 			
 			
@@ -156,7 +156,7 @@ public class CtrUsuario extends HttpServlet {
 					DaoUsuario daoUsuario = new DaoUsuario();
 					daoUsuario.insertarUsuario(cedula, nombre, apellidos, correo, 1, password, telefono, ciudad, codigoPostal, direccion);
 					//getServletContext().getRequestDispatcher("CrudNuevoLienzoArt/usuarioCrud/usuarioFormulario.jsp").forward(request, response);
-					out.print("el usuario se ha creado correctamente");
+					out.print("El usuario se ha creado correctamente");
 				} catch (Exception e) {
 					e.printStackTrace(System.out);
 				}
