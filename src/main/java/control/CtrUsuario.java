@@ -78,7 +78,7 @@ public class CtrUsuario extends HttpServlet {
 		
 		
 		
-		if(decision.equals("crear")) {
+		if(decision.equals("Crear")) {
 			
 			
 			
@@ -118,7 +118,7 @@ public class CtrUsuario extends HttpServlet {
 			String password = request.getParameter("password");
 			
 			if(password == null || password.isBlank()) {
-				errores.put("password", "la contraseña es requerida");
+				errores.put("password", "la contraseï¿½a es requerida");
 			}
 			
 			//validar telefono
