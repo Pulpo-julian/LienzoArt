@@ -8,7 +8,6 @@ body{
     margin: auto;
     border-radius: 7px;
     box-shadow: 7px 13px 37px #000;
-    margin-top: 20%;
     background-color: #44BBA4;
 }
 
@@ -35,14 +34,10 @@ h1{
 	background-color: #dedcd6;
 }
 
-.user-img{
-	text-align: center;
+.row{
+	margin-top: 10%;
 }
 
-.seccion {
-	
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	margin-top: 10%;
-	column-gap: 32%;
+#iconmain:hover{
+	cursor: pointer;
 }
