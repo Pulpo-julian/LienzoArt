@@ -9,12 +9,13 @@
 
                 <div class="buscador">
 
-                    <li>
-                        <a href="#">
-                          <i class="fas fa-search"></i>
-                          <h6>buscar...</h6>
-                        </a>
-                    </li>
+					<input type="search" id="buscador" placeholder="Buscar..." >
+					
+					<div id="btnbuscar">
+					
+						<i class="fas fa-search"></i>
+					
+					</div>
 
                 </div>
 
