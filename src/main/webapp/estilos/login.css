@@ -1,0 +1,43 @@
+body{
+	background-color: #E7E5DF;
+}
+
+.formulario{
+	width: 400px;
+    padding: 30px;
+    margin: auto;
+    border-radius: 7px;
+    box-shadow: 7px 13px 37px #000;
+    background-color: #44BBA4;
+}
+
+h1{
+	text-align: center;
+	margin: 20px;
+}
+
+.registro{
+	text-align: center;
+}
+
+#btnregistro{
+	border: none;
+	background-color: #44BBA4;
+}
+
+.btn{
+	background-color:#E7E5DF;
+	border: none;
+}
+
+.btn:hover{
+	background-color: #dedcd6;
+}
+
+.row{
+	margin-top: 10%;
+}
+
+#iconmain:hover{
+	cursor: pointer;
+}
