@@ -17,21 +17,26 @@
     margin-top: 10px;
 }
 
-.buscador li {
-    list-style: none;
-    padding: 8px;
-    width: 200px;
+.buscador {
+	display: grid;
+	grid-template-columns: 85% 15%;
+	align-items: center;
+}
+
+#buscador {
+    width: 100%;
+    height: 30%;
     border: 1px solid black;
-    border-radius: 17px;
 }
 
-.buscador li a {
-    display: flex; 
-    text-decoration: none;
-}
+#btnbuscar {
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	text-align: center;
+	height: 24px;
 
-.buscardor li a i{
-    margin-right: 10px;
+	
 }
 
 .cabecera .logo img,

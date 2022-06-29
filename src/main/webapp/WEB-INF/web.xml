@@ -39,4 +39,14 @@
     <servlet-name>CtrSesion</servlet-name>
     <url-pattern>/CtrSesion</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CtrBarraBusqueda</display-name>
+    <servlet-name>CtrBarraBusqueda</servlet-name>
+    <servlet-class>control.CtrBarraBusqueda</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CtrBarraBusqueda</servlet-name>
+    <url-pattern>/CtrBarraBusqueda</url-pattern>
+  </servlet-mapping>
 </web-app>
