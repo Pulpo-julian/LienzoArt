@@ -40,6 +40,7 @@ $(document).ready(() => {
 					
 					$("#titulorespuesta").html("Productos relacionados con: \"" + buscar + "\"");
 					
+					/*
 					var productosHtml = "";
 					
 					$.each( responseText , function (key, value) => {
@@ -71,7 +72,7 @@ $(document).ready(() => {
 						</div>
 						
 					});
-
+					*/
 					
 					
 					
