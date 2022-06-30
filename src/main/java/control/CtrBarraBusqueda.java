@@ -68,7 +68,7 @@ public class CtrBarraBusqueda extends HttpServlet {
 				
 			} else {
 				
-				out.print("No existen productos relacionados con: \"" + buscar + "\"");
+				out.print("");
 				
 			}
 			
