@@ -40,44 +40,46 @@ $(document).ready(() => {
 					
 					$("#titulorespuesta").html("Productos relacionados con: \"" + buscar + "\"");
 					
-					/*
+					
 					var productosHtml = "";
 					
-					$.each( responseText , function (key, value) => {
+					responseText.forEach((value)  => {
 						
-					productosHtml += "<div class=\"producto\">";
-					
-					productosHtml += "<div class=\"muestra\">";
-					
-					productosHtml += "		<img alt=\"#\" src=\"\">";
-							
+						productosHtml += "<div class=\"producto\">";
+						
+						productosHtml += "		<div class=\"muestra\">";
+						
+						productosHtml += "			<img alt=\"#\" src=\"\">";
 								
-					productosHtml += "		<h3>" + value.nombre + "</h3>";
-					
-					productosHtml += "</div>";
-							
-					productosHtml += "<div class=\"informacion\">";
-							
-					productosHtml += "<ul class=\"listaproducto\">";
 									
-									<li> <h5>Categoria: <% out.print(producto.getCategoria()); %></h5> </li>
-									<li> <h5>Estado: <% out.print(producto.getEstado()); %></h5> </li>
-									<li> <h5>Existencia: <% out.print(producto.getExistencia()); %></h5> </li>
-									<li> <h5>Tienda: <a href="#"><% out.print(producto.getTienda()); %></a> </h5> </li>
-									
-								</ul>
-							
-							</div>
-							
-						</div>
+						productosHtml += "			<h3>" + value.nombre + "</h3>";
+						
+						productosHtml += "		</div>";
+								
+						productosHtml += "		<div class=\"informacion\">";
+								
+						productosHtml += "				<ul class=\"listaproducto\">";
+										
+						productosHtml += "					<li> <h5>Categoria:" + value.categoria + "</h5> </li>";
+						
+						productosHtml += "					<li> <h5>Estado:" + value.estado + "</h5> </li>";
+						
+						productosHtml += "					<li> <h5>Existencia:" + value.existencia + "</h5> </li>";
+						
+						productosHtml += "					<li> <h5>Tienda: <a href=\"#\">" + value.tienda + "</a> </h5> </li>";
+										
+						productosHtml += "				</ul>";
+								
+						productosHtml += "		</div>";
+								
+						productosHtml += "</div>";
 						
 					});
-					*/
 					
+					//console.log(responseText[0].codigo);
 					
-					
-					
-					console.log(responseText);	
+					$(".seccion").html(productosHtml);
+						
 				} else {
 					
 					$(".seccion").html("");
