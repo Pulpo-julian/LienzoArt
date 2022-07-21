@@ -119,7 +119,7 @@ public class CtrUsuario extends HttpServlet {
 			
 			if(password == null || password.isBlank()) {
 
-				errores.put("password", "Debe ingresar una contraseÃ±a");
+				errores.put("password", "Debe ingresar una contraseña");
 
 			}
 			
@@ -127,28 +127,28 @@ public class CtrUsuario extends HttpServlet {
 			String telefono = request.getParameter("telefono");
 			
 			if(telefono == null || telefono.isBlank()) {
-				errores.put("telefono", "Debe ingresar su telÃ©fono");
+				errores.put("telefono", "Debe ingresar su teléfono");
 			}
 			
 			//validar ciudad
 			String ciudad = request.getParameter("ciudades");
 			
 			if(ciudad == null || ciudad.isBlank()) {
-				errores.put("ciudades", "Seleccione una opciÃ³n");
+				errores.put("ciudades", "Seleccione una opción");
 			}
 			
 			//validar codigoPostal
 			String codigoPostal = request.getParameter("codigoPostal");
 			
 			if(codigoPostal == null || codigoPostal.isBlank()) {
-				errores.put("codigoPostal", "Debe ingresar su cÃ³digo postal");
+				errores.put("codigoPostal", "Debe ingresar su código postal");
 			}
 			
 			//validar direccion
 			String direccion = request.getParameter("direccion");
 			
 			if(direccion == null || direccion.isBlank()) {
-				errores.put("direccion", "Debe ingresar su direcciÃ³n");
+				errores.put("direccion", "Debe ingresar su dirección");
 			}
 			
 			
@@ -166,6 +166,15 @@ public class CtrUsuario extends HttpServlet {
 			} else {
 				
 				request.setAttribute("errores", errores);
+				request.setAttribute("cedula", cedula);
+				request.setAttribute("nombre", nombre);
+				request.setAttribute("apellidos", apellidos);
+				request.setAttribute("correo", correo);
+				request.setAttribute("password", password);
+				request.setAttribute("telefono", telefono);
+				request.setAttribute("ciudad", ciudad);
+				request.setAttribute("codigoPostal", codigoPostal);
+				request.setAttribute("direccion", direccion);
 				
 				getServletContext().getRequestDispatcher("/usuarioCrud/crearUsuario.jsp").forward(request, response);
 				

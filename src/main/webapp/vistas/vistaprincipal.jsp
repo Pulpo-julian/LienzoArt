@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="estilos/primerestilos.css">
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
-	<script defer type="text/javascript" src="scripts/main.js"></script>
+	<script defer type="text/javascript" src="scripts/principal.js"></script>
     <title>Bienvenido a LienzoArt</title>
 </head>
 <body>

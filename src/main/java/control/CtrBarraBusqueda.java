@@ -5,6 +5,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import modelos.Categoria;
 import modelos.Producto;
 
 import java.io.IOException;
@@ -15,6 +16,8 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import dao.DaoBarra;
+import dao.DaoCategoria;
+import dao.DaoProducto;
 
 /**
  * Servlet implementation class CtrBarraBusqueda
@@ -54,6 +57,7 @@ public class CtrBarraBusqueda extends HttpServlet {
 		String buscar = request.getParameter("buscar");
 		
 		
+			
 		try {
 			
 			DaoBarra daoBarra =  new DaoBarra();
@@ -79,6 +83,12 @@ public class CtrBarraBusqueda extends HttpServlet {
 			e.printStackTrace(System.out);
 			
 		}
+			
+			
+		
+		
+		
+
 		
 		
 		//String tituloRespuesta = "Productos relacionados con: \"" + buscar + "\"";

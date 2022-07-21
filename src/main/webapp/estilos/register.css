@@ -8,7 +8,7 @@ body{
     margin: auto;
     border-radius: 7px;
     box-shadow: 7px 13px 37px #000;
-    background-color: #44BBA4;
+    background-color: white;
 }
 
 h1{
@@ -20,8 +20,8 @@ h1{
 	text-align: center;
 }
 
-#btnregistro{
-	border: none;
-	background-color: #44BBA4;
-	text-decoration: underline;
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }

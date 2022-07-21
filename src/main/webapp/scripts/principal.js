@@ -95,13 +95,26 @@ $(document).ready(() => {
 			});
 			
 				
+				
+		// entra cuando el campo de busqueda esta vacia
 		} else {
+			
+			
 			return;
+			
+			
+			
+			
 		}
 		
-		
-		
-	}
+	} 
+	
+	
+	
+	// nuevo script para cambiar estilos
+	
+	
+	
 	
 	
 });
