@@ -1,9 +1,17 @@
+<head>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<link rel="stylesheet" href="estilos/header4.css">
+
+</head>
+
 <header class="header">
 
             <div class="cabecera">
 
                 <div class="logo">
-                    <img src="img/sena-logo.png" alt="LOGO">
+                    <img src="img/logo.png" alt="LOGO">
                     <h6>LienzoArt</h6>
                 </div>
 
@@ -19,9 +27,7 @@
 
                 </div>
 
-                
 
-        
                 <div class="usuario">
      
 	                <form action="/CrudNuevoLienzoArt/controlsesion" method="post">
