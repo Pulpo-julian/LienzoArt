@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="estilos/login.css">
+    <link rel="stylesheet" href="estilos/login1.css">
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
 
@@ -32,7 +32,7 @@
     
 
 	
-		<div class="seccion row">
+		<div class="row">
 		
 			<div id="iconmain"class="col-6">
 			
@@ -73,8 +73,8 @@
 	
 					<form action="/CrudNuevoLienzoArt/controlsesion" method="post">
 						
-						<h6>¿No tienes una cuenta? <input type="submit" name="sesion" id="btnregistro" value="Registrate" class="boton_mov text-white mt-3"> </h6>
-						<h6>¿Olvidaste tu contraseña? <input type="submit" name="sesion" id="btnregistro" value="Recupérala" class="boton_mov text-white"> </h6>	
+						<h6>¿No tienes una cuenta? <input type="submit" name="sesion" id="btnregistro" value="Registrate" class="boton_mov mt-3"> </h6>
+						<h6>¿Olvidaste tu contraseña? <input type="submit" name="sesion" id="btnregistro" value="Recupérala" class="boton_mov"> </h6>	
 						
 					</form>	
 				

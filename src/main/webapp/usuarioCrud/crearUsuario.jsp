@@ -22,25 +22,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<link rel="stylesheet" href="estilos/register.css">
-
+<link rel="stylesheet" href="estilos/register1.css"> 
 <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
 <script defer src="scripts/validacionBootStrap.js"></script>
 <title>Registrate en LienzoArt</title>
 </head>
 
 <body>
 
-	<div class="formulario">
+<div class="seccion row">
+
+	<div id="iconmain"class="col-6">
+			
+		<a href="/CrudNuevoLienzoArt/controlprincipal"> <img src="img/logo.png"> </a>
+				
+	</div>
+	
+	<div class="formulario col-6">
 
 
 		<h1>Registro</h1>
-		<form action="/CrudNuevoLienzoArt/formulariousuario" method="post" class="form_usuario <%if(errores != null && errores.size() > 0 ){%> <% out.print("was-validated"); %>" <%} %>" novalidate>
+		<form action="/CrudNuevoLienzoArt/formulariousuario" method="post" class="form_usuario row <%if(errores != null && errores.size() > 0 ){%> <% out.print("was-validated"); %>" <%} %>" novalidate>
 
-			<div>
+			<div class="col-6">
 			
-				<label class="form-label mt-4">Cédula</label>
+				<label class="form-label mt-3">Cédula</label>
 				<input class="form-control" type="number" placeholder="Número de cédula" id="cedula" name="cedula" required <%if(errores != null && !errores.containsKey("cedula")){%> value="<% out.print(cedula); %>" <%} %>>
 				<div class="invalid-feedback">
 					    <%if(errores != null && errores.containsKey("cedula")){%> 
@@ -52,7 +59,7 @@
 			</div>
 
 
-			<div>
+			<div class="col-6">
 				<label class="form-label mt-3">Nombres</label> 
 				<input class="form-control" type="text" placeholder="Juan" id="nombre" name="nombre" required <%if(errores != null && !errores.containsKey("nombre")){%> value="<% out.print(nombre); %>" <%} %>>
 				<div class="invalid-feedback">
@@ -63,7 +70,7 @@
 				<div class="valid-feedback">¡Correcto!</div>
 			</div>
 
-			<div>
+			<div class="col-6">
 				<label class="form-label mt-3">Apellidos</label> 
 				<input class="form-control" type="text" placeholder="Pérez lópez" id="apellidos" name="apellidos" required <%if(errores != null && !errores.containsKey("apellidos")){%> value="<% out.print(apellidos); %>" <%} %>>
 				<div class="invalid-feedback">
@@ -75,7 +82,7 @@
 
 			</div>
 
-			<div>
+			<div class="col-6">
 				<label class="form-label mt-3">Correo electrónico</label> 
 				<input class="form-control" type="text" placeholder="correo@gmail.com" id="correo" name="correo" required <%if(errores != null && !errores.containsKey("correo")){%> value="<% out.print(correo); %>" <%} %>>
 				<div class="invalid-feedback">
@@ -86,7 +93,7 @@
 				<div class="valid-feedback">¡Correcto!</div>
 			</div>
 
-			<div>
+			<div class="col-6">
 				<label class="form-label mt-3">Contraseña</label> 
 				<input class="form-control" type="password" placeholder="Contraseña" id="password" name="password" required <%if(errores != null && !errores.containsKey("password")){%> value="<% out.print(password); %>" <%} %>>
 				<div class="invalid-feedback">
@@ -98,7 +105,7 @@
 				
 			</div>
 
-			<div>
+			<div class="col-6">
 				<label class="form-label mt-3">Número de contacto</label> 
 				<input class="form-control" type="text" placeholder="000-000-0000" id="telefono" name="telefono" required <%if(errores != null && !errores.containsKey("telefono")){%> value="<% out.print(telefono); %>" <%} %>>
 				<div class="invalid-feedback">
@@ -109,10 +116,10 @@
 				<div class="valid-feedback">¡Correcto!</div>
 			</div>
 
-			<div class="p_ciudades">
+			<div class="p_ciudades col-6">
 				<p class="form-label mt-3">Seleccione su Ciudad</p>
 				<select name="ciudades" id="" class="form-select" required>
-					<option value="">Seleccionar:</option>
+					<option value="">Seleccionar...</option>
 					<option value="05001" <%if(errores != null && !errores.containsKey("ciudades") && "05001".equals(ciudad)){%> <% out.print("selected"); %> <%} %>>Medellin</option>
 					<option value="05318" <%if(errores != null && !errores.containsKey("ciudades") && "05318".equals(ciudad)){%> <% out.print("selected"); %> <%} %>>Guarne</option>
 					<option value="05321" <%if(errores != null && !errores.containsKey("ciudades") && "05321".equals(ciudad)){%> <% out.print("selected"); %> <%} %>>Guatape</option>
@@ -133,7 +140,7 @@
 
 			</div>
 
-			<div>
+			<div class="col-6">
 				<label class="form-label mt-3">Código postal</label> 
 				<input class="form-control" type="text" placeholder="000000" id="codigoPostal" name="codigoPostal" required <%if(errores != null && !errores.containsKey("codigoPostal")){%> value="<% out.print(codigoPostal); %>" <%} %>>
 				<div class="invalid-feedback">
@@ -145,7 +152,7 @@
 				
 			</div>
 
-			<div>
+			<div class="col-12">
 				<label class="form-label mt-3">Dirección</label> 
 				<input class="form-control" type="text" placeholder="cra x #xx-xx" id="direccion" name="direccion"required <%if(errores != null && !errores.containsKey("direccion")){%> value="<% out.print(direccion); %>" <%} %>>
 				<div class="invalid-feedback">
@@ -158,13 +165,13 @@
 			</div>
 			
 
-			<input type="submit" name="crud" value="Crear" class="btn btn-primary col-12 mt-3 boton-enviar">
+			<input type="submit" name="crud" value="Crear" class="btn btn-primary col-12 mt-4 text-dark">
 
 		</form>
 
 
 	</div>
-
+</div>
 
 
 
