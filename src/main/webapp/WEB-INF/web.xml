@@ -49,4 +49,14 @@
     <servlet-name>CtrBarraBusqueda</servlet-name>
     <url-pattern>/CtrBarraBusqueda</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CtrProducto</display-name>
+    <servlet-name>CtrProducto</servlet-name>
+    <servlet-class>control.CtrProducto</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CtrProducto</servlet-name>
+    <url-pattern>/CtrProducto</url-pattern>
+  </servlet-mapping>
 </web-app>

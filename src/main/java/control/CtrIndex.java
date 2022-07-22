@@ -38,32 +38,19 @@ public class CtrIndex extends HttpServlet {
     public CtrIndex() {
         super();
         // TODO Auto-generated constructor stub
-        
     }
     
     
-    
-
-	
-
-
-
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-
 		
-
-
 		
 		String accion = request.getParameter("accion");
 		
 		if(accion == null) {
 			
-
 			try {
 				
 				DaoProducto daoPro = new DaoProducto();
@@ -81,18 +68,10 @@ public class CtrIndex extends HttpServlet {
 				getServletContext().getRequestDispatcher("/vistas/vistaprincipal.jsp").forward(request, response);
 				
 			} catch (Exception e) {
+				
 				e.printStackTrace(System.out);
-			}
-
-
-
-			
-			
-			
-			
-			
-			
-					
+				
+			}			
 		
 		// cuando se elija la categoria entra en este else
 		} else  {
@@ -126,10 +105,7 @@ public class CtrIndex extends HttpServlet {
 		}
 		
 		
-
 		
-		
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 	
 	
@@ -140,14 +116,9 @@ public class CtrIndex extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 		
-		//List<String> nombres = new ArrayList<String>();
 		
-		//nombres.map()
-		 
-		
-		//doGet(request, response);
 	}
 	
 	
