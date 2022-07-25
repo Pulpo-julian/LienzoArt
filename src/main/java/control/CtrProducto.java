@@ -1,6 +1,7 @@
 package control;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -11,6 +12,7 @@ import java.io.PrintWriter;
 /**
  * Servlet implementation class CtrProducto
  */
+@MultipartConfig 
 @WebServlet("/formularioproducto")
 public class CtrProducto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
