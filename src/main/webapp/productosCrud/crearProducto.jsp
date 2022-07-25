@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
-
+	
+<%@ page import="java.util.List"%>
+<%@ page import="modelos.Categoria"%>
+<% List<Categoria> categorias = (List<Categoria>) request.getAttribute("categorias"); %>
 
 
 <!DOCTYPE html>
@@ -32,69 +34,68 @@
 			<div>
 			
 				<label class="form-label mt-4">Nombre del producto</label>
-				<input class="form-control" type="number" placeholder="Número de cédula" id="cedula" name="cedula">	
+				<input class="form-control" type="text" id="nombre" name="nombre">	
 				
 			</div>
 
 
 			<div>
 				<label class="form-label mt-3">Descripcion</label> 
-				<input class="form-control" type="text" placeholder="Juan" id="nombre" name="nombre">
-
+				<input class="form-control" type="text" id="descripcion" name="descripcion">
 			</div>
 
 			<div>
 				<label class="form-label mt-3">Precio</label> 
-				<input class="form-control" type="text" placeholder="Pérez lópez" id="apellidos" name="apellidos">
+				<input class="form-control" type="number" id="precio" name="precio">
 
 			</div>
 
 			<div>
 				<label class="form-label mt-3">Existencia</label> 
-				<input class="form-control" type="text" placeholder="correo@gmail.com" id="correo" name="correo">
+				<input class="form-control" type="number" placeholder="correo@gmail.com" id="existencia" name="existencia">
 
-			</div>
-
-			<div>
-				<label class="form-label mt-3">Contraseña</label> 
-				<input class="form-control" type="password" placeholder="Contraseña" id="password" name="password">
-				
-			</div>
-
-			<div>
-				<label class="form-label mt-3">Número de contacto</label> 
-				<input class="form-control" type="text" placeholder="000-000-0000" id="telefono" name="telefono">
 			</div>
 
 			<div class="p_estados">
-				<p class="form-label mt-3">Seleccione estado del Producto</p>
-				<select name="ciudades" id="" class="form-select">
-					<option value="">Seleccionar:</option>
-					<option value="05001">Medellin</option>
-					<option value="05318">Guarne</option>
-					<option value="05321">Guatape</option>
-					<option value="05376">La ceja</option>
-					<option value="05440">Marinilla</option>
-					<option value="05541">El Peñol</option>
-					<option value="05615">Rionegro</option>
-					<option value="05649">San carlos</option>
-					<option value="05656">San Jerónimo</option>
-					<option value="05667">San Rafael</option>
+			
+				<p class="form-label mt-3">Seleccione el estado del producto</p>
+				<select name="estado" id="" class="form-select">
+					<option>--</option>
+					<option value="1">Disponible</option>
+					<option value="2">No disponible</option>
 				</select>
-
-			</div>
-
-			<div>
-				<label class="form-label mt-3">Código postal</label> 
-				<input class="form-control" type="text" placeholder="000000" id="codigoPostal" name="codigoPostal">
 				
 			</div>
+			
+			<div class="p_categorias">
+			
+				<p class="form-label mt-3">Seleccione la categoria del producto</p>
+				<select name="categoria" id="" class="form-select">
+					
+					<option value="">--</option>
+				
+					<%if(categorias != null) {%>
+						
+						<%for (Categoria categoria: categorias) {%>
+							
+							<option value="<% out.print(categoria.getCodigo()); %>"><% out.print(categoria.getNombre()); %></option>
+						
+						<%} %>
+						
+					<%} %>
+						
+				</select>
+			</div>
+
 
 			<div>
-				<label class="form-label mt-3">Dirección</label> 
-				<input class="form-control" type="text" placeholder="cra x #xx-xx" id="direccion" name="direccion">
-
-				
+				<label class="form-label mt-3">Tienda</label> 
+				<input class="form-control" type="text" placeholder="codigo de tienda" id="tienda" name="tienda">
+			</div>
+			
+			<div>
+				<label class="form-label mt-3">Seleccione Imagenes del Producto maximo 5 imagenes</label> 
+				<input class="form-control" type="file" id="imagenes" name="imagenes">
 			</div>
 			
 

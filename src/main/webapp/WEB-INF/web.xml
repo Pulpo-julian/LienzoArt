@@ -59,4 +59,14 @@
     <servlet-name>CtrProducto</servlet-name>
     <url-pattern>/CtrProducto</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CtrProductoListarCategorias</display-name>
+    <servlet-name>CtrProductoListarCategorias</servlet-name>
+    <servlet-class>control.CtrProductoListarCategorias</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CtrProductoListarCategorias</servlet-name>
+    <url-pattern>/CtrProductoListarCategorias</url-pattern>
+  </servlet-mapping>
 </web-app>
