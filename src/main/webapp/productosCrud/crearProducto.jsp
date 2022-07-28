@@ -94,12 +94,12 @@
 			</div>
 			
 			<div>
-				<label class="form-label mt-3">Seleccione Imagenes del Producto maximo 5 imagenes</label> 
+				<label class="form-label mt-3">Seleccione un archivo de imagen del producto</label> 
 				<input class="form-control" type="file" id="imagenes" name="imagenes">
 			</div>
 			
 
-			<input type="submit" name="crud" value="Crear" class="btn btn-primary col-12 mt-3 boton-enviar">
+			<input type="submit" name="productocrear" value="Crear" class="btn btn-primary col-12 mt-3 boton-enviar">
 
 		</form>
 

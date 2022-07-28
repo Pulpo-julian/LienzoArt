@@ -6,6 +6,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import modelos.GuardarImagen;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -39,11 +41,21 @@ public class CtrProducto extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		PrintWriter out = response.getWriter();
+		String accion = request.getParameter("productocrear");
 		
-		out.println("hola metodo post");
+		String urlBase = getServletContext().getRealPath("/");
 		
-		//doGet(request, response);
+		String urlImagen = urlBase + "imagenesProductos/"; 
+		
+		if(accion.equals("Crear")) {
+			
+			GuardarImagen guardarImagen = new GuardarImagen();
+			
+		}
+		
+		
+		
+	
 	}
 
 }
