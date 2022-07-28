@@ -14,7 +14,7 @@
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
 	<script defer type="text/javascript" src="scripts/principal.js"></script>
-	<link rel="stylesheet" href="estilos/index4.css">
+	<link rel="stylesheet" href="estilos/index5.css">
     <title>Bienvenido a LienzoArt</title>
 </head>
 <body>
@@ -23,7 +23,6 @@
 		<!-- HEADER -->
 		<jsp:include page="../commons/header.jsp"></jsp:include>
 		        
-
 		<!-- SECCION PRINCIPAL -->
 		<div class="principal">
 			
@@ -36,6 +35,7 @@
 			
 		
 		</div>
+</div>
 		
 		
 		<!-- SECCION FOOTER -->

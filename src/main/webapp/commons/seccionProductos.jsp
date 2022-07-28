@@ -36,12 +36,12 @@
 	
 	
 	
-	    
+	    <div class="row">
 		<%if (productos != null && productos.size() > 0) {%>
 		
 			<% for(Producto producto: productos){ %>
 			
-				<div class="producto">
+				<div class="producto card col-2">
 					
 					<div class="muestra">
 						<img alt="#" src="">
@@ -67,7 +67,7 @@
 		
 		
 		<%} %>
-	
+		</div>
 	</main>
 
 
