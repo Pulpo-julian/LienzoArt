@@ -45,7 +45,7 @@ public class CtrProducto extends HttpServlet {
 		
 		String urlBase = getServletContext().getRealPath("/");
 		
-		String urlImagen = urlBase + "imagenesProductos/"; 
+		String urlCarpetaImagenes = urlBase + "imagenesProductos\\"; 
 		
 		if(accion.equals("Crear")) {
 			
@@ -53,6 +53,10 @@ public class CtrProducto extends HttpServlet {
 			
 		}
 		
+		System.out.println(urlCarpetaImagenes);
+		
+		String sSistemaOperativo = System.getProperty("os.name");
+		System.out.println(sSistemaOperativo);
 		
 		
 	

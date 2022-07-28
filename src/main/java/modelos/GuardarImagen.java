@@ -2,6 +2,7 @@ package modelos;
 
 import java.io.File;
 import java.io.InputStream;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -25,8 +26,10 @@ public class GuardarImagen {
 			
 			if(binarioFotoSubida != null) {
 				
+				//donde debo corregir en caso de errores
 				File archivoDeFoto = new File(fotoSubida, nombreFotoSubida);
-				
+				rutaRetornar = archivoDeFoto.getAbsolutePath();
+				Files.copy(binarioFotoSubida, archivoDeFoto.toPath());
 				
 				
 			}
@@ -39,5 +42,23 @@ public class GuardarImagen {
 		return rutaRetornar;
 		
 	}
+	
+	private boolean validarExtension(String nombreRuta, String[] extenciones) {
+		
+		for(String extencion: extenciones) {
+			
+			if(nombreRuta.toLowerCase().endsWith(extencion)) {
+				
+				return true;
+				
+			}
+			
+		}
+		
+		return false;
+		
+	}
+	
+	
 
 }

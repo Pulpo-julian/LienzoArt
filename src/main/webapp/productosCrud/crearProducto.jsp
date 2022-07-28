@@ -52,7 +52,7 @@
 
 			<div>
 				<label class="form-label mt-3">Existencia</label> 
-				<input class="form-control" type="number" placeholder="correo@gmail.com" id="existencia" name="existencia">
+				<input class="form-control" type="number" id="existencia" name="existencia">
 
 			</div>
 
