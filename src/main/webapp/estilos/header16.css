@@ -1,12 +1,22 @@
-body{
+.header{
 	background-color: #EFEFEF;
 	@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap');
 	font-family: 'Mukta', sans-serif;
+	font-size: 20px;
 	background-color: #276E90;
+	margin: 0;
 }
 
 .logo img{
+	width: 145px;
+	height: 65px;
+}
+
+.usuario img{
 	width: 65px;
 	height: 65px;
 }
 
+#btnbuscar{
+	position: relative;
+}

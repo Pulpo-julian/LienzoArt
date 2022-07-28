@@ -9,17 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
 	<script defer type="text/javascript" src="scripts/principal.js"></script>
+	<link rel="stylesheet" href="estilos/index4.css">
     <title>Bienvenido a LienzoArt</title>
 </head>
 <body>
 
-    <div class="container">
 		
 		<!-- HEADER -->
 		<jsp:include page="../commons/header.jsp"></jsp:include>
@@ -42,13 +41,6 @@
 		<!-- SECCION FOOTER -->
 		<jsp:include page="../commons/footer.jsp"></jsp:include>
 
-
-
-   	</div>
-    
-    
-
-    
 </body>
 </html>
 
