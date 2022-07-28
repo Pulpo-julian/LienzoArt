@@ -5,7 +5,7 @@
 <%@ page import="java.util.List"%>
 <%@ page import="modelos.Categoria"%>
 <% List<Categoria> categorias = (List<Categoria>) request.getAttribute("categorias"); %>
-<aside class="categorias mh-100">
+<aside class="categorias">
 
 	<h1 class="title_categories">Categorias</h1>
 

@@ -4,9 +4,10 @@
 }
 
 .categorias{
-	border: 1px solid red;
 	padding: 20px;
 	margin: 50px;
+	height: 400px;
+	background-color: white;
 }
 
 .title_categories{
@@ -22,4 +23,16 @@
 	background-color: #EFEFEF;
 	display: grid;
 	grid-template-columns: 20% 80%;
+}
+
+.producto{
+	margin: 20px;
+}
+
+.seccionprincipal{
+	margin-top: 40px;
+}
+
+.listaproducto{
+	list-style: none;
 }
