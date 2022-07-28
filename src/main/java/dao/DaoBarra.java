@@ -52,6 +52,7 @@ public class DaoBarra {
 		try {
 			
 			entrada = "%".concat(entrada).concat("%");
+			//se imprime lo que busco
 			System.out.print(entrada);
 			conn = Conexion.getConnection();
 			stmt = conn.prepareStatement(SQL_SELECT);
