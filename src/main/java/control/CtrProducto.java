@@ -51,6 +51,10 @@ public class CtrProducto extends HttpServlet {
 			
 			GuardarImagen guardarImagen = new GuardarImagen();
 			
+			String nombre = request.getParameter("nombre");
+			String descripcion = request.getParameter("descripcion");
+			int precio = Integer.parseInt(request.getParameter("precio"));
+			int existencia = Integer.parseInt(request.getParameter("existencia"));
 			
 			
 		}
