@@ -12,7 +12,7 @@
     	<img src="img/logoindex.png" alt="LOGO">
 	</div>
 
-    <div class="buscador col-3 navbar navbar-expand-lg navbar-light border-6">
+    <div class="buscador col-3">
 		<input type="search" id="buscador" placeholder="Buscar..." >
 
 		<div id="btnbuscar">
@@ -24,7 +24,15 @@
 	<div class="usuario col-3">
     
          <form action="/CrudNuevoLienzoArt/controlsesion" method="post">            		 		
-            <input type="submit" name="sesion" value="iniciar sesión">
+            <input type="submit" name="sesion" value="Iniciar sesión">
+ 		</form>                                
+
+	</div>
+	
+	<div class="usuario col-3">
+    
+         <form action="/CrudNuevoLienzoArt/controlsesion" method="post">            		 		
+            <input type="submit" name="registro" value="Regístrate">
  		</form>                                
 
 	</div>
