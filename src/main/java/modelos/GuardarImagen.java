@@ -10,6 +10,8 @@ import jakarta.servlet.http.Part;
 
 public class GuardarImagen {
 	
+	String[] extenciones = {".ico", ".png", ".jpg", ".jpeg"};
+	
 	private String imagenEnDirectorio(Part part, File fotoSubida, String ruta) {
 		
 		String rutaRetornar = "";
@@ -43,7 +45,7 @@ public class GuardarImagen {
 		
 	}
 	
-	private boolean validarExtension(String nombreRuta, String[] extenciones) {
+	private boolean validarExtension(String nombreRuta) {
 		
 		for(String extencion: extenciones) {
 			

@@ -51,12 +51,13 @@ public class CtrProducto extends HttpServlet {
 			
 			GuardarImagen guardarImagen = new GuardarImagen();
 			
+			
+			
 		}
 		
 		System.out.println(urlCarpetaImagenes);
 		
-		String sSistemaOperativo = System.getProperty("os.name");
-		System.out.println(sSistemaOperativo);
+
 		
 		
 	
