@@ -45,7 +45,7 @@ $(document).ready(() => {
 					
 					responseText.forEach((value)  => {
 						
-						productosHtml += "<div class=\"producto\">";
+						productosHtml += "<div class=\"productocard col-2\"";
 						
 						productosHtml += "		<div class=\"muestra\">";
 						
