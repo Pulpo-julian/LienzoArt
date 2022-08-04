@@ -6,7 +6,7 @@
         <div class="left box">
           <h2>Nosotros</h2>
           <div class="content">
-            <p>Empresa dedica al desarrollo de Software,tienda Online</p>
+            <p>Empresa dedica al desarrollo de Software, tienda online</p>
             <div class="social">
               <p>Proyecto formativo de la ficha 2278748.<br> Equipo #3 <br>
               </p>
@@ -23,7 +23,7 @@
             </div>
             <div class="phone">
               <span class="fas fa-phone-alt"></span>
-              <span class="text">+57-3016092596 | +57-3193510013 | +57-</span>
+              <span class="text">+57-3016092596 | +57-3193510013 | +57-3104712665</span>
             </div>
             <div class="email">
               <span class="fas fa-envelope"></span>
