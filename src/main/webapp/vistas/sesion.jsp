@@ -73,7 +73,7 @@
 	
 					<form action="/CrudNuevoLienzoArt/controlsesion" method="post">
 						
-						<h6>¿No tienes una cuenta? <input type="submit" name="sesion" id="btnregistro" value="Registrate" class="boton_mov mt-3"> </h6>
+						<h6>¿No tienes una cuenta? <input type="submit" name="registro" id="btnregistro" value="Regístrate" class="boton_mov mt-3"> </h6>
 						<h6>¿Olvidaste tu contraseña? <input type="submit" name="sesion" id="btnregistro" value="Recupérala" class="boton_mov"> </h6>	
 						
 					</form>	

@@ -49,14 +49,15 @@ public class CtrSesion extends HttpServlet {
 		//doGet(request, response);
 		
 		String validar = request.getParameter("sesion");
+		String registro = request.getParameter("registro");
 		
-		if(validar.equalsIgnoreCase("iniciar sesión")) {
+		if(validar != null && validar.equalsIgnoreCase("Iniciar sesión")) {
 			
 			getServletContext().getRequestDispatcher("/vistas/sesion.jsp").forward(request, response);
 			
 		}
 		
-		if(validar.equalsIgnoreCase("Registrate")) {
+		if(registro != null && registro.equalsIgnoreCase("Regístrate")) {
 			
 			getServletContext().getRequestDispatcher("/usuarioCrud/crearUsuario.jsp").forward(request, response);
 			
