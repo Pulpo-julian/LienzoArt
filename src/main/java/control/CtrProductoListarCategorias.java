@@ -57,6 +57,7 @@ public class CtrProductoListarCategorias extends HttpServlet {
 		}
 		
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 	}
 
 	/**
