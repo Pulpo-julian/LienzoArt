@@ -47,24 +47,20 @@
 			<div>
 				<label class="form-label mt-3">Precio</label> 
 				<input class="form-control" type="number" id="precio" name="precio">
-
 			</div>
 
 			<div>
 				<label class="form-label mt-3">Existencia</label> 
 				<input class="form-control" type="number" id="existencia" name="existencia">
-
 			</div>
 
 			<div class="p_estados">
-			
 				<p class="form-label mt-3">Seleccione el estado del producto</p>
 				<select name="estado" id="" class="form-select">
 					<option>--</option>
 					<option value="1">Disponible</option>
 					<option value="2">No disponible</option>
 				</select>
-				
 			</div>
 			
 			<div class="p_categorias">
@@ -95,7 +91,7 @@
 			
 			<div>
 				<label class="form-label mt-3">Seleccione un archivo de imagen del producto</label> 
-				<input class="form-control" type="file" id="imagenes" name="imagenes">
+				<input class="form-control" type="file" id="imagenes" name="imagen">
 			</div>
 			
 
