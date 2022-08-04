@@ -9,7 +9,7 @@
     <header class="header row"> <!-- Inicio header -->
     
         <div class="logo col-2">
-            <img src="img/logoindex.png" alt="LOGO">
+            <a href="/CrudNuevoLienzoArt/controlprincipal"> <img src="img/logoindex.png"> </a>
         </div>
     
         <div class="buscador col-6">
