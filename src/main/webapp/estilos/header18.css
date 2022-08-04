@@ -2,27 +2,22 @@
 	background-color: #EFEFEF;
 	@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap');
 	font-family: 'Mukta', sans-serif;
-	font-size: 20px;
+	font-size: 18px;
 	background-color: #276E90;
 }
 
-.logo img{
-	width: 145px;
+.logo img{ /*Estilos para el logo en el header*/
+	width: 135px;
 	height: 65px;
     align-items: center;
 }
 
-.usuario img{
-	width: 65px;
-	height: 65px;
-}
-
-.buscador{
+.buscador{ /*Estilos para el espaciado de la barra de búsqueda*/
 	padding: 5px;
     margin-top: 15px;
 }
 
-.buscador input{
+.buscador input{ /*Estilos para la barra de búsqueda*/
 	width: 100%;
 	height: 40px;
 	outline: none;
@@ -32,7 +27,7 @@
 	margin-top: 7px;
 }
 
-.btn{
+.btn{ /*Estilos y posicionamiento del botón de búsqueda*/
 	position: absolute;
     display: flex;
     padding-top: 25px;
@@ -43,7 +38,7 @@
 	margin-top:13px;
 }
 
-.btniniciarsesion{
+.btniniciarsesion{ /*Estilos y posicionamiento del botón de iniciar sesión*/
     text-decoration: none;
     font-size: 15;
     height: 40px;
@@ -54,7 +49,8 @@
     margin-top: 10px;
     margin-left:120px;
 }
-.btncrearusuario{
+
+.btncrearusuario{ /*Estilos y posicionamiento del botón de registro*/
     text-decoration: none;
     font-size: 15;
     height: 40px;
@@ -67,14 +63,74 @@
     
 }
 
-.btniniciarsesion:hover{
+.btniniciarsesion:hover{ /*Estilos para el hover del botón de iniciar sesión*/
     color: #1883ba;
     background-color: #ffffff;
     transition: 300ms;
 }
 
-.btncrearusuario:hover{
+.btncrearusuario:hover{ /*Estilos para el hover del botón de registro*/
     color: #1883ba;
     background-color: #ffffff;
     transition: 300ms;
+}
+
+@media (max-width: 1850px){ /*Estilos para una pantalla de 1850 pixeles o menor*/
+	.btniniciarsesion{
+		margin-left: -36px;
+	}
+	
+	.buscador input{
+		width: 700px;
+	}
+}
+
+@media (max-width: 1520px){ /*Estilos para una pantalla de 1520 pixeles o menor*/
+	.btniniciarsesion{
+		margin-left: -36px;
+	}
+	
+	.buscador input{
+		width: 650px;
+	}
+}
+
+@media (max-width: 1390px){ /*Estilos para una pantalla de 1390 pixeles o menor*/
+	.btniniciarsesion{
+		margin-left: -36px;
+	}
+	
+	.buscador input{
+		width: 600px;
+	}
+}
+
+@media (max-width: 1290px){ /*Estilos para una pantalla de 1290 pixeles o menor*/
+	.btniniciarsesion{
+		margin-left: -36px;
+	}
+	
+	.buscador input{
+		width: 500px;
+	}
+}
+
+@media (max-width: 1180px){ /*Estilos para una pantalla de 1180 pixeles o menor*/
+	.btniniciarsesion{
+		margin-left: -36px;
+	}
+	
+	.buscador input{
+		width: 400px;
+	}
+}
+
+@media (max-width: 978px){ /*Estilos para una pantalla de 978 pixeles o menor*/
+	.btniniciarsesion{
+		margin-left: -66px;
+	}
+	
+	.buscador input{
+		width: 300px;
+	}
 }

@@ -36,12 +36,12 @@
 	
 	
 	
-	    <div class="row">
+	    <div class="flex_container">
 		<%if (productos != null && productos.size() > 0) {%>
 		
 			<% for(Producto producto: productos){ %>
 			
-				<div class="producto card col-2">
+				<div class="producto card">
 					
 					<div class="muestra">
 						<img alt="#" src="">

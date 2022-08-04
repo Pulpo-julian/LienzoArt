@@ -14,17 +14,17 @@
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
 	<script defer type="text/javascript" src="scripts/principal.js"></script>
-	<link rel="stylesheet" href="estilos/index5.css">
+	<link rel="stylesheet" href="estilos/index7.css">
     <title>Bienvenido a LienzoArt</title>
 </head>
 <body>
 
-		
 		<!-- HEADER -->
 		<jsp:include page="../commons/header.jsp"></jsp:include>
 		        
 		<!-- SECCION PRINCIPAL -->
 		<div class="principal">
+		
 			
 			<!-- ASIDE CATEGORIAS -->			
 			<jsp:include page="../commons/aside.jsp"></jsp:include>
@@ -35,9 +35,7 @@
 			
 		
 		</div>
-</div>
-		
-		
+				
 		<!-- SECCION FOOTER -->
 		<jsp:include page="../commons/footer.jsp"></jsp:include>
 
