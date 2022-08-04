@@ -91,7 +91,7 @@
 			
 			<div>
 				<label class="form-label mt-3">Seleccione un archivo de imagen del producto</label> 
-				<input class="form-control" type="file" id="imagenes" name="imagenes">
+				<input class="form-control" type="file" id="imagenes" name="imagen">
 			</div>
 			
 

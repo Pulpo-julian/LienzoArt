@@ -12,7 +12,7 @@ public class GuardarImagen {
 	
 	String[] extenciones = {".ico", ".png", ".jpg", ".jpeg"};
 	
-	private String imagenEnDirectorio(Part part, File fotoSubida, String ruta) {
+	public String imagenEnDirectorio(Part part, File fotoSubida, String ruta) {
 		
 		String rutaRetornar = "";
 		
@@ -49,7 +49,7 @@ public class GuardarImagen {
 		
 	}
 	
-	private boolean validarExtension(String nombreRuta) {
+	public boolean validarExtension(String nombreRuta) {
 		
 		for(String extencion: extenciones) {
 			
@@ -64,6 +64,8 @@ public class GuardarImagen {
 		return false;
 		
 	}
+	
+	
 	
 	
 

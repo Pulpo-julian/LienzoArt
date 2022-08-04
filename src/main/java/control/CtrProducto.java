@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
 import modelos.GuardarImagen;
 
 import java.io.IOException;
@@ -55,8 +56,13 @@ public class CtrProducto extends HttpServlet {
 			String descripcion = request.getParameter("descripcion");
 			int precio = Integer.parseInt(request.getParameter("precio"));
 			int existencia = Integer.parseInt(request.getParameter("existencia"));
+			int estado = Integer.parseInt(request.getParameter("estado"));
+			int categoria = Integer.parseInt(request.getParameter("categoria"));
+			int tienda = Integer.parseInt(request.getParameter("tienda"));
+			Part imagen = request.getPart("imagen");
 			
-			
+			//12:31 en el video 
+			//debo seleccionar solo el codigo y la imagen para verificar si funciona
 		}
 		
 		System.out.println(urlCarpetaImagenes);
