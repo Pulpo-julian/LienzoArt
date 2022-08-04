@@ -61,8 +61,22 @@ public class CtrProducto extends HttpServlet {
 			int tienda = Integer.parseInt(request.getParameter("tienda"));
 			Part imagen = request.getPart("imagen");
 			
+			//parametro provisional para asignar el codigo del producto
+			int codigoProducto = 0;
+			
+			
 			//12:31 en el video 
 			//debo seleccionar solo el codigo y la imagen para verificar si funciona
+			
+			if(imagen == null) {
+				System.out.println("No se ha seleccionado el archivo");
+			}
+			
+			if(guardarImagen.validarExtension(imagen.getSubmittedFileName())) {
+				
+				
+				
+			}
 		}
 		
 		System.out.println(urlCarpetaImagenes);
