@@ -12,11 +12,10 @@ public class GuardarImagen {
 	
 	String[] extenciones = {".ico", ".png", ".jpg", ".jpeg"};
 	
-	public String imagenEnDirectorio(Part part, File fotoSubida, String ruta) {
+	public String imagenEnDirectorio(Part part, File fotoSubida) {
 		
 		String rutaRetornar = "";
 		
-		rutaRetornar = ruta;
 		
 		try {
 			
@@ -61,7 +60,7 @@ public class GuardarImagen {
 			
 		}
 		
-		return false;
+		return false;	
 		
 	}
 	

@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
 import modelos.GuardarImagen;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -48,10 +49,13 @@ public class CtrProducto extends HttpServlet {
 		
 		String urlCarpetaImagenes = urlBase + "imagenesProductos\\"; 
 		
+		File instaciaCarpetaImagenes = new File(urlCarpetaImagenes);
+		
 		if(accion.equals("Crear")) {
 			
 			GuardarImagen guardarImagen = new GuardarImagen();
 			
+			/*
 			String nombre = request.getParameter("nombre");
 			String descripcion = request.getParameter("descripcion");
 			int precio = Integer.parseInt(request.getParameter("precio"));
@@ -59,6 +63,8 @@ public class CtrProducto extends HttpServlet {
 			int estado = Integer.parseInt(request.getParameter("estado"));
 			int categoria = Integer.parseInt(request.getParameter("categoria"));
 			int tienda = Integer.parseInt(request.getParameter("tienda"));
+			*/
+			
 			Part imagen = request.getPart("imagen");
 			
 			//parametro provisional para asignar el codigo del producto
@@ -74,9 +80,14 @@ public class CtrProducto extends HttpServlet {
 			
 			if(guardarImagen.validarExtension(imagen.getSubmittedFileName())) {
 				
+				String urlFotoGuardada = guardarImagen.imagenEnDirectorio(imagen, instaciaCarpetaImagenes);
+				
 				
 				
 			}
+			
+			
+			
 		}
 		
 		System.out.println(urlCarpetaImagenes);
