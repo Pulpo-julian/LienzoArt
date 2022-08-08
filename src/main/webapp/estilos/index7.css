@@ -27,7 +27,7 @@
 	color: black;
 }
 
-.lista a:hover{
+.cat-container:hover{
 	color: black;
 	background-color: grey;
 }
