@@ -46,8 +46,8 @@
     background-color: #CCEAF4;
     border-radius: 10px;
     border: none;
-    margin-top: 10px;
-    margin-left:-4rem;
+    margin-top: 12px;
+    margin-left: 2rem;
 }
 
 .btncrearusuario{ /*Estilos y posicionamiento del bot�n de registro*/
@@ -59,7 +59,7 @@
     border-radius: 10px;
     border: none;
     margin-left: -5rem;
-    margin-top: 10px;
+    margin-top: 12px;
     
 }
 
