@@ -13,6 +13,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import dao.DaoProducto;
+
 /**
  * Servlet implementation class CtrProducto
  */
@@ -45,11 +47,15 @@ public class CtrProducto extends HttpServlet {
 		
 		String accion = request.getParameter("productocrear");
 		
-		String urlBase = getServletContext().getRealPath("/");
+		//En caso de desplegar la app en un servidor se usa esta variable
+		//String urlBase = getServletContext().getRealPath("/");
 		
-		String urlCarpetaImagenes = urlBase + "imagenesProductos\\"; 
+		//esta variable contiene la ruta donde se ubica el proyecto pero no donde se desplega el servidor
+		String urlBase = System.getProperty("user.home");
 		
-		File instaciaCarpetaImagenes = new File(urlCarpetaImagenes);
+		String urlCarpetaImagenes = urlBase + "\\git\\LienzoArt\\src\\main\\webapp\\imagenesProductos\\"; 
+		
+		File carpetaImagenes = new File(urlCarpetaImagenes);
 		
 		if(accion.equals("Crear")) {
 			
@@ -68,7 +74,7 @@ public class CtrProducto extends HttpServlet {
 			Part imagen = request.getPart("imagen");
 			
 			//parametro provisional para asignar el codigo del producto
-			int codigoProducto = 0;
+			int codigoProducto = 1;
 			
 			
 			//12:31 en el video 
@@ -80,7 +86,20 @@ public class CtrProducto extends HttpServlet {
 			
 			if(guardarImagen.validarExtension(imagen.getSubmittedFileName())) {
 				
-				String urlFotoGuardada = guardarImagen.imagenEnDirectorio(imagen, instaciaCarpetaImagenes);
+				String urlFotoGuardada = guardarImagen.imagenEnDirectorio(imagen, carpetaImagenes);
+				
+				DaoProducto daoProducto = new DaoProducto();
+				
+				int resultado = daoProducto.actualizarProducto(codigoProducto, urlFotoGuardada); 
+				
+				if(resultado != 0) {
+					response.getWriter().println("Producto Actualizado");
+				} else {
+					response.getWriter().println("No se ha podido actualizar el producto");
+				}
+				
+				System.out.println(urlFotoGuardada);
+				
 				
 				
 				
@@ -90,7 +109,7 @@ public class CtrProducto extends HttpServlet {
 			
 		}
 		
-		System.out.println(urlCarpetaImagenes);
+
 		
 
 		

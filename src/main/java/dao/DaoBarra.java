@@ -71,9 +71,10 @@ public class DaoBarra {
 				String estado = rs.getString(7);
 				String categoria = rs.getString(8);
 				String tienda = rs.getString(9);
+				String imagen = rs.getString(10);
 				
 				productos.add(new Producto(codProducto, nombre, fechaPub, descripcion, 
-						precio, existencia, estado, categoria, tienda));
+						precio, existencia, estado, categoria, tienda, imagen));
 				
 
 				

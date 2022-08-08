@@ -41,4 +41,4 @@
           <span class="far fa-copyright"></span><span> 2021.</span>
         </center>
       </div>
-    </footer>
+</footer>

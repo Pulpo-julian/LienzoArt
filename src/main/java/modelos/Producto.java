@@ -11,10 +11,12 @@ public class Producto {
 	private String estado;
 	private String categoria;
 	private String tienda;
+	private String urlImagen;
+	
 	
 	//constructors
 	public Producto(int codigo, String nombre, String fechaPublicacion, String descripcion, int precio, int existencia,
-			String estado, String categoria, String tienda) {
+			String estado, String categoria, String tienda, String imagen) {
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.fechaPublicacion = fechaPublicacion;
@@ -24,6 +26,7 @@ public class Producto {
 		this.estado = estado;
 		this.categoria = categoria;
 		this.tienda = tienda;
+		this.urlImagen = imagen;
 	}
 	
 	
@@ -84,6 +87,12 @@ public class Producto {
 	public void setTienda(String tienda) {
 		this.tienda = tienda;
 	}
+	public String getUrlImagen() {
+		return urlImagen;
+	}
+	public void setUrlImagen(String urlImagen) {
+		this.urlImagen = urlImagen;
+	}
 
 
 
@@ -91,7 +100,7 @@ public class Producto {
 	public String toString() {
 		return "Producto [codigo=" + codigo + ", nombre=" + nombre + ", fechaPublicacion=" + fechaPublicacion
 				+ ", descripcion=" + descripcion + ", precio=" + precio + ", existencia=" + existencia + ", estado="
-				+ estado + ", categoria=" + categoria + ", tienda=" + tienda + "]";
+				+ estado + ", categoria=" + categoria + ", tienda=" + tienda + ", urlImagen=" + urlImagen + "]";
 	}
 	
 	
