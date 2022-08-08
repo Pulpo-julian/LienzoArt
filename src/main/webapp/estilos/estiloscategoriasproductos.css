@@ -1,0 +1,80 @@
+*{
+	@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap');
+	font-family: 'Mukta', sans-serif;
+}
+
+aside{
+	padding: 20px;
+	margin: 67px auto;
+	border-radius: 10px;
+	background-color: white;
+	height: auto;
+}
+
+.title_categories{
+	display: block;
+	font-family: 'Mukta', sans-serif;
+}
+
+.categoria .lista{
+	width: auto;
+	list-style: none;
+	padding-left: 13%;
+	line-height: 3.8em;
+	
+	
+}
+
+.lista a{
+	font-size: 1.4rem;
+	box-shadow: inset 0 0 0 0 #276e90;
+  	color: black;
+  	margin: 0 -.25rem;
+  	padding: 0 .25rem;
+  	transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+	text-transform: capitalize;
+	text-decoration: none;
+}
+
+<<<<<<< HEAD:src/main/webapp/estilos/index7.css
+.cat-container:hover{
+	color: black;
+	background-color: grey;
+=======
+.lista a:hover{
+	box-shadow: inset 100px 0 0 0 #276e90;
+  	color: white;
+	
+>>>>>>> c24bec591ada93f2fa942097af1eacfb3ea9dce7:src/main/webapp/estilos/estiloscategoriasproductos.css
+}
+
+.principal{
+	background-color:  grey;
+	display: grid;
+	grid-template-columns: 20% 80%;
+}
+
+
+.producto{ /*Estilos de la caja de productos*/
+	margin: 20px;
+	width: 335px;
+	height: auto;
+}
+
+
+.seccionprincipal{
+	margin-top: 40px;
+}
+
+.listaproducto{
+	list-style: none;
+}
+
+
+
+
+.flex_container{
+	display: flex;
+	flex-direction: row;
+	flex-flow: row wrap;
+}

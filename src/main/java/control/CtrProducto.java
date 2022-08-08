@@ -75,7 +75,7 @@ public class CtrProducto extends HttpServlet {
 			Part imagen = request.getPart("imagen");
 			
 			//parametro provisional para asignar el codigo del producto
-			int codigoProducto = 3;
+			int codigoProducto = 13;
 			
 			
 			//12:31 en el video 
@@ -100,9 +100,6 @@ public class CtrProducto extends HttpServlet {
 				}
 				
 				System.out.println(urlFotoGuardada);
-				
-				
-				
 				
 			}
 			

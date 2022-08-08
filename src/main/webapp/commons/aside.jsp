@@ -7,20 +7,22 @@
 <% List<Categoria> categorias = (List<Categoria>) request.getAttribute("categorias"); %>
 <aside class="categorias">
 
-	<h2 class="title_categories">Categorias</h2>
+	
 
 
 	
 		<blockquote class="categoria">
-			<div class="cat-container">
-				<ul class="lista">
-					<%for(Categoria categoria: categorias) { %>			
-						<li>
-							<a href="/CrudNuevoLienzoArt/controlprincipal?idcategoria=<% out.print(categoria.getCodigo()); %>&accion=listarporcategoria"><% out.print(categoria.getNombre()); %></a>				
-						</li>
-					<%} %>		
-				</ul>	
-			</div>
+
+		<h2 class="title_categories"><b>Categorias</b></h2>
+		
+			<ul class="lista">
+				<%for(Categoria categoria: categorias) { %>			
+					<li>
+						<a href="/CrudNuevoLienzoArt/controlprincipal?idcategoria=<% out.print(categoria.getCodigo()); %>&accion=listarporcategoria"><% out.print(categoria.getNombre()); %></a>				
+					</li>
+				<%} %>		
+			</ul>	
+			
 		</blockquote>
 	
 	
