@@ -41,7 +41,7 @@
 		
 			<% for(Producto producto: productos){ %>
 			
-				<div class="producto card">
+				<div class="producto card" style="border-radius: 10px;">
 					
 					<div class="muestra">
 						<img alt="#" src="\imagenesProductos\manillaTela.jpg">
