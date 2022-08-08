@@ -44,7 +44,7 @@
 				<div class="producto card">
 					
 					<div class="muestra">
-						<img alt="#" src="">
+						<img alt="#" src="\imagenesProductos\manillaTela.jpg">
 						<h3><% out.print(producto.getNombre());%></h3>
 					</div>
 					

@@ -18,6 +18,8 @@ import java.sql.Connection;
 
 public class DaoProducto {
 	
+
+	
 	private static final String SQL_SELECT = "SELECT\n"
 			+ "\n"
 			+ "    tp.codproducto,\n"
@@ -28,7 +30,8 @@ public class DaoProducto {
 			+ "    tp.existencia,\n"
 			+ "    te.nombre,\n"
 			+ "    tc.nombre,\n"
-			+ "    tt.nombre\n"
+			+ "    tt.nombre,\n"
+			+ "	   tp.urlimagen\n"	
 			+ "\n"
 			+ "FROM \n"
 			+ "\n"
@@ -47,7 +50,8 @@ public class DaoProducto {
 			+ "    tp.existencia,\n"
 			+ "    te.nombre,\n"
 			+ "    tc.nombre,\n"
-			+ "    tt.nombre\n"
+			+ "    tt.nombre,\n"
+			+ "	   tp.urlimagen\n"	
 			+ "\n"
 			+ "FROM \n"
 			+ "\n"
@@ -70,7 +74,8 @@ public class DaoProducto {
 			+ "    tp.existencia,\n"
 			+ "    te.nombre,\n"
 			+ "    tc.nombre,\n"
-			+ "    tt.nombre\n"
+			+ "    tt.nombre,\n"
+			+ "	   tp.urlimagen\n"	
 			+ "\n"
 			+ "FROM \n"
 			+ "\n"
@@ -85,7 +90,9 @@ public class DaoProducto {
 	
 	private static final String SQL_INSERT = "INSERT INTO tblproducto VALUES(?,?,?,?,?,?,?,?,?);";
 	
-	private static final String SQL_UPDATE = "UPDATE tblusuario SET nombres = ?, apellidos = ?, correo = ? WHERE docid = ?;";
+	//private static final String SQL_UPDATE = "UPDATE tblusuario SET nombres = ?, apellidos = ?, correo = ? WHERE docid = ?;";
+	
+	private static final String SQL_UPDATE = "UPDATE tblproducto SET urlimagen = ? WHERE codproducto = ?;";
 	
 	private static final String SQL_DELETE = "DELETE FROM tblusuario WHERE docid = ?;";
 
@@ -114,9 +121,10 @@ public class DaoProducto {
 				String estado = rs.getString(7);
 				String categoria = rs.getString(8);
 				String tienda = rs.getString(9);
+				String imagen = rs.getString(10);
 				
 				productos.add(new Producto(codProducto, nombre, fechaPub, descripcion, 
-						precio, existencia, estado, categoria, tienda));
+						precio, existencia, estado, categoria, tienda, imagen));
 				
 			}
 			
@@ -160,9 +168,10 @@ public class DaoProducto {
 				String estado = rs.getString(7);
 				String categoria = rs.getString(8);
 				String tienda = rs.getString(9);
+				String imagen = rs.getString(10);
 				
 				productos.add(new Producto(codProducto, nombre, fechaPub, descripcion, 
-						precio, existencia, estado, categoria, tienda));
+						precio, existencia, estado, categoria, tienda, imagen));
 				
 			}
 			
@@ -207,9 +216,10 @@ public class DaoProducto {
 			String estado = rs.getString(7);
 			String categoria = rs.getString(8);
 			String tienda = rs.getString(9);
+			String imagen = rs.getString(10);
 			
 			producto = new Producto(codProducto, nombre, fechaPub, descripcion, 
-					precio, existencia, estado, categoria, tienda);
+					precio, existencia, estado, categoria, tienda, imagen);
 				
 			
 			
@@ -228,8 +238,8 @@ public class DaoProducto {
 		
 	}
 	
-	/*
-	public void insertarUsuario(int codigoProducto, String nombre, String apellidos, 
+	// se debe ingresar los metodos correctos del producto
+	public void insertarProducto(String nombre, String apellidos, 
 			String correo, int perfil, String clave, String telefono,
 			String ciudad, String codigoPost, String direccion) {
 		
@@ -240,8 +250,9 @@ public class DaoProducto {
 			
 			conn = Conexion.getConnection();
 			stmt = conn.prepareStatement(SQL_INSERT);
-			stmt.setString(1, docid);
-			stmt.setString(2, nombres);
+			
+			stmt.setString(1, null);
+			stmt.setString(2, nombre);
 			stmt.setString(3, apellidos);
 			stmt.setString(4, correo);
 			stmt.setInt(5, perfil);
@@ -266,7 +277,8 @@ public class DaoProducto {
 		
 	}
 	
-	public void actualizarUsuario(String docid ,String nombres, String apellidos, String correo) {
+	
+	public int actualizarProducto(int codProducto, String urlImagen) {
 		
 		
 		Connection conn = null;
@@ -277,18 +289,18 @@ public class DaoProducto {
 			
 			conn = Conexion.getConnection();
 			stmt = conn.prepareStatement(SQL_UPDATE);
-			stmt.setString(1, nombres);
-			stmt.setString(2, apellidos);
-			stmt.setString(3, correo);
-			stmt.setString(4, docid);
-			stmt.executeUpdate();
+			stmt.setString(1, urlImagen);
+			stmt.setInt(2, codProducto);
+			int resultado = stmt.executeUpdate();
 			
-			
+			return resultado;
 			
 			
 		} catch (Exception e) {
 			
 			e.printStackTrace(System.out);
+			
+			return 0;
 			
 		} finally {
 			Conexion.closeConnection(stmt);
@@ -296,7 +308,7 @@ public class DaoProducto {
 		}
 		
 	}
-	
+	/*
 	public void borrarUsuario(String docid) {
 		
 		
@@ -334,6 +346,8 @@ public class DaoProducto {
 		
 	}
 	*/
+
+	
 	
 	
 }

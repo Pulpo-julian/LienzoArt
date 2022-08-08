@@ -9,8 +9,11 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
 import modelos.GuardarImagen;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+
+import dao.DaoProducto;
 
 /**
  * Servlet implementation class CtrProducto
@@ -44,14 +47,21 @@ public class CtrProducto extends HttpServlet {
 		
 		String accion = request.getParameter("productocrear");
 		
-		String urlBase = getServletContext().getRealPath("/");
+		//En caso de desplegar la app en un servidor se usa esta variable
+		//String urlBase = getServletContext().getRealPath("/");
 		
-		String urlCarpetaImagenes = urlBase + "imagenesProductos\\"; 
+		//esta variable contiene la ruta donde se ubica el proyecto pero no donde se desplega el servidor
+		String urlBase = System.getProperty("user.home");
+		
+		String urlCarpetaImagenes = urlBase + "\\git\\LienzoArt\\src\\main\\webapp\\imagenesProductos\\"; 
+		
+		File carpetaImagenes = new File(urlCarpetaImagenes);
 		
 		if(accion.equals("Crear")) {
 			
 			GuardarImagen guardarImagen = new GuardarImagen();
 			
+			/*
 			String nombre = request.getParameter("nombre");
 			String descripcion = request.getParameter("descripcion");
 			int precio = Integer.parseInt(request.getParameter("precio"));
@@ -59,13 +69,47 @@ public class CtrProducto extends HttpServlet {
 			int estado = Integer.parseInt(request.getParameter("estado"));
 			int categoria = Integer.parseInt(request.getParameter("categoria"));
 			int tienda = Integer.parseInt(request.getParameter("tienda"));
+			*/
+			
 			Part imagen = request.getPart("imagen");
+			
+			//parametro provisional para asignar el codigo del producto
+			int codigoProducto = 1;
+			
 			
 			//12:31 en el video 
 			//debo seleccionar solo el codigo y la imagen para verificar si funciona
+			
+			if(imagen == null) {
+				System.out.println("No se ha seleccionado el archivo");
+			}
+			
+			if(guardarImagen.validarExtension(imagen.getSubmittedFileName())) {
+				
+				String urlFotoGuardada = guardarImagen.imagenEnDirectorio(imagen, carpetaImagenes);
+				
+				DaoProducto daoProducto = new DaoProducto();
+				
+				int resultado = daoProducto.actualizarProducto(codigoProducto, urlFotoGuardada); 
+				
+				if(resultado != 0) {
+					response.getWriter().println("Producto Actualizado");
+				} else {
+					response.getWriter().println("No se ha podido actualizar el producto");
+				}
+				
+				System.out.println(urlFotoGuardada);
+				
+				
+				
+				
+			}
+			
+			
+			
 		}
 		
-		System.out.println(urlCarpetaImagenes);
+
 		
 
 		

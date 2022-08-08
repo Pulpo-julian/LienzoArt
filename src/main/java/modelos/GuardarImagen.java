@@ -12,11 +12,10 @@ public class GuardarImagen {
 	
 	String[] extenciones = {".ico", ".png", ".jpg", ".jpeg"};
 	
-	public String imagenEnDirectorio(Part part, File fotoSubida, String ruta) {
+	public String imagenEnDirectorio(Part part, File ruta) {
 		
 		String rutaRetornar = "";
 		
-		rutaRetornar = ruta;
 		
 		try {
 			
@@ -33,9 +32,12 @@ public class GuardarImagen {
 			if(binarioFotoSubida != null) {
 				
 				//donde debo corregir en caso de errores
-				File archivoDeFoto = new File(fotoSubida, nombreFotoSubida);
-				rutaRetornar = archivoDeFoto.getAbsolutePath();
-				Files.copy(binarioFotoSubida, archivoDeFoto.toPath());
+				File fotoEnServidor = new File(ruta, nombreFotoSubida);
+				
+				rutaRetornar = fotoEnServidor.getAbsolutePath();
+				
+				//Se envia el binario de la foto a la ruta que retorna
+				Files.copy(binarioFotoSubida, fotoEnServidor.toPath());
 				
 				
 			}
@@ -61,7 +63,7 @@ public class GuardarImagen {
 			
 		}
 		
-		return false;
+		return false;	
 		
 	}
 	
