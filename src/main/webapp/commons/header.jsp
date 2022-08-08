@@ -1,7 +1,11 @@
 <head>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<<<<<<< HEAD
     <link rel="stylesheet" href="estilos/estilosbarrabusqueda.css">
+=======
+    <link rel="stylesheet" href="estilos/header19.css">
+>>>>>>> c70c021b6101f9ce4ee3ec5bd1fc5ad954a11944
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 </head>
