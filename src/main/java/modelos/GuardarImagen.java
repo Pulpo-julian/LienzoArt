@@ -34,7 +34,7 @@ public class GuardarImagen {
 				//donde debo corregir en caso de errores
 				File fotoEnServidor = new File(ruta, nombreFotoSubida);
 				
-				rutaRetornar = fotoEnServidor.getAbsolutePath();
+				rutaRetornar = "http://localhost:8080/CrudNuevoLienzoArt/imagenesProductos/" + nombreFotoSubida;
 				
 				//Se envia el binario de la foto a la ruta que retorna
 				Files.copy(binarioFotoSubida, fotoEnServidor.toPath());
