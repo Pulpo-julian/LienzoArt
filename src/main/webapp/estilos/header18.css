@@ -75,7 +75,7 @@
     transition: 300ms;
 }
 
-@media (max-width: 1850px){ /*Estilos para una pantalla de 1850 pixeles o menor*/
+@include media-breakpoint-up(xl){ /*Estilos para una pantalla de 1850 pixeles o menor*/
 	.btniniciarsesion{
 		margin-left: -36px;
 	}
@@ -83,9 +83,13 @@
 	.buscador input{
 		width: 700px;
 	}
+	
+	.header{
+		background-color: black;
+	}
 }
 
-@media (max-width: 1520px){ /*Estilos para una pantalla de 1520 pixeles o menor*/
+@media (max-width: 1520.98px){ /*Estilos para una pantalla de 1520 pixeles o menor*/
 	.btniniciarsesion{
 		margin-left: -36px;
 	}
@@ -95,7 +99,7 @@
 	}
 }
 
-@media (max-width: 1390px){ /*Estilos para una pantalla de 1390 pixeles o menor*/
+@media (max-width: 1390.98px){ /*Estilos para una pantalla de 1390 pixeles o menor*/
 	.btniniciarsesion{
 		margin-left: -36px;
 	}
@@ -105,7 +109,7 @@
 	}
 }
 
-@media (max-width: 1290px){ /*Estilos para una pantalla de 1290 pixeles o menor*/
+@media (max-width: 1290.98px){ /*Estilos para una pantalla de 1290 pixeles o menor*/
 	.btniniciarsesion{
 		margin-left: -36px;
 	}
@@ -115,7 +119,7 @@
 	}
 }
 
-@media (max-width: 1180px){ /*Estilos para una pantalla de 1180 pixeles o menor*/
+@media (max-width: 1180.98px){ /*Estilos para una pantalla de 1180 pixeles o menor*/
 	.btniniciarsesion{
 		margin-left: -36px;
 	}
@@ -123,9 +127,9 @@
 	.buscador input{
 		width: 400px;
 	}
-}
+} 	
 
-@media (max-width: 978px){ /*Estilos para una pantalla de 978 pixeles o menor*/
+@media (max-width: 978.98px){ /*Estilos para una pantalla de 978 pixeles o menor*/
 	.btniniciarsesion{
 		margin-left: -66px;
 	}
