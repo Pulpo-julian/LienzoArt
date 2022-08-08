@@ -51,6 +51,7 @@ public class CtrProducto extends HttpServlet {
 		//String urlBase = getServletContext().getRealPath("/");
 		
 		//esta variable contiene la ruta donde se ubica el proyecto pero no donde se desplega el servidor
+		
 		String urlBase = System.getProperty("user.home");
 		
 		String urlCarpetaImagenes = urlBase + "\\git\\LienzoArt\\src\\main\\webapp\\imagenesProductos\\"; 
@@ -74,7 +75,7 @@ public class CtrProducto extends HttpServlet {
 			Part imagen = request.getPart("imagen");
 			
 			//parametro provisional para asignar el codigo del producto
-			int codigoProducto = 1;
+			int codigoProducto = 3;
 			
 			
 			//12:31 en el video 

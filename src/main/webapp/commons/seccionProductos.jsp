@@ -44,7 +44,7 @@
 				<div class="producto card" style="border-radius: 10px;">
 					
 					<div class="muestra">
-						<img alt="#" src="\imagenesProductos\manillaTela.jpg">
+						<img alt="#" src="<% out.println(producto.getUrlImagen()); %>">
 						<h3><% out.print(producto.getNombre());%></h3>
 					</div>
 					
