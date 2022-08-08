@@ -3,44 +3,58 @@
 	font-family: 'Mukta', sans-serif;
 }
 
-.categorias{
+aside{
 	padding: 20px;
-	margin: 50px;
+	margin: 67px auto;
 	border-radius: 10px;
 	background-color: white;
-	display: flex;
-	flex-flow: column wrap;
+	height: auto;
 }
 
 .title_categories{
-	padding-left: 12%;
+	display: block;
+	font-family: 'Mukta', sans-serif;
 }
 
 .categoria .lista{
-	width: 100%;
+	width: auto;
 	list-style: none;
 	padding-left: 13%;
+	line-height: 3.8em;
+	
+	
 }
 
 .lista a{
+	font-size: 1.4rem;
+	box-shadow: inset 0 0 0 0 #276e90;
+  	color: black;
+  	margin: 0 -.25rem;
+  	padding: 0 .25rem;
+  	transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+	text-transform: capitalize;
 	text-decoration: none;
-	color: black;
 }
 
 .lista a:hover{
-	color: black;
-	background-color: grey;
+	box-shadow: inset 100px 0 0 0 #276e90;
+  	color: white;
+	
 }
 
 .principal{
-	background-color: #EFEFEF;
+	background-color:  grey;
 	display: grid;
 	grid-template-columns: 20% 80%;
 }
 
-.producto{
+
+.producto{ /*Estilos de la caja de productos*/
 	margin: 20px;
+	width: 335px;
+	height: auto;
 }
+
 
 .seccionprincipal{
 	margin-top: 40px;
@@ -50,10 +64,8 @@
 	list-style: none;
 }
 
-.producto{
-	width: 335px;
-	height: auto;
-}
+
+
 
 .flex_container{
 	display: flex;
