@@ -48,12 +48,7 @@ public class CtrProducto extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String accion = request.getParameter("productocrear");
-		
-		
-		
-		
-		
+		String accion = request.getParameter("productocrear");	
 		
 		//En caso de desplegar la app en un servidor se usa esta variable
 		//String urlBase = getServletContext().getRealPath("/");
@@ -68,7 +63,7 @@ public class CtrProducto extends HttpServlet {
 		
 		if(accion.equals("Crear")) {
 			
-			Writer out = response.getWriter();
+			PrintWriter out = response.getWriter();
 			
 			Map<String, String> errores = new HashMap<String, String>();
 			
