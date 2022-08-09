@@ -54,7 +54,6 @@ public class CtrProducto extends HttpServlet {
 		//String urlBase = getServletContext().getRealPath("/");
 		
 		//esta variable contiene la ruta donde se ubica el proyecto pero no donde se desplega el servidor
-		
 		String urlBase = System.getProperty("user.home");
 		
 		String urlCarpetaImagenes = urlBase + "\\git\\LienzoArt\\src\\main\\webapp\\imagenesProductos\\"; 
@@ -74,74 +73,87 @@ public class CtrProducto extends HttpServlet {
 				errores.put("nombre", "Debe asignar un nombre al producto");
 			}
 			
-			//validar nombre
-			String nombre2 = request.getParameter("nombre");
+			//validar descripcion
+			String descripcion = request.getParameter("descripcion");
 			
 			if(nombre == null || nombre.isBlank()) {
-				errores.put("nombre", "Debe ingresar su nombre");
+				errores.put("descripcion", "coloca una breve descripcion del producto");
 			}
 			
-			//validar apellidos
-			String apellidos = request.getParameter("apellidos");
+			//validar precio, debe ser int
+			String precioString = request.getParameter("precio");
 			
-			if(apellidos == null || apellidos.isBlank()) {
-				errores.put("apellidos", "Debe ingresar sus apellidos");
+			if(precioString == null || precioString.isBlank()) {
+				errores.put("precio", "asigne un precio al producto");
 			}
 			
-			//validar correo
-			String correo = request.getParameter("correo");
+			//validar existencia, debe ser int
+			String existenciaString = request.getParameter("existencia");
 			
-			if(correo == null || correo.isBlank()) {
-				errores.put("correo", "Debe ingresar su correo");
-			} else if(!correo.contains("@")) {
-				errores.put("correo", "El correo debe contener caracter \"@\"");
+			if(existenciaString == null || existenciaString.isBlank()) {
+				errores.put("existencia", "ingrese la existencia disponible del producto");
 			}
 			
-			//validar password
-			String password = request.getParameter("password");
+			//validar estado
+			String estado = request.getParameter("estado");
 			
-			if(password == null || password.isBlank()) {
+			if(estado == null || estado.isBlank()) {
 
-				errores.put("password", "Debe ingresar una contraseña");
+				errores.put("estado", "seleccione un estado del producto");
 
 			}
 			
-			//validar telefono
-			String telefono = request.getParameter("telefono");
+			//validar categoria
+			String categoria = request.getParameter("categoria");
 			
-			if(telefono == null || telefono.isBlank()) {
-				errores.put("telefono", "Debe ingresar su teléfono");
+			if(categoria == null || categoria.isBlank()) {
+				errores.put("categoria", "seleccione una categoria para el producto");
 			}
 			
-			//validar ciudad
-			String ciudad = request.getParameter("ciudades");
+			//validar tienda, debe ser int
+			String tiendaString = request.getParameter("tienda");
 			
-			if(ciudad == null || ciudad.isBlank()) {
-				errores.put("ciudades", "Seleccione una opción");
+			if(tiendaString == null || tiendaString.isBlank()) {
+				errores.put("tienda", "ingrese el codigo de la tienda");
 			}
 			
-			//validar codigoPostal
-			String codigoPostal = request.getParameter("codigoPostal");
+			//validar si hay archivo de foto
+			Part imagen = request.getPart("imagen");
 			
-			if(codigoPostal == null || codigoPostal.isBlank()) {
-				errores.put("codigoPostal", "Debe ingresar su código postal");
+			GuardarImagen guardarImagen = new GuardarImagen();
+			
+			if(imagen == null) {
+				errores.put("imagen", "seleccione una imagen para el producto");
+			} else if( !(guardarImagen.validarExtension(imagen.getSubmittedFileName())) ) {
+				errores.put("imagen", "archivo con extencion no valida");
 			}
-			
-			//validar direccion
-			String direccion = request.getParameter("direccion");
-			
-			if(direccion == null || direccion.isBlank()) {
-				errores.put("direccion", "Debe ingresar su dirección");
-			}
-			
 			
 			if(errores.isEmpty()) {
 				
 				try {
-					DaoUsuario daoUsuario = new DaoUsuario();
-					//daoUsuario.insertarUsuario(cedula, nombre, apellidos, correo, 1, password, telefono, ciudad, codigoPostal, direccion);
-					//getServletContext().getRequestDispatcher("CrudNuevoLienzoArt/usuarioCrud/usuarioFormulario.jsp").forward(request, response);
-					out.print("El usuario se ha creado correctamente");
+					
+					//logica para guardar producto						
+					String urlFotoGuardada = guardarImagen.imagenEnDirectorio(imagen, carpetaImagenes);
+					
+					DaoProducto daoProducto = new DaoProducto();
+					
+					//int resultado = daoProducto.actualizarProducto(codigoProducto, urlFotoGuardada); 
+					
+					/*
+					if(resultado != 0) {
+						response.getWriter().println("Producto Actualizado");
+					} else {
+						response.getWriter().println("No se ha podido actualizar el producto");
+					}
+					*/
+					
+					System.out.println(urlFotoGuardada);
+						
+
+					
+					
+					
+					
 				} catch (Exception e) {
 					e.printStackTrace(System.out);
 				}
@@ -149,66 +161,18 @@ public class CtrProducto extends HttpServlet {
 			} else {
 				
 				request.setAttribute("errores", errores);
-				//request.setAttribute("cedula", cedula);
 				request.setAttribute("nombre", nombre);
-				request.setAttribute("apellidos", apellidos);
-				request.setAttribute("correo", correo);
-				request.setAttribute("password", password);
-				request.setAttribute("telefono", telefono);
-				request.setAttribute("ciudad", ciudad);
-				request.setAttribute("codigoPostal", codigoPostal);
-				request.setAttribute("direccion", direccion);
+				request.setAttribute("descripcion", descripcion);
+				request.setAttribute("precio", precioString);
+				request.setAttribute("existencia", existenciaString);
+				request.setAttribute("estado", estado);
+				request.setAttribute("categoria", categoria);
 				
 				getServletContext().getRequestDispatcher("/usuarioCrud/crearUsuario.jsp").forward(request, response);
 				
 			}
 			
-			
-			
-			
-			
-			GuardarImagen guardarImagen = new GuardarImagen();
-			
-			/*
-			
-			String descripcion = request.getParameter("descripcion");
-			int precio = Integer.parseInt(request.getParameter("precio"));
-			int existencia = Integer.parseInt(request.getParameter("existencia"));
-			int estado = Integer.parseInt(request.getParameter("estado"));
-			int categoria = Integer.parseInt(request.getParameter("categoria"));
-			int tienda = Integer.parseInt(request.getParameter("tienda"));
-			*/
-			
-			Part imagen = request.getPart("imagen");
-			
-			//parametro provisional para asignar el codigo del producto
-			int codigoProducto = 13;
-			
-			
-			//12:31 en el video 
-			//debo seleccionar solo el codigo y la imagen para verificar si funciona
-			
-			if(imagen == null) {
-				System.out.println("No se ha seleccionado el archivo");
-			}
-			
-			if(guardarImagen.validarExtension(imagen.getSubmittedFileName())) {
-				
-				String urlFotoGuardada = guardarImagen.imagenEnDirectorio(imagen, carpetaImagenes);
-				
-				DaoProducto daoProducto = new DaoProducto();
-				
-				int resultado = daoProducto.actualizarProducto(codigoProducto, urlFotoGuardada); 
-				
-				if(resultado != 0) {
-					response.getWriter().println("Producto Actualizado");
-				} else {
-					response.getWriter().println("No se ha podido actualizar el producto");
-				}
-				
-				System.out.println(urlFotoGuardada);
-				
-			}
+
 			
 			
 			

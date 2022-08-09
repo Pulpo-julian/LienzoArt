@@ -85,12 +85,12 @@
 
 
 			<div>
-				<label class="form-label mt-3">Tienda</label> 
+				<label class="form-label mt-3">Tienda <h6 style = "font-size: 15px;">campo provisional mientras se crea formulario de tienda</h6> </label> 
 				<input class="form-control" type="text" placeholder="codigo de tienda" id="tienda" name="tienda">
 			</div>
 			
 			<div>
-				<label class="form-label mt-3">Seleccione un archivo de imagen del producto</label> 
+				<label class="form-label mt-3">Seleccione un archivo de imagen del producto <h6 style = "font-size: 15px;">adjunta archivos con extencion: .jpg .ico .jpeg .png</h6> </label> 
 				<input class="form-control" type="file" id="imagenes" name="imagen">
 			</div>
 			
