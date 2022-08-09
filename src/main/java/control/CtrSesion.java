@@ -27,18 +27,7 @@ public class CtrSesion extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
-		//PrintWriter out = response.getWriter();
-		
-		//out.print("que mas ps");
-		
 
-		
-		
-		
-		
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**

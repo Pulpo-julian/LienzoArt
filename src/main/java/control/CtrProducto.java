@@ -12,8 +12,12 @@ import modelos.GuardarImagen;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Writer;
+import java.util.HashMap;
+import java.util.Map;
 
 import dao.DaoProducto;
+import dao.DaoUsuario;
 
 /**
  * Servlet implementation class CtrProducto
@@ -43,9 +47,8 @@ public class CtrProducto extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		
-		String accion = request.getParameter("productocrear");
+		String accion = request.getParameter("productocrear");	
 		
 		//En caso de desplegar la app en un servidor se usa esta variable
 		//String urlBase = getServletContext().getRealPath("/");
@@ -60,10 +63,114 @@ public class CtrProducto extends HttpServlet {
 		
 		if(accion.equals("Crear")) {
 			
+			PrintWriter out = response.getWriter();
+			
+			Map<String, String> errores = new HashMap<String, String>();
+			
+			//validar nombre
+			String nombre = request.getParameter("nombre");
+			
+			if(nombre == null || nombre.isEmpty()) {
+				errores.put("nombre", "Debe asignar un nombre al producto");
+			}
+			
+			//validar nombre
+			String nombre2 = request.getParameter("nombre");
+			
+			if(nombre == null || nombre.isBlank()) {
+				errores.put("nombre", "Debe ingresar su nombre");
+			}
+			
+			//validar apellidos
+			String apellidos = request.getParameter("apellidos");
+			
+			if(apellidos == null || apellidos.isBlank()) {
+				errores.put("apellidos", "Debe ingresar sus apellidos");
+			}
+			
+			//validar correo
+			String correo = request.getParameter("correo");
+			
+			if(correo == null || correo.isBlank()) {
+				errores.put("correo", "Debe ingresar su correo");
+			} else if(!correo.contains("@")) {
+				errores.put("correo", "El correo debe contener caracter \"@\"");
+			}
+			
+			//validar password
+			String password = request.getParameter("password");
+			
+			if(password == null || password.isBlank()) {
+
+				errores.put("password", "Debe ingresar una contraseña");
+
+			}
+			
+			//validar telefono
+			String telefono = request.getParameter("telefono");
+			
+			if(telefono == null || telefono.isBlank()) {
+				errores.put("telefono", "Debe ingresar su teléfono");
+			}
+			
+			//validar ciudad
+			String ciudad = request.getParameter("ciudades");
+			
+			if(ciudad == null || ciudad.isBlank()) {
+				errores.put("ciudades", "Seleccione una opción");
+			}
+			
+			//validar codigoPostal
+			String codigoPostal = request.getParameter("codigoPostal");
+			
+			if(codigoPostal == null || codigoPostal.isBlank()) {
+				errores.put("codigoPostal", "Debe ingresar su código postal");
+			}
+			
+			//validar direccion
+			String direccion = request.getParameter("direccion");
+			
+			if(direccion == null || direccion.isBlank()) {
+				errores.put("direccion", "Debe ingresar su dirección");
+			}
+			
+			
+			if(errores.isEmpty()) {
+				
+				try {
+					DaoUsuario daoUsuario = new DaoUsuario();
+					//daoUsuario.insertarUsuario(cedula, nombre, apellidos, correo, 1, password, telefono, ciudad, codigoPostal, direccion);
+					//getServletContext().getRequestDispatcher("CrudNuevoLienzoArt/usuarioCrud/usuarioFormulario.jsp").forward(request, response);
+					out.print("El usuario se ha creado correctamente");
+				} catch (Exception e) {
+					e.printStackTrace(System.out);
+				}
+				
+			} else {
+				
+				request.setAttribute("errores", errores);
+				//request.setAttribute("cedula", cedula);
+				request.setAttribute("nombre", nombre);
+				request.setAttribute("apellidos", apellidos);
+				request.setAttribute("correo", correo);
+				request.setAttribute("password", password);
+				request.setAttribute("telefono", telefono);
+				request.setAttribute("ciudad", ciudad);
+				request.setAttribute("codigoPostal", codigoPostal);
+				request.setAttribute("direccion", direccion);
+				
+				getServletContext().getRequestDispatcher("/usuarioCrud/crearUsuario.jsp").forward(request, response);
+				
+			}
+			
+			
+			
+			
+			
 			GuardarImagen guardarImagen = new GuardarImagen();
 			
 			/*
-			String nombre = request.getParameter("nombre");
+			
 			String descripcion = request.getParameter("descripcion");
 			int precio = Integer.parseInt(request.getParameter("precio"));
 			int existencia = Integer.parseInt(request.getParameter("existencia"));

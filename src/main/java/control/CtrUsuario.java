@@ -203,15 +203,12 @@ public class CtrUsuario extends HttpServlet {
 				DaoUsuario daoUsuario = new DaoUsuario();
 				daoUsuario.borrarUsuario(cedula);
 				
-				//getServletContext().getRequestDispatcher("CrudNuevoLienzoArto/usuarioCrud/usuarioFormulario.jsp").forward(request, response);
-
-				
 			} catch (Exception e) {
 				e.printStackTrace(System.out);
 			}
 			
 			
-			//super.doPost(req, resp);
+
 		}
 		
 		
@@ -285,118 +282,23 @@ public class CtrUsuario extends HttpServlet {
 			
 		}
 		
-		
-		
-			
-			
-		
-
-		/*
-		try {
-
-			
-			DaoUsuario daoUsuario = new DaoUsuario();
-			Usuario usuario = daoUsuario.buscarUsuario(cedula);
-			//getServletContext().getRequestDispatcher("CrudNuevoLienzoArto/usuarioCrud/usuarioFormulario.jsp").forward(request, response);
-			
-			out.print("la cedula del usuario es: " + usuario.getDocid());
-			out.print("el nombre del usuario es: " + usuario.getNombres());
-			out.print("los apellidos del usuario son: " + usuario.getApellidos());
-			out.print("el correo del usuario es: " + usuario.getCorreo());
-			
-		} catch (Exception e) {
-			e.printStackTrace(System.out);
-		}	
-		*/
-
-		
-		//doGet(request, response);
 	}
 
 	@Override
 	protected void doTrace(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		/*
-		String cedula = request.getParameter("cedula");
-		
-		PrintWriter out = response.getWriter();
-		
-		try {
 
-			
-			DaoUsuario daoUsuario = new DaoUsuario();
-			Usuario usuario = daoUsuario.buscarUsuario(cedula);
-			//getServletContext().getRequestDispatcher("CrudNuevoLienzoArto/usuarioCrud/usuarioFormulario.jsp").forward(request, response);
-			
-			out.print("la cedula del usuario es: " + usuario.getDocid());
-			out.print("el nombre del usuario es: " + usuario.getNombres());
-			out.print("los apellidos del usuario son: " + usuario.getApellidos());
-			out.print("el correo del usuario es: " + usuario.getCorreo());
-			
-		} catch (Exception e) {
-			e.printStackTrace(System.out);
-		}
-		*/	
-		
-		//super.doTrace(arg0, arg1);
 	}
 	
 	
 	@Override
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		// TODO Auto-generated method stub
-		/*
-		String cedula = request.getParameter("cedula");
-		
-		PrintWriter out = response.getWriter();
-		
-		try {
-
-			
-			DaoUsuario daoUsuario = new DaoUsuario();
-			daoUsuario.borrarUsuario(cedula);
-			
-			//getServletContext().getRequestDispatcher("CrudNuevoLienzoArto/usuarioCrud/usuarioFormulario.jsp").forward(request, response);
-
-			
-		} catch (Exception e) {
-			e.printStackTrace(System.out);
-		}
-		*/
-		
-		//super.doDelete(req, resp);
 	}
 
 	
 	@Override
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		/*
-		String cedula = request.getParameter("cedula");
-		String nombres = request.getParameter("nombre");
-		String apellidos = request.getParameter("apellidos");
-		String correo = request.getParameter("correo");
-		
 
-		
-		try {
-
-			
-			DaoUsuario daoUsuario = new DaoUsuario();
-			daoUsuario.actualizarUsuario(cedula, nombres, apellidos, correo);
-			//getServletContext().getRequestDispatcher("CrudNuevoLienzoArto/usuarioCrud/usuarioFormulario.jsp").forward(request, response);
-			
-
-			
-		} catch (Exception e) {
-			e.printStackTrace(System.out);
-		}
-		*/
-		
-		
-		
-		//super.doPut(req, resp);
 	}
 	
 	
