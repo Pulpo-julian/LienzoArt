@@ -139,7 +139,7 @@ public class CtrProducto extends HttpServlet {
 				
 				try {
 					DaoUsuario daoUsuario = new DaoUsuario();
-					daoUsuario.insertarUsuario(cedula, nombre, apellidos, correo, 1, password, telefono, ciudad, codigoPostal, direccion);
+					//daoUsuario.insertarUsuario(cedula, nombre, apellidos, correo, 1, password, telefono, ciudad, codigoPostal, direccion);
 					//getServletContext().getRequestDispatcher("CrudNuevoLienzoArt/usuarioCrud/usuarioFormulario.jsp").forward(request, response);
 					out.print("El usuario se ha creado correctamente");
 				} catch (Exception e) {
@@ -149,7 +149,7 @@ public class CtrProducto extends HttpServlet {
 			} else {
 				
 				request.setAttribute("errores", errores);
-				request.setAttribute("cedula", cedula);
+				//request.setAttribute("cedula", cedula);
 				request.setAttribute("nombre", nombre);
 				request.setAttribute("apellidos", apellidos);
 				request.setAttribute("correo", correo);
