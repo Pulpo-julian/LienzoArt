@@ -128,6 +128,7 @@ public class CtrProducto extends HttpServlet {
 				errores.put("imagen", "archivo con extencion no valida");
 			}
 			
+			//si no hay errores en la lista, se guarda el producto
 			if(errores.isEmpty()) {
 				
 				try {
@@ -147,11 +148,7 @@ public class CtrProducto extends HttpServlet {
 					}
 					*/
 					
-					System.out.println(urlFotoGuardada);
-						
-
-					
-					
+					System.out.println(urlFotoGuardada);	
 					
 					
 				} catch (Exception e) {
@@ -167,8 +164,9 @@ public class CtrProducto extends HttpServlet {
 				request.setAttribute("existencia", existenciaString);
 				request.setAttribute("estado", estado);
 				request.setAttribute("categoria", categoria);
+				request.setAttribute("tienda", tiendaString);
 				
-				getServletContext().getRequestDispatcher("/usuarioCrud/crearUsuario.jsp").forward(request, response);
+				getServletContext().getRequestDispatcher("/productosCrud/crearProducto.jsp").forward(request, response);
 				
 			}
 			
