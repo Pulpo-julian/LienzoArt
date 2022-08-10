@@ -89,7 +89,7 @@
 			<div class="p_estados">
 				<p class="form-label mt-3">Seleccione el estado del producto</p>
 				<select name="estado" id="" class="form-select" required>
-					<option>--</option>
+					<option value="">Seleccionar...</option>
 					<option value="1" <%if(errores != null && !errores.containsKey("estado") && "1".equals(estado)){%> <% out.print("selected"); %> <%} %>>Disponible</option>
 					<option value="2" <%if(errores != null && !errores.containsKey("estado") && "2".equals(estado)){%> <% out.print("selected"); %> <%} %>>No disponible</option>
 				</select>
@@ -105,9 +105,9 @@
 			<div class="p_categorias">
 			
 				<p class="form-label mt-3">Seleccione la categoria del producto</p>
-				<select name="categoria" id="" class="form-select">
+				<select name="categoria" id="" class="form-select" required>
 					
-					<option value="">--</option>
+					<option value="">Seleccionar...</option>
 				
 					<%if(categorias != null) {%>
 						
@@ -144,10 +144,10 @@
 			
 			<div>
 				<label class="form-label mt-3">Seleccione un archivo de imagen del producto <h6 style = "font-size: 15px;">adjunta archivos con extencion: .jpg .ico .jpeg .png</h6> </label> 
-				<input class="form-control" type="file" id="imagenes" name="imagen">
+				<input class="form-control" type="file" id="imagenes" name="imagen" required>
 				<div class="invalid-feedback">
-					    <%if(errores != null && errores.containsKey("tienda")){%> 
-									<% out.print(errores.get("tienda")); %>
+					    <%if(errores != null && errores.containsKey("imagen")){%> 
+									<% out.print(errores.get("imagen")); %>
 						<%} %>
 				</div>
 				<div class="valid-feedback">¡Correcto!</div>

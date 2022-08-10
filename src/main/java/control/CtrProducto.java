@@ -7,15 +7,19 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
+import modelos.Categoria;
 import modelos.GuardarImagen;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Writer;
+import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import dao.DaoCategoria;
 import dao.DaoProducto;
 import dao.DaoUsuario;
 
@@ -39,8 +43,7 @@ public class CtrProducto extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		doPost(request, response);
 	}
 
 	/**
@@ -49,6 +52,33 @@ public class CtrProducto extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String accion = request.getParameter("productocrear");	
+		
+		List<Categoria> categorias = null;
+		
+		if(accion == null) {
+			
+			try {
+				
+				
+				DaoCategoria daoCat = new DaoCategoria();
+				
+				
+				categorias = daoCat.listar();
+				
+
+				request.setAttribute("categorias", categorias);
+				
+				
+				
+				getServletContext().getRequestDispatcher("/productosCrud/crearProducto.jsp").forward(request, response);
+				
+			} catch (Exception e) {
+				
+				e.printStackTrace(System.out);
+				
+			}
+			
+		}
 		
 		//En caso de desplegar la app en un servidor se usa esta variable
 		//String urlBase = getServletContext().getRealPath("/");
@@ -122,7 +152,9 @@ public class CtrProducto extends HttpServlet {
 			
 			GuardarImagen guardarImagen = new GuardarImagen();
 			
-			if(imagen == null) {
+			
+			
+			if(Paths.get(imagen.getSubmittedFileName()).getFileName().toString().isEmpty()) {
 				errores.put("imagen", "seleccione una imagen para el producto");
 			} else if( !(guardarImagen.validarExtension(imagen.getSubmittedFileName())) ) {
 				errores.put("imagen", "archivo con extencion no valida");
@@ -158,6 +190,22 @@ public class CtrProducto extends HttpServlet {
 			} else {
 				
 				request.setAttribute("errores", errores);
+				
+				//se reenvia la lista de las categorias en caso de que haya errores
+				try {
+					
+					DaoCategoria daoCat = new DaoCategoria();
+					
+					categorias = daoCat.listar();
+					
+				} catch (Exception e) {
+					
+					e.printStackTrace(System.out);
+					
+				}
+				request.setAttribute("categorias", categorias);
+				
+				
 				request.setAttribute("nombre", nombre);
 				request.setAttribute("descripcion", descripcion);
 				request.setAttribute("precio", precioString);
