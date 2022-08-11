@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Writer;
 import java.nio.file.Paths;
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -43,6 +44,9 @@ public class CtrProducto extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+		
 		doPost(request, response);
 	}
 
@@ -125,18 +129,18 @@ public class CtrProducto extends HttpServlet {
 			}
 			
 			//validar estado
-			String estado = request.getParameter("estado");
+			String estadoString = request.getParameter("estado");
 			
-			if(estado == null || estado.isBlank()) {
+			if(estadoString == null || estadoString.isBlank()) {
 
 				errores.put("estado", "seleccione un estado del producto");
 
 			}
 			
 			//validar categoria
-			String categoria = request.getParameter("categoria");
+			String categoriaString = request.getParameter("categoria");
 			
-			if(categoria == null || categoria.isBlank()) {
+			if(categoriaString == null || categoriaString.isBlank()) {
 				errores.put("categoria", "seleccione una categoria para el producto");
 			}
 			
@@ -170,15 +174,35 @@ public class CtrProducto extends HttpServlet {
 					
 					DaoProducto daoProducto = new DaoProducto();
 					
-					//int resultado = daoProducto.actualizarProducto(codigoProducto, urlFotoGuardada); 
+					//obtengo la fecha de creacion del producto
+			        java.util.Date utilfecha = new java.util.Date();
+			        java.sql.Date sqlFecha = new java.sql.Date(utilfecha.getTime());
 					
-					/*
+					//convierto el precio de String a int
+					int precioInt = Integer.parseInt(precioString);
+					
+					//convierto la existencia de String a int
+					int existenciaInt = Integer.parseInt(existenciaString);
+					
+					//convierto el estado de String a int
+					int estadoInt = Integer.parseInt(estadoString);
+					
+					//convierto la categoria de String a int
+					int categoriaInt = Integer.parseInt(categoriaString);
+					
+					//convierto la tienda de String a int
+					int tiendaInt = Integer.parseInt(tiendaString);	
+					
+					int resultado = daoProducto.insertarProducto(nombre, sqlFecha, descripcion, 
+							precioInt, existenciaInt, estadoInt, categoriaInt, tiendaInt, urlFotoGuardada); 
+					
+					
 					if(resultado != 0) {
-						response.getWriter().println("Producto Actualizado");
+						response.getWriter().println("Producto Creado");
 					} else {
 						response.getWriter().println("No se ha podido actualizar el producto");
 					}
-					*/
+					
 					
 					System.out.println(urlFotoGuardada);	
 					
@@ -210,8 +234,8 @@ public class CtrProducto extends HttpServlet {
 				request.setAttribute("descripcion", descripcion);
 				request.setAttribute("precio", precioString);
 				request.setAttribute("existencia", existenciaString);
-				request.setAttribute("estado", estado);
-				request.setAttribute("categoria", categoria);
+				request.setAttribute("estado", estadoString);
+				request.setAttribute("categoria", categoriaString);
 				request.setAttribute("tienda", tiendaString);
 				
 				getServletContext().getRequestDispatcher("/productosCrud/crearProducto.jsp").forward(request, response);

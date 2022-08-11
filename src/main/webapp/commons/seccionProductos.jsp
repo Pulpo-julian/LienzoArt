@@ -45,7 +45,10 @@
 				<div class="producto card" style="border-radius: 10px;">
 					
 					<div class="muestra">
+					<a href="/CrudNuevoLienzoArt/formularioproducto?">
 						<img alt="#" src="<% out.println(producto.getUrlImagen()); %>" class="img">
+					</a>
+						
 						<h4><% out.print(producto.getNombre());%></h4>
 					</div>
 					

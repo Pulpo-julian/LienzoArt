@@ -2,6 +2,7 @@ package dao;
 
 import java.sql.Connection;
 import java.util.ArrayList;
+import java.sql.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -88,7 +89,7 @@ public class DaoProducto {
 			+ "\n"
 			+ "    tp.codproducto = ?;";
 	
-	private static final String SQL_INSERT = "INSERT INTO tblproducto VALUES(?,?,?,?,?,?,?,?,?);";
+	private static final String SQL_INSERT = "INSERT INTO tblproducto VALUES(?,?,?,?,?,?,?,?,?,?);";
 	
 	//private static final String SQL_UPDATE = "UPDATE tblusuario SET nombres = ?, apellidos = ?, correo = ? WHERE docid = ?;";
 	
@@ -239,9 +240,9 @@ public class DaoProducto {
 	}
 	
 	// se debe ingresar los metodos correctos del producto
-	public void insertarProducto(String nombre, String apellidos, 
-			String correo, int perfil, String clave, String telefono,
-			String ciudad, String codigoPost, String direccion) {
+	public int insertarProducto(String nombre, Date fechaPublicacion, 
+			String descripcion, int precio, int existencia, int estado,
+			int categoria, int tienda, String urlImagen) {
 		
 		Connection conn = null;
 		PreparedStatement stmt = null;
@@ -253,15 +254,18 @@ public class DaoProducto {
 			
 			stmt.setString(1, null);
 			stmt.setString(2, nombre);
-			stmt.setString(3, apellidos);
-			stmt.setString(4, correo);
-			stmt.setInt(5, perfil);
-			stmt.setString(6, clave);
-			stmt.setString(7, telefono);
-			stmt.setString(8, ciudad);
-			stmt.setString(9, codigoPost);
-			stmt.setString(10, direccion);
-			stmt.executeUpdate();
+			stmt.setDate(3, fechaPublicacion);
+			stmt.setString(4, descripcion);
+			stmt.setInt(5, precio);
+			stmt.setInt(6, existencia);
+			stmt.setInt(7, estado);
+			stmt.setInt(8, categoria);
+			stmt.setInt(9, tienda);
+			stmt.setString(10, urlImagen);
+			
+			int resultado = stmt.executeUpdate();
+			
+			return resultado;
 	
 			
 			
@@ -274,6 +278,8 @@ public class DaoProducto {
 			Conexion.closeConnection(stmt);
 			Conexion.closeConnection(conn);
 		}
+		
+		return 0;
 		
 	}
 	
