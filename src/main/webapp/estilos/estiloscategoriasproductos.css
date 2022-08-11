@@ -4,23 +4,20 @@
 
 aside{
 	padding: 20px;
-	margin: 68px auto;
-	border-radius: 10px;
-	background-color: #EFEFEF;
-	height: auto;
+	margin-top: 17%;
 }
 
-.title_categories{
-	display: block;
+.categoria{
+	background-color: white;
+	padding: 30px;
+	border-radius: 20px;
 }
 
 .categoria .lista{
-	width: auto;
+	width: 100%;
 	list-style: none;
 	padding-left: 13%;
 	line-height: 3.8em;
-			
-	
 }
 
 .lista a{
@@ -32,7 +29,6 @@ aside{
   	transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 	text-transform: capitalize;
 	text-decoration: none;
-	border-radius:2px;
 }
 
 .lista a:hover{
@@ -47,7 +43,6 @@ aside{
 	grid-template-columns: 20% 80%;
 }
 
-
 .producto{ /*Estilos de la caja de productos*/
 	margin: 20px;
 	width: 250px;
@@ -57,7 +52,7 @@ aside{
 
 
 .seccionprincipal{
-	margin-top: 40px;
+	margin-top: 3.7%;
 }
 
 .listaproducto{
@@ -72,7 +67,7 @@ aside{
 }
 
 .muestra {
-	diplay: flex;
+	display: flex;
 	justify-content:center;
 	flex-direction: column;
 	align-items: center;
