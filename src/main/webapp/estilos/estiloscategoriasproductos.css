@@ -97,11 +97,14 @@ aside{
 	transition-property: margin-right, color;
 }
 
-.precio{
-	display: flex;
+.preciocarrito{
+	padding: 5px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 }
 
-.precio li p a{
+.preciocarrito .precio{
+	text-align: center;
 	border-radius: 3px;
 	padding: 5px;
 	background-color: #59aed6;
@@ -110,7 +113,7 @@ aside{
 	color: white;
 }
 
-.precio li i{
+.preciocarrito .carrito{
 	text-align: center;
 	width: 55px;
 	padding: 7px;

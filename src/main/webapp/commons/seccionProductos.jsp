@@ -45,9 +45,9 @@
 				<div class="producto card" style="border-radius: 10px;">
 					
 					<div class="muestra">
-					<a href="/CrudNuevoLienzoArt/formularioproducto?">
-						<img alt="#" src="<% out.println(producto.getUrlImagen()); %>" class="img">
-					</a>
+						<a href="/CrudNuevoLienzoArt/formularioproducto?">
+							<img alt="#" src="<% out.println(producto.getUrlImagen()); %>" class="img">
+						</a>
 						
 						<h4><% out.print(producto.getNombre());%></h4>
 					</div>
@@ -60,11 +60,13 @@
 							<li> <h6>Estado: <% out.print(producto.getEstado()); %></h6> </li>
 							<li> <h6>Existencia: <% out.print(producto.getExistencia()); %></h6> </li>
 							<li> <h6>Tienda: <a class="tienda" href="#"><% out.print(producto.getTienda()); %></a> </h6> </li>
-							<div class="precio">
-								<li><p><a href="#""><% out.print("$" + producto.getPrecio()); %></a></p></li>
-								<li><a href="#"><i class="fas fa-cart-plus"></i></a></li>
-							</div>
 						</ul>
+						
+						<div class="preciocarrito">
+							<a href="#" class="precio"><% out.print("$" + producto.getPrecio()); %></a>
+							<a href="#" class="carrito"><i class="fas fa-cart-plus"></i></a>
+						</div>
+						
 					</div>
 					
 				</div>

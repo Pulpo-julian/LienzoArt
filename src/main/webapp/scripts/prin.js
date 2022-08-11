@@ -40,19 +40,21 @@ $(document).ready(() => {
 					
 					$("#titulorespuesta").html("Productos relacionados con: \"" + buscar + "\"");
 					
-					
 					var productosHtml = "";
 					
 					responseText.forEach((value)  => {
 						
-						productosHtml += "<div class=\"productocard col-2\"";
+						productosHtml += "<div class=\"producto card\" style=\"border-radius: 10px;\"";
 						
 						productosHtml += "		<div class=\"muestra\">";
 						
-						productosHtml += "			<img alt=\"#\" src=\"\">";
-								
+						productosHtml += "			<a href=\"/CrudNuevoLienzoArt/formularioproducto?\">";
+						
+						productosHtml += "				<img alt=\"#\" src=\"" + value.urlImagen +"\" class=\"img\">";
+						
+						productosHtml += "			</a>";
 									
-						productosHtml += "			<h3>" + value.nombre + "</h3>";
+						productosHtml += "			<h4>" + value.nombre + "</h4>";
 						
 						productosHtml += "		</div>";
 								
@@ -60,15 +62,23 @@ $(document).ready(() => {
 								
 						productosHtml += "				<ul class=\"listaproducto\">";
 										
-						productosHtml += "					<li> <h5>Categoria:" + value.categoria + "</h5> </li>";
+						productosHtml += "					<li> <h6>Categoria:" + value.categoria + "</h6> </li>";
 						
-						productosHtml += "					<li> <h5>Estado:" + value.estado + "</h5> </li>";
+						productosHtml += "					<li> <h6>Estado:" + value.estado + "</h6> </li>";
 						
-						productosHtml += "					<li> <h5>Existencia:" + value.existencia + "</h5> </li>";
+						productosHtml += "					<li> <h6>Existencia:" + value.existencia + "</h6> </li>";
 						
-						productosHtml += "					<li> <h5>Tienda: <a href=\"#\">" + value.tienda + "</a> </h5> </li>";
+						productosHtml += "					<li> <h6>Tienda: <a class=\"tienda\" href=\"#\">" + value.tienda + "</a> </h6> </li>";
 										
 						productosHtml += "				</ul>";
+						
+						productosHtml += "				<div class=\"precio\">";
+						
+						productosHtml += "					<a href=\"#\"> $" + value.precio + "</a>";
+						
+						productosHtml += "					<a href=\"#\"><i class=\"fas fa-cart-plus\"></i></a>";
+						
+						productosHtml += "				</div>";
 								
 						productosHtml += "		</div>";
 								
@@ -91,6 +101,8 @@ $(document).ready(() => {
 				
 				console.log(responseText.length);
 				
+				loadCSS("/estilos/estiloscategoriasproductos.css");
+				
 				
 			});
 			
@@ -111,8 +123,21 @@ $(document).ready(() => {
 	
 	
 	
-	// nuevo script para cambiar estilos
+		// nuevo script para cambiar estilos
+	loadCSS = function(href) {
 	
+  		var cssLink = $("<link>");
+	  		
+	
+  		cssLink.attr({
+	    	rel:  "stylesheet",
+	    	type: "text/css",
+	    	href: href
+	    });
+	    
+	    $("head").append(cssLink); //IE hack: append before setting href
+	
+	};
 	
 	
 	
