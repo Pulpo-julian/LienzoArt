@@ -82,19 +82,36 @@ aside{
 	border-radius: 10px;	
 }
 
-/*Cambio de tamaño de letra*/
-.listarproducto li{
+/*Cambio de tamaï¿½o de letra*/
+.listaproducto h6{
 	margin-top:-5px;
 	text-transform: capitalize;
 }
+
 .tienda{
 	text-decoration:none;
 	font-weight: bold;
 	text-transform: capitalize;
 }
 
+.precio{
+	display: flex;
+}
+
 .precio li p a{
-	text-decoration:none;
+	border-radius: 3px;
+	padding: 5px;
+	background-color: #59aed6;
 	font-weight: bold;
-	
+	text-decoration: none;
+	color: white;
+}
+
+.precio li i{
+	text-align: center;
+	width: 55px;
+	padding: 7px;
+	color: white;
+	background-color: #59aed6;
+	border-radius: 3px;
 }

@@ -60,7 +60,8 @@
 							
 							<div class="precio">
 								<li><p><a href="#""><% out.print("$" + producto.getPrecio()); %></a></p></li>
-							</div>	
+								<li><a href="#"><i class="fas fa-cart-plus"></i></a></li>
+							</div>
 							
 						</ul>
 					
