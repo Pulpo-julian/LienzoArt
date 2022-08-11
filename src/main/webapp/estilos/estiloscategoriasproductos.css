@@ -6,13 +6,12 @@ aside{
 	padding: 20px;
 	margin: 68px auto;
 	border-radius: 10px;
-	background-color: white;
+	background-color: #EFEFEF;
 	height: auto;
 }
 
 .title_categories{
 	display: block;
-	font-family: 'Mukta', sans-serif;
 }
 
 .categoria .lista{
@@ -20,7 +19,7 @@ aside{
 	list-style: none;
 	padding-left: 13%;
 	line-height: 3.8em;
-	
+			
 	
 }
 
@@ -33,6 +32,7 @@ aside{
   	transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 	text-transform: capitalize;
 	text-decoration: none;
+	border-radius:2px;
 }
 
 .lista a:hover{
@@ -42,7 +42,7 @@ aside{
 }
 
 .principal{
-	background-color:  grey;
+	background-color:  #CECFC9;
 	display: grid;
 	grid-template-columns: 20% 80%;
 }
@@ -52,6 +52,7 @@ aside{
 	margin: 20px;
 	width: 250px;
 	height: auto;
+	background-color: #EFEFEF;
 }
 
 
