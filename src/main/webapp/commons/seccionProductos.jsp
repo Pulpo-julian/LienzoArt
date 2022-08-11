@@ -58,6 +58,12 @@
 							<li> <h6>Existencia: <% out.print(producto.getExistencia()); %></h6> </li>
 							<li> <h6>Tienda: <a href="#"><% out.print(producto.getTienda()); %></a> </h6> </li>
 							
+							<div class="precio">
+								
+								<li><h2><a href="#"><% out.print("$ " + producto.getPrecio()); %></a></h2></li>
+							
+							</div>
+							
 						</ul>
 					
 					</div>
