@@ -58,7 +58,6 @@ aside{
 	list-style: none;
 }
 
-
 .flex_container{
 	display: flex;
 	flex-direction: row;
@@ -66,7 +65,7 @@ aside{
 }
 
 .muestra {
-	diplay: flex;
+	display: flex;
 	justify-content:center;
 	flex-direction: column;
 	align-items: center;
