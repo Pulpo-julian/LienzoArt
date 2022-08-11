@@ -38,7 +38,7 @@ aside{
 }
 
 .principal{
-	background-color:  grey;
+	background-color:  #CECFC9;
 	display: grid;
 	grid-template-columns: 20% 80%;
 }
@@ -47,6 +47,7 @@ aside{
 	margin: 20px;
 	width: 250px;
 	height: auto;
+	background-color: #EFEFEF;
 }
 
 
@@ -81,8 +82,19 @@ aside{
 	border-radius: 10px;	
 }
 
-/*Cambio de tamaï¿½o de letra*/
+/*Cambio de tamaño de letra*/
 .listarproducto li{
 	margin-top:-5px;
 	text-transform: capitalize;
+}
+.tienda{
+	text-decoration:none;
+	font-weight: bold;
+	text-transform: capitalize;
+}
+
+.precio li p a{
+	text-decoration:none;
+	font-weight: bold;
+	
 }
