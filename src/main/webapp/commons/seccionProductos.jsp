@@ -49,7 +49,7 @@
 						<h4><% out.print(producto.getNombre());%></h4>
 					</div>
 					
-					<div class="informacion card-body" >
+					<div class="informacion" >
 					
 						<ul class="listaproducto">
 							
@@ -57,14 +57,11 @@
 							<li> <h6>Estado: <% out.print(producto.getEstado()); %></h6> </li>
 							<li> <h6>Existencia: <% out.print(producto.getExistencia()); %></h6> </li>
 							<li> <h6>Tienda: <a class="tienda" href="#"><% out.print(producto.getTienda()); %></a> </h6> </li>
-							
 							<div class="precio">
 								<li><p><a href="#""><% out.print("$" + producto.getPrecio()); %></a></p></li>
 								<li><a href="#"><i class="fas fa-cart-plus"></i></a></li>
 							</div>
-							
 						</ul>
-					
 					</div>
 					
 				</div>

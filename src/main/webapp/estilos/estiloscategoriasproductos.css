@@ -82,16 +82,19 @@ aside{
 	border-radius: 10px;	
 }
 
-/*Cambio de tama�o de letra*/
-.listaproducto h6{
-	margin-top:-5px;
-	text-transform: capitalize;
+.muestra h4{
+	margin-top:1rem;
 }
 
 .tienda{
 	text-decoration:none;
 	font-weight: bold;
 	text-transform: capitalize;
+	color: black;
+}
+.tienda:hover {
+	transition-delay:1s, 150ms;
+	transition-property: margin-right, color;
 }
 
 .precio{
