@@ -4,24 +4,20 @@
 
 aside{
 	padding: 20px;
-	margin: 68px auto;
-	border-radius: 10px;
-	background-color: white;
-	height: auto;
+	margin-top: 17%;
 }
 
-.title_categories{
-	display: block;
-	font-family: 'Mukta', sans-serif;
+.categoria{
+	background-color: white;
+	padding: 30px;
+	border-radius: 20px;
 }
 
 .categoria .lista{
-	width: auto;
+	width: 100%;
 	list-style: none;
 	padding-left: 13%;
 	line-height: 3.8em;
-	
-	
 }
 
 .lista a{
@@ -42,27 +38,26 @@ aside{
 }
 
 .principal{
-	background-color:  grey;
+	background-color:  #CECFC9;
 	display: grid;
 	grid-template-columns: 20% 80%;
 }
-
 
 .producto{ /*Estilos de la caja de productos*/
 	margin: 20px;
 	width: 250px;
 	height: auto;
+	background-color: #EFEFEF;
 }
 
 
 .seccionprincipal{
-	margin-top: 40px;
+	margin-top: 3.7%;
 }
 
 .listaproducto{
 	list-style: none;
 }
-
 
 .flex_container{
 	display: flex;
@@ -71,7 +66,7 @@ aside{
 }
 
 .muestra {
-	diplay: flex;
+	display: flex;
 	justify-content:center;
 	flex-direction: column;
 	align-items: center;
@@ -87,8 +82,39 @@ aside{
 	border-radius: 10px;	
 }
 
-/*Cambio de tamaño de letra*/
-.listarproducto li{
-	margin-top:-5px;
+.muestra h4{
+	margin-top:1rem;
+}
+
+.tienda{
+	text-decoration:none;
+	font-weight: bold;
 	text-transform: capitalize;
+	color: black;
+}
+.tienda:hover {
+	transition-delay:1s, 150ms;
+	transition-property: margin-right, color;
+}
+
+.precio{
+	display: flex;
+}
+
+.precio li p a{
+	border-radius: 3px;
+	padding: 5px;
+	background-color: #59aed6;
+	font-weight: bold;
+	text-decoration: none;
+	color: white;
+}
+
+.precio li i{
+	text-align: center;
+	width: 55px;
+	padding: 7px;
+	color: white;
+	background-color: #59aed6;
+	border-radius: 3px;
 }
