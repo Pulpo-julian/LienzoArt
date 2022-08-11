@@ -1,5 +1,6 @@
 <%@ page import="java.util.List"%>
 <%@ page import="modelos.Producto"%>
+<link rel="stylesheet" href="estilos/estiloscategoriasproductos.css">
 <% List<Producto> productos = (List<Producto>) request.getAttribute("productos"); %>
 <% String accion = (String) request.getAttribute("accion"); %>
 
@@ -44,18 +45,18 @@
 				<div class="producto card" style="border-radius: 10px;">
 					
 					<div class="muestra">
-						<img alt="#" src="<% out.println(producto.getUrlImagen()); %>">
-						<h3><% out.print(producto.getNombre());%></h3>
+						<img alt="#" src="<% out.println(producto.getUrlImagen()); %>" class="img">
+						<h4><% out.print(producto.getNombre());%></h4>
 					</div>
 					
 					<div class="informacion">
 					
 						<ul class="listaproducto">
 							
-							<li> <h5>Categoria: <% out.print(producto.getCategoria()); %></h5> </li>
-							<li> <h5>Estado: <% out.print(producto.getEstado()); %></h5> </li>
-							<li> <h5>Existencia: <% out.print(producto.getExistencia()); %></h5> </li>
-							<li> <h5>Tienda: <a href="#"><% out.print(producto.getTienda()); %></a> </h5> </li>
+							<li> <h6>Categoria: 	<% out.print(producto.getCategoria()); %></h6> </li>
+							<li> <h6>Estado: <% out.print(producto.getEstado()); %></h6> </li>
+							<li> <h6>Existencia: <% out.print(producto.getExistencia()); %></h6> </li>
+							<li> <h6>Tienda: <a href="#"><% out.print(producto.getTienda()); %></a> </h6> </li>
 							
 							<div class="precio">
 								
