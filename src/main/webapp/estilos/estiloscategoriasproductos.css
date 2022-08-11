@@ -93,3 +93,14 @@ aside{
 	margin-top:-5px;
 	text-transform: capitalize;
 }
+.tienda{
+	text-decoration:none;
+	font-weight: bold;
+	text-transform: capitalize;
+}
+
+.precio li p a{
+	text-decoration:none;
+	font-weight: bold;
+	
+}
