@@ -83,6 +83,10 @@ aside{
 	border-radius: 10px;	
 }
 
+.muestra h4{
+	margin-top:1rem;
+}
+
 /*Cambio de tamaño de letra*/
 .listarproducto li{
 	margin-top:-5px;
@@ -92,10 +96,15 @@ aside{
 	text-decoration:none;
 	font-weight: bold;
 	text-transform: capitalize;
+	color: black;
+}
+.tienda:hover {
+	transition-delay:1s, 150ms;
+	transition-property: margin-right, color;
 }
 
 .precio li p a{
 	text-decoration:none;
 	font-weight: bold;
-	
+	font-size: 25px;
 }
