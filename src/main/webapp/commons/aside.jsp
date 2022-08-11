@@ -12,7 +12,7 @@
 
 	
 		<blockquote class="categoria">
-		<h2 class="title_categories"><b>Categorias</b></h2>
+		<h2><b>Categorias</b></h2>
 		
 			<ul class="lista">
 				<%for(Categoria categoria: categorias) { %>			

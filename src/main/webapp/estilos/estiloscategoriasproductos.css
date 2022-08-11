@@ -4,24 +4,20 @@
 
 aside{
 	padding: 20px;
-	margin: 68px auto;
-	border-radius: 10px;
-	background-color: white;
-	height: auto;
+	margin-top: 17%;
 }
 
-.title_categories{
-	display: block;
-	font-family: 'Mukta', sans-serif;
+.categoria{
+	background-color: white;
+	padding: 30px;
+	border-radius: 20px;
 }
 
 .categoria .lista{
-	width: auto;
+	width: 100%;
 	list-style: none;
 	padding-left: 13%;
 	line-height: 3.8em;
-	
-	
 }
 
 .lista a{
@@ -47,7 +43,6 @@ aside{
 	grid-template-columns: 20% 80%;
 }
 
-
 .producto{ /*Estilos de la caja de productos*/
 	margin: 20px;
 	width: 250px;
@@ -56,7 +51,7 @@ aside{
 
 
 .seccionprincipal{
-	margin-top: 40px;
+	margin-top: 3.7%;
 }
 
 .listaproducto{
@@ -87,7 +82,7 @@ aside{
 	border-radius: 10px;	
 }
 
-/*Cambio de tamaño de letra*/
+/*Cambio de tamaï¿½o de letra*/
 .listarproducto li{
 	margin-top:-5px;
 	text-transform: capitalize;
