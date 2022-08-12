@@ -72,11 +72,11 @@ $(document).ready(() => {
 										
 						productosHtml += "				</ul>";
 						
-						productosHtml += "				<div class=\"precio\">";
+						productosHtml += "				<div class=\"preciocarrito\">";
 						
-						productosHtml += "					<a href=\"#\"> $" + value.precio + "</a>";
+						productosHtml += "					<a href=\"#\" class=\"precio\"> $" + value.precio + "</a>";
 						
-						productosHtml += "					<a href=\"#\"><i class=\"fas fa-cart-plus\"></i></a>";
+						productosHtml += "					<a href=\"#\" class=\"carrito\"><i class=\"fas fa-cart-plus\"></i></a>";
 						
 						productosHtml += "				</div>";
 								
@@ -89,6 +89,8 @@ $(document).ready(() => {
 					//console.log(responseText[0].codigo);
 					
 					$(".seccion").html(productosHtml);
+					
+					
 						
 				} else {
 					
@@ -101,7 +103,7 @@ $(document).ready(() => {
 				
 				console.log(responseText.length);
 				
-				loadCSS("/estilos/estiloscategoriasproductos.css");
+				
 				
 				
 			});
@@ -111,11 +113,7 @@ $(document).ready(() => {
 		// entra cuando el campo de busqueda esta vacia
 		} else {
 			
-			
 			return;
-			
-			
-			
 			
 		}
 		
@@ -123,21 +121,7 @@ $(document).ready(() => {
 	
 	
 	
-		// nuevo script para cambiar estilos
-	loadCSS = function(href) {
-	
-  		var cssLink = $("<link>");
-	  		
-	
-  		cssLink.attr({
-	    	rel:  "stylesheet",
-	    	type: "text/css",
-	    	href: href
-	    });
-	    
-	    $("head").append(cssLink); //IE hack: append before setting href
-	
-	};
+
 	
 	
 	

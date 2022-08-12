@@ -14,7 +14,7 @@
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
 	<script defer type="text/javascript" src="scripts/prin.js"></script>
-	<link rel="stylesheet" href="estilos/estiloscategoriasproductos.css">
+	<link rel="stylesheet" href="estilos/estiloscategoriasproductos.css" id="recargar">
     <title>Bienvenido a LienzoArt</title>
 </head>
 <body>

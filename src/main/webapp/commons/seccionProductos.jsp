@@ -1,6 +1,5 @@
 <%@ page import="java.util.List"%>
 <%@ page import="modelos.Producto"%>
-<link rel="stylesheet" href="estilos/estiloscategoriasproductos.css">
 <% List<Producto> productos = (List<Producto>) request.getAttribute("productos"); %>
 <% String accion = (String) request.getAttribute("accion"); %>
 
