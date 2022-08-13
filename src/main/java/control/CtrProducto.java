@@ -74,6 +74,7 @@ public class CtrProducto extends HttpServlet {
 				
 				
 				
+				
 				getServletContext().getRequestDispatcher("/productosCrud/crearProducto.jsp").forward(request, response);
 				
 			} catch (Exception e) {

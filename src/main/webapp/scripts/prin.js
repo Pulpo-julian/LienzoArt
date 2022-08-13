@@ -28,6 +28,9 @@ $(document).ready(() => {
 		
 		if(buscar != ""){
 			
+			$.post("barrabusqueda", {buscar: buscar});
+				
+			/*
 			$.post("barrabusqueda", {buscar: buscar}, (responseText) => {
 				
 				//$(".seccion").html(responseText);
@@ -103,11 +106,8 @@ $(document).ready(() => {
 				
 				console.log(responseText.length);
 				
-				
-				
-				
 			});
-			
+			*/
 				
 				
 		// entra cuando el campo de busqueda esta vacia

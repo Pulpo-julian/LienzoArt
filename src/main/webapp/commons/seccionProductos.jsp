@@ -2,6 +2,7 @@
 <%@ page import="modelos.Producto"%>
 <% List<Producto> productos = (List<Producto>) request.getAttribute("productos"); %>
 <% String accion = (String) request.getAttribute("accion"); %>
+<% String buscar = (String) request.getAttribute("buscar"); %>
 
 
 <div class="seccionprincipal">
@@ -24,7 +25,7 @@
 				
 			</div>
 	
-		<%} else if (productos.size() == 0){ %>
+		<%} else if (accion != null && productos.size() == 0){ %>
 		
 			<div class="titulocategoria">
 				
@@ -32,9 +33,25 @@
 			
 			</div>
 			
+		<%} else if (buscar != null && productos.size() > 0 && !buscar.isEmpty()) {%>
+			
+			<div class="titulocategoria">
+				
+				<h1>Productos relacionados con: "<% out.print(buscar); %>"</h1>
+			
+			</div>			
+			
+		<%} else if (buscar != null && productos.size() == 0) {%>
+			
+			<div class="titulocategoria">
+				
+				<h1>Por el momento no hay productos relacionados con: "<% out.print(buscar); %>"</h1>
+			
+			</div>
+			
 		<%} %>
-	
-	
+
+
 	
 	    <div class="flex_container">
 		<%if (productos != null && productos.size() > 0) {%>
