@@ -1,3 +1,4 @@
+<% String buscar = (String) request.getAttribute("buscar"); %>
 <head>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -14,10 +15,13 @@
         </div>
     
         <div class="buscador col-6">
-            <input type="search" id="buscador" class="buscar" placeholder="Buscar..." >
+        	
+        	<form action="/CrudNuevoLienzoArt/controlprincipal" id="buscarForm">
+        		<input type="search" id="buscador" name="buscar" class="buscar" placeholder="Buscar..." value="<%if(buscar != null && !buscar.isEmpty()) {out.println(buscar);} %>">
+        	</form>
     
             <div id="btnbuscar" class="btn">
-                <i class="fas fa-search"></i>
+            	<button type="submit" form="buscarForm"><i class="fas fa-search"></i></button>
             </div>
         </div>
     

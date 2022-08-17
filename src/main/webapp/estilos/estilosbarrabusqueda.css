@@ -1,9 +1,7 @@
-.header{
-background-color: #EFEFEF;
-@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap');
-font-family: 'Mukta', sans-serif;
+header{
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
 font-size: 18px;
-background-color: #276E90;
+background-color: #59aed6;
 }
 
 .logo img{ /*Estilos para el logo en el header*/
@@ -27,15 +25,14 @@ background-color: #276E90;
 	margin-top: 7px;
 }
 
-.btn{ /*Estilos y posicionamiento del bot�n de b�squeda*/
+.buscador .btn{
+	transform: translateY(-40px);
 	position: absolute;
-	display: flex;
-	padding-top: 25px;
-	width: 60px;
-	height: 60px;
-	top: 0;
-	transform: translateX(-55px);
-	margin-top:13px;
+}
+
+.buscador button{ /*Estilos y posicionamiento del bot�n de b�squeda*/
+	border: none;
+	background-color: #FFFFFF;
 }
 
 .btniniciarsesion{ /*Estilos y posicionamiento del bot�n de iniciar sesi�n*/

@@ -2,6 +2,7 @@
 <%@ page import="modelos.Producto"%>
 <% List<Producto> productos = (List<Producto>) request.getAttribute("productos"); %>
 <% String accion = (String) request.getAttribute("accion"); %>
+<% String buscar = (String) request.getAttribute("buscar"); %>
 
 
 <div class="seccionprincipal">
@@ -24,7 +25,7 @@
 				
 			</div>
 	
-		<%} else if (productos.size() == 0){ %>
+		<%} else if (accion != null && productos.size() == 0){ %>
 		
 			<div class="titulocategoria">
 				
@@ -32,9 +33,25 @@
 			
 			</div>
 			
+		<%} else if (buscar != null && productos.size() > 0 && !buscar.isEmpty()) {%>
+			
+			<div class="titulocategoria">
+				
+				<h1>Productos relacionados con: "<% out.print(buscar); %>"</h1>
+			
+			</div>			
+			
+		<%} else if (buscar != null && productos.size() == 0) {%>
+			
+			<div class="titulocategoria">
+				
+				<h1>Por el momento no hay productos relacionados con: "<% out.print(buscar); %>"</h1>
+			
+			</div>
+			
 		<%} %>
-	
-	
+
+
 	
 	    <div class="flex_container">
 		<%if (productos != null && productos.size() > 0) {%>
@@ -44,21 +61,28 @@
 				<div class="producto card" style="border-radius: 10px;">
 					
 					<div class="muestra">
-						<img alt="#" src="<% out.println(producto.getUrlImagen()); %>">
-						<h3><% out.print(producto.getNombre());%></h3>
+						<a href="/CrudNuevoLienzoArt/formularioproducto?">
+							<img alt="#" src="<% out.println(producto.getUrlImagen()); %>" class="img">
+						</a>
+						
+						<h4><% out.print(producto.getNombre());%></h4>
 					</div>
 					
-					<div class="informacion">
+					<div class="informacion" >
 					
 						<ul class="listaproducto">
 							
-							<li> <h5>Categoria: <% out.print(producto.getCategoria()); %></h5> </li>
-							<li> <h5>Estado: <% out.print(producto.getEstado()); %></h5> </li>
-							<li> <h5>Existencia: <% out.print(producto.getExistencia()); %></h5> </li>
-							<li> <h5>Tienda: <a href="#"><% out.print(producto.getTienda()); %></a> </h5> </li>
-							
+							<li> <h6>Categoria: 	<% out.print(producto.getCategoria()); %></h6> </li>
+							<li> <h6>Estado: <% out.print(producto.getEstado()); %></h6> </li>
+							<li> <h6>Existencia: <% out.print(producto.getExistencia()); %></h6> </li>
+							<li> <h6><a class="tienda" href="#"><% out.print(producto.getTienda()); %></a> </h6> </li>
 						</ul>
-					
+						
+						<div class="preciocarrito">
+							<a href="#" class="precio"><% out.print("$" + producto.getPrecio()); %></a>
+							<a href="#" class="carrito"><i class="fas fa-cart-plus"></i></a>
+						</div>
+						
 					</div>
 					
 				</div>

@@ -1,28 +1,28 @@
 *{
-	@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap');
-	font-family: 'Mukta', sans-serif;
+	@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
 }
 
 aside{
 	padding: 20px;
-	margin: 67px auto;
-	border-radius: 10px;
-	background-color: white;
-	height: auto;
+	margin-top: 17%;
 }
 
-.title_categories{
-	display: block;
-	font-family: 'Mukta', sans-serif;
+.categoria h2{
+	text-align: center;
+}
+
+.categoria{
+	border: 1px solid lightgrey;
+	background-color: white;
+	padding: 30px;
+	border-radius: 20px;
 }
 
 .categoria .lista{
-	width: auto;
+	width: 100%;
 	list-style: none;
 	padding-left: 13%;
 	line-height: 3.8em;
-	
-	
 }
 
 .lista a{
@@ -36,45 +36,95 @@ aside{
 	text-decoration: none;
 }
 
-<<<<<<< HEAD:src/main/webapp/estilos/index7.css
-.cat-container:hover{
-	color: black;
-	background-color: grey;
-=======
 .lista a:hover{
 	box-shadow: inset 100px 0 0 0 #276e90;
   	color: white;
-	
->>>>>>> c24bec591ada93f2fa942097af1eacfb3ea9dce7:src/main/webapp/estilos/estiloscategoriasproductos.css
 }
 
 .principal{
-	background-color:  grey;
+	background-color:  #EFEFEF;
 	display: grid;
 	grid-template-columns: 20% 80%;
 }
 
-
 .producto{ /*Estilos de la caja de productos*/
+	border: 10px solid black;
 	margin: 20px;
-	width: 335px;
+	width: 250px;
 	height: auto;
+	background-color: #EFEFEF;
 }
 
 
 .seccionprincipal{
-	margin-top: 40px;
+	margin-top: 3.7%;
 }
 
 .listaproducto{
 	list-style: none;
 }
 
-
-
-
 .flex_container{
 	display: flex;
 	flex-direction: row;
 	flex-flow: row wrap;
+}
+
+.muestra {
+	display: flex;
+	justify-content:center;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	text-transform: capitalize;
+}
+.muestra:hover .img {transform:scale(1.03) translate(0,0);}
+.contenedor {overflow:hidden;}
+.muestra img{
+	margin-top: .3rem;
+	width: 230px;
+	height: 230px;
+	border-radius: 10px;	
+}
+
+.muestra h4{
+	margin-top:1rem;
+}
+
+.tienda{
+	text-decoration:none;
+	font-weight: bold;
+	text-transform: capitalize;
+	color: black;
+}
+.tienda:hover {
+	transition-delay:1s, 150ms;
+	transition-property: margin-right, color;
+}
+
+.preciocarrito{
+	padding: 5px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.preciocarrito .precio{
+	margin-left: 25px;
+	text-align: center;
+	border-radius: 3px;
+	padding: 5px;
+	background-color: #59aed6;
+	font-weight: bold;
+	text-decoration: none;
+	color: white;
+}
+
+.preciocarrito .carrito{
+	margin-left: 40px;
+	text-align: center;
+	width: 55px;
+	padding: 7px;
+	color: white;
+	background-color: #59aed6;
+	border-radius: 3px;
 }
