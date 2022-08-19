@@ -2,12 +2,14 @@ header{
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
 font-size: 18px;
 background-color: #59aed6;
+width: auto;
 }
 
 .logo img{ /*Estilos para el logo en el header*/
 	width: 135px;
 	height: 65px;
     align-items: center;
+    margin-left: 50px;
 }
 
 .buscador{ /*Estilos para el espaciado de la barra de b�squeda*/

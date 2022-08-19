@@ -10,7 +10,7 @@ body{
     margin: auto;
     border-radius: 7px;
     box-shadow: 7px 13px 37px #000;
-    background-color: #276E90;
+    background-color: #59aed6;
 }
 
 h1{
@@ -34,8 +34,8 @@ label{
 
 #btnregistro{
 	border: none;
-	background-color: #276E90;
-	color: lightblue;
+	background-color: #59aed6;
+	color: black;
 }
 
 .btn{

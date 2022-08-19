@@ -8,26 +8,30 @@
           <div class="content">
             <p>Empresa dedica al desarrollo de Software, tienda online</p>
             <div class="social">
-              <p>Proyecto formativo de la ficha 2278748.<br> Equipo #3 <br>
+              <p>Página desarrollada para la venta de productos artesanales, enfocada principalmente en las tiendas del oriente antioqueño,
+               brindando la facilidad a los vendedores independientes o con tiendas físicas a tener 
+              un impacto un poco mayor en su número de ventas, esta pagina les brindara la opción de generar más 
+              ingresos y dar a conocer sus productos a otras regiones de antioquia.
+            <br> Equipo #3 <br>
               </p>
             </div>
           </div>
         </div>
 
         <div class="center box">
-          <h2>Contactanos</h2>
+          <h2>Contáctanos</h2>
           <div class="content">
             <div class="place">
-             <span class="fas fa-map-marker-alt"></span>  
+             <span class="fas fa-map-marker-alt" id="icono_footer"></span>  
               <span class="text">Rionegro, Antioquia</span>
             </div>
             <div class="phone">
-              <span class="fas fa-phone-alt"></span>
+              <span class="fas fa-phone-alt" id="icono_footer"></span>
               <span class="text">+57-3016092596 | +57-3193510013 | +57-3104712665</span>
             </div>
             <div class="email">
-              <span class="fas fa-envelope"></span>
-              <span class="text">gagil339@misena.edu.co</span>
+              <span class="fas fa-envelope" id="icono_footer"></span>
+              <span class="text">gagil339@misena.edu.co || jjjaramillo826@misena.edu.co || jaregalado5@misena.edu.co</span>
             </div>
           </div>
         </div>
