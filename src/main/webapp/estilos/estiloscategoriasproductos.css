@@ -62,6 +62,7 @@ aside{
 
 .listaproducto{
 	list-style: none;
+	text-transform: capitalize;
 }
 
 .flex_container{
