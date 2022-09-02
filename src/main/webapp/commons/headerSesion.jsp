@@ -26,7 +26,7 @@
         </div>
     
     
-        <div class="Micuenta col-2">
+        <div class="micuenta col-2">
         
              <ul>
              	<li><a href="configuracion">Configuracion</a></li>
@@ -36,7 +36,7 @@
     
         </div>
         
-        <div class="Carrocompras col-2">
+        <div class="carrocompras col-2">
         
              <form action="/CrudNuevoLienzoArt/controlsesion" method="post">            		 		
                 <input type="submit" name="carrocompras" value="carrocompras" class="btncrearusuario">
