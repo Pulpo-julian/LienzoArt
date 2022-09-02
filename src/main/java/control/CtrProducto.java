@@ -229,8 +229,6 @@ public class CtrProducto extends HttpServlet {
 					
 				}
 				request.setAttribute("categorias", categorias);
-				
-				
 				request.setAttribute("nombre", nombre);
 				request.setAttribute("descripcion", descripcion);
 				request.setAttribute("precio", precioString);
@@ -239,6 +237,7 @@ public class CtrProducto extends HttpServlet {
 				request.setAttribute("categoria", categoriaString);
 				request.setAttribute("tienda", tiendaString);
 				
+				//Donde se quiere redirigir a una vista
 				getServletContext().getRequestDispatcher("/productosCrud/crearProducto.jsp").forward(request, response);
 				
 			}

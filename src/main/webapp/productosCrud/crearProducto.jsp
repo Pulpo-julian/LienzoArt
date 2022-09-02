@@ -4,8 +4,8 @@
 <%@ page import="java.util.Map"%>
 <%@ page import="java.util.List"%>
 <%@ page import="modelos.Categoria"%>
-<% List<Categoria> categorias = (List<Categoria>) request.getAttribute("categorias"); %>
 
+<% List<Categoria> categorias = (List<Categoria>) request.getAttribute("categorias"); %>
 <% Map<String, String> errores = (Map<String, String>) request.getAttribute("errores"); %>
 <% String nombre = (String) request.getAttribute("nombre"); %>
 <% String descripcion = (String) request.getAttribute("descripcion"); %>
