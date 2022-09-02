@@ -28,6 +28,9 @@ $(document).ready(() => {
 		
 		if(buscar != ""){
 			
+			$.post("barrabusqueda", {buscar: buscar});
+				
+			/*
 			$.post("barrabusqueda", {buscar: buscar}, (responseText) => {
 				
 				//$(".seccion").html(responseText);
@@ -40,19 +43,21 @@ $(document).ready(() => {
 					
 					$("#titulorespuesta").html("Productos relacionados con: \"" + buscar + "\"");
 					
-					
 					var productosHtml = "";
 					
 					responseText.forEach((value)  => {
 						
-						productosHtml += "<div class=\"productocard col-2\"";
+						productosHtml += "<div class=\"producto card\" style=\"border-radius: 10px;\"";
 						
 						productosHtml += "		<div class=\"muestra\">";
 						
-						productosHtml += "			<img alt=\"#\" src=\"\">";
-								
+						productosHtml += "			<a href=\"/CrudNuevoLienzoArt/formularioproducto?\">";
+						
+						productosHtml += "				<img alt=\"#\" src=\"" + value.urlImagen +"\" class=\"img\">";
+						
+						productosHtml += "			</a>";
 									
-						productosHtml += "			<h3>" + value.nombre + "</h3>";
+						productosHtml += "			<h4>" + value.nombre + "</h4>";
 						
 						productosHtml += "		</div>";
 								
@@ -60,15 +65,23 @@ $(document).ready(() => {
 								
 						productosHtml += "				<ul class=\"listaproducto\">";
 										
-						productosHtml += "					<li> <h5>Categoria:" + value.categoria + "</h5> </li>";
+						productosHtml += "					<li> <h6>Categoria:" + value.categoria + "</h6> </li>";
 						
-						productosHtml += "					<li> <h5>Estado:" + value.estado + "</h5> </li>";
+						productosHtml += "					<li> <h6>Estado:" + value.estado + "</h6> </li>";
 						
-						productosHtml += "					<li> <h5>Existencia:" + value.existencia + "</h5> </li>";
+						productosHtml += "					<li> <h6>Existencia:" + value.existencia + "</h6> </li>";
 						
-						productosHtml += "					<li> <h5>Tienda: <a href=\"#\">" + value.tienda + "</a> </h5> </li>";
+						productosHtml += "					<li> <h6>Tienda: <a class=\"tienda\" href=\"#\">" + value.tienda + "</a> </h6> </li>";
 										
 						productosHtml += "				</ul>";
+						
+						productosHtml += "				<div class=\"preciocarrito\">";
+						
+						productosHtml += "					<a href=\"#\" class=\"precio\"> $" + value.precio + "</a>";
+						
+						productosHtml += "					<a href=\"#\" class=\"carrito\"><i class=\"fas fa-cart-plus\"></i></a>";
+						
+						productosHtml += "				</div>";
 								
 						productosHtml += "		</div>";
 								
@@ -79,6 +92,8 @@ $(document).ready(() => {
 					//console.log(responseText[0].codigo);
 					
 					$(".seccion").html(productosHtml);
+					
+					
 						
 				} else {
 					
@@ -91,19 +106,14 @@ $(document).ready(() => {
 				
 				console.log(responseText.length);
 				
-				
 			});
-			
+			*/
 				
 				
 		// entra cuando el campo de busqueda esta vacia
 		} else {
 			
-			
 			return;
-			
-			
-			
 			
 		}
 		
@@ -111,8 +121,7 @@ $(document).ready(() => {
 	
 	
 	
-	// nuevo script para cambiar estilos
-	
+
 	
 	
 	

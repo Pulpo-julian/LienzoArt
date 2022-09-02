@@ -2,6 +2,7 @@ package dao;
 
 import java.sql.Connection;
 import java.util.ArrayList;
+import java.sql.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -61,7 +62,26 @@ public class DaoProducto {
 			+ "    INNER JOIN tbltienda AS tt ON tt.codigo = tp.tienda "
 			+ "WHERE tp.categoria = ?;";
 	
-	
+	private static final String SQL_SELECT_BUSQUEDA = "SELECT\n"
+			+ "\n"
+			+ "    tp.codproducto,\n"
+			+ "    tp.nombre,\n"
+			+ "    tp.fechapublicacion,\n"
+			+ "    tp.descripcion,\n"
+			+ "    tp.precio,\n"
+			+ "    tp.existencia,\n"
+			+ "    te.nombre,\n"
+			+ "    tc.nombre,\n"
+			+ "    tt.nombre\n,"
+			+ "	   tp.urlimagen\n"
+			+ "\n"
+			+ "FROM \n"
+			+ "\n"
+			+ "    tblproducto AS tp\n"
+			+ "    INNER JOIN tblestadoproducto AS te ON tp.estado = te.codestado\n"
+			+ "    INNER JOIN tblcategoria AS tc ON tc.codigo = tp.categoria\n"
+			+ "    INNER JOIN tbltienda AS tt ON tt.codigo = tp.tienda"
+			+ "    WHERE tp.nombre LIKE ? OR tp.descripcion LIKE ? LIMIT 10;";
 	
 	
 	private static final String SQL_SELECT_DOCID = "SELECT\n"
@@ -88,7 +108,7 @@ public class DaoProducto {
 			+ "\n"
 			+ "    tp.codproducto = ?;";
 	
-	private static final String SQL_INSERT = "INSERT INTO tblproducto VALUES(?,?,?,?,?,?,?,?,?);";
+	private static final String SQL_INSERT = "INSERT INTO tblproducto VALUES(?,?,?,?,?,?,?,?,?,?);";
 	
 	//private static final String SQL_UPDATE = "UPDATE tblusuario SET nombres = ?, apellidos = ?, correo = ? WHERE docid = ?;";
 	
@@ -239,9 +259,9 @@ public class DaoProducto {
 	}
 	
 	// se debe ingresar los metodos correctos del producto
-	public void insertarProducto(String nombre, String apellidos, 
-			String correo, int perfil, String clave, String telefono,
-			String ciudad, String codigoPost, String direccion) {
+	public int insertarProducto(String nombre, Date fechaPublicacion, 
+			String descripcion, int precio, int existencia, int estado,
+			int categoria, int tienda, String urlImagen) {
 		
 		Connection conn = null;
 		PreparedStatement stmt = null;
@@ -253,15 +273,18 @@ public class DaoProducto {
 			
 			stmt.setString(1, null);
 			stmt.setString(2, nombre);
-			stmt.setString(3, apellidos);
-			stmt.setString(4, correo);
-			stmt.setInt(5, perfil);
-			stmt.setString(6, clave);
-			stmt.setString(7, telefono);
-			stmt.setString(8, ciudad);
-			stmt.setString(9, codigoPost);
-			stmt.setString(10, direccion);
-			stmt.executeUpdate();
+			stmt.setDate(3, fechaPublicacion);
+			stmt.setString(4, descripcion);
+			stmt.setInt(5, precio);
+			stmt.setInt(6, existencia);
+			stmt.setInt(7, estado);
+			stmt.setInt(8, categoria);
+			stmt.setInt(9, tienda);
+			stmt.setString(10, urlImagen);
+			
+			int resultado = stmt.executeUpdate();
+			
+			return resultado;
 	
 			
 			
@@ -274,6 +297,8 @@ public class DaoProducto {
 			Conexion.closeConnection(stmt);
 			Conexion.closeConnection(conn);
 		}
+		
+		return 0;
 		
 	}
 	
@@ -308,6 +333,59 @@ public class DaoProducto {
 		}
 		
 	}
+	
+	public List<Producto> listarProductosBusqueda(String entrada){
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		List<Producto> productos = new ArrayList<Producto>();
+		
+		try {
+			
+			entrada = "%".concat(entrada).concat("%");
+			//se imprime lo que busco
+			System.out.print(entrada);
+			conn = Conexion.getConnection();
+			stmt = conn.prepareStatement(SQL_SELECT_BUSQUEDA);
+			stmt.setString(1, entrada);
+			stmt.setString(2, entrada);
+			rs = stmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				int codProducto = rs.getInt(1);
+				String nombre = rs.getString(2);
+				String fechaPub = rs.getString(3);
+				String descripcion = rs.getString(4);
+				int precio = rs.getInt(5);
+				int existencia = rs.getInt(6);
+				String estado = rs.getString(7);
+				String categoria = rs.getString(8);
+				String tienda = rs.getString(9);
+				String imagen = rs.getString(10);
+				
+				productos.add(new Producto(codProducto, nombre, fechaPub, descripcion, 
+						precio, existencia, estado, categoria, tienda, imagen));
+				
+
+				
+			}
+			
+			
+		} catch (Exception e) {
+			
+			e.printStackTrace(System.out);
+			
+		} finally {
+			Conexion.closeConnection(rs);
+			Conexion.closeConnection(stmt);
+			Conexion.closeConnection(conn);
+		}
+		
+		return productos;
+		
+	}
+	
 	/*
 	public void borrarUsuario(String docid) {
 		

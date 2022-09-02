@@ -28,10 +28,9 @@ public class GuardarImagen {
 			//se extrae informacion binaria de la foto
 			InputStream binarioFotoSubida = part.getInputStream();
 			
-			//valida si hay informacion o no sobre la foto
+			//valida si hay informacion binaria o no de la foto
 			if(binarioFotoSubida != null) {
 				
-				//donde debo corregir en caso de errores
 				File fotoEnServidor = new File(ruta, nombreFotoSubida);
 				
 				rutaRetornar = "http://localhost:8080/CrudNuevoLienzoArt/imagenesProductos/" + nombreFotoSubida;

@@ -46,18 +46,41 @@ public class CtrIndex extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		//obtengo atributo de barrabusqueda 
+		String buscar = request.getParameter("buscar");
 		
+		//cuando arranque la aplicacion por primera vez la accion sera null
+		//ya que no se envia ningun paramertro 
 		String accion = request.getParameter("accion");
-		
-		if(accion == null) {
 			
 			try {
 				
 				DaoProducto daoPro = new DaoProducto();
 				DaoCategoria daoCat = new DaoCategoria();
 				
+				List<Producto> productos = null;
 				
-				List<Producto> productos = daoPro.listar();
+				//si no hay una accion ni busqueda simplemente se listan todos los productos
+				if(accion == null && buscar == null) {
+					
+					productos = daoPro.listar();
+				
+				//entra al else cuando elgia alguna categoria metiante el parametro accion
+				} else if(buscar == null) {
+					
+					//tomo el id de la categoria
+					int codigoCategoria = Integer.parseInt(request.getParameter("idcategoria"));
+					productos = daoPro.listarPorCategoria(codigoCategoria);
+					request.setAttribute("accion", accion);
+					
+				//entra cuando el buscar este con algun valor de busqueda
+				} else if(buscar != null){
+					
+					productos = daoPro.listarProductosBusqueda(buscar);
+					request.setAttribute("buscar", buscar);
+				}
+				
+				
 				List<Categoria> categorias = daoCat.listar();
 				
 				request.setAttribute("productos", productos);
@@ -73,38 +96,6 @@ public class CtrIndex extends HttpServlet {
 				
 			}			
 		
-		// cuando se elija la categoria entra en este else
-		} else  {
-			
-
-			try {
-				
-				int codigoCategoria = Integer.parseInt(request.getParameter("idcategoria"));
-								
-				DaoProducto daoPro = new DaoProducto();
-				DaoCategoria daoCat = new DaoCategoria();
-				
-				List<Producto> productos = daoPro.listarPorCategoria(codigoCategoria);
-				List<Categoria> categorias = daoCat.listar();
-				
-				request.setAttribute("categorias", categorias);
-				request.setAttribute("productos", productos);
-				request.setAttribute("accion", accion);
-				
-				getServletContext().getRequestDispatcher("/vistas/vistaprincipal.jsp").forward(request, response);
-				
-				
-				
-			} catch (Exception e) {
-				
-				e.printStackTrace(System.out);
-				
-			} 
-
-			
-		}
-		
-		
 		
 	}
 	
@@ -116,7 +107,8 @@ public class CtrIndex extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
+		
 		
 		
 	}
