@@ -36,20 +36,19 @@ header{
 	background-color: #FFFFFF;
 }
 
-.micuenta{ /*Estilos y posicionamiento del botï¿½n de iniciar sesiï¿½n*/
-    text-decoration: none;
-    font-size: 15;
-    font-weight: bold;
-    height: 40px;
-    color: #000000;
-    background-color: #CCEAF4;
-    border-radius: 10px;
-    border: none;
-    margin-top: 12px;
-    margin-left: 2rem;
+.micuenta{ /*Estilos y posicionamiento del botón de mi cuenta*/
 }
 
-.carrocompras{ /*Estilos y posicionamiento del botï¿½n de registro*/
+.micuenta a{
+	text-decoration: none;
+	background-color: black;
+}
+
+.micuenta li{
+	list-style: none;
+}
+
+.carrocompras{ /*Estilos y posicionamiento del botï¿½n de carro de compras*/
     text-decoration: none;
     font-size: 15;
     font-weight: bold;
@@ -75,10 +74,6 @@ header{
 }
 
 @media (max-width: 1850px){ /*Estilos para una pantalla de 1850 pixeles o menor*/
-	.micuenta{
-	margin-left: -36px;
-	}
-
 	.buscador input{
 	width: 700px;
 	}

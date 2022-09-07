@@ -1,8 +1,8 @@
-<% String buscar = (String) request.getAttribute("buscar"); %>
+<%String buscar = (String) request.getAttribute("buscar"); %>
 <head>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="estilos/estilosheadersesion.css">
+    <link rel="stylesheet" href="../estilos/estilosheadersesion.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 </head>
@@ -26,17 +26,18 @@
         </div>
     
     
-        <div class="micuenta col-2">
+        <div class="micuenta col-1">
         
-             <ul>
-             	<li><a href="configuracion">Configuracion</a></li>
-             	<li><a href="configuracion">Mi tienda</a></li>
-             	<li><a href="configuracion">Salir</a></li>
-             </ul>                                   
-    
+        <a href="">Mi cuenta</a>
+        
+	             <ul>
+	             	<li><a href="configuracion">Configuracion</a></li>
+	             	<li><a href="configuracion">Mi tienda</a></li>
+	             	<li><a href="configuracion">Salir</a></li>
+	             </ul>                                   
         </div>
         
-        <div class="carrocompras col-2">
+        <div class="carrocompras col-1">
         
              <form action="/CrudNuevoLienzoArt/controlsesion" method="post">            		 		
                 <input type="submit" name="carrocompras" value="carrocompras" class="btncrearusuario">
