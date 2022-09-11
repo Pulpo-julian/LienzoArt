@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 </head>
     
-    <header class="header row"> <!-- Inicio header -->
+    <header class="header row gx-5"> <!-- Inicio header -->
     
     	
         <div class="logo col-2">
@@ -26,15 +26,15 @@
         </div>
     
     
-        <div class="micuenta col-1">
-        
-        <a href="">Mi cuenta</a>
-        
-	             <ul>
-	             	<li><a href="configuracion">Configuracion</a></li>
-	             	<li><a href="configuracion">Mi tienda</a></li>
-	             	<li><a href="configuracion">Salir</a></li>
-	             </ul>                                   
+        <div class="micuenta dropdown col-1"> 
+        	<button type="button" class="btn btn-secondary dropdown-toggle" id="simpleDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        		Mi cuenta
+        	</button>
+        	<ul class="dropdown-menu">
+        		<li><a href="#" class="dropdown-item">Configuración</a></li>
+        		<li><a href="#" class="dropdown-item">Crear tienda</a></li>
+        		<li><a href="#" class="dropdown-item">Cerrar sesión</a></li>
+        	</ul>
         </div>
         
         <div class="carrocompras col-1">

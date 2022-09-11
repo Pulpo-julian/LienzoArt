@@ -36,16 +36,9 @@ header{
 	background-color: #FFFFFF;
 }
 
-.micuenta{ /*Estilos y posicionamiento del botón de mi cuenta*/
-}
-
 .micuenta a{
 	text-decoration: none;
 	background-color: black;
-}
-
-.micuenta li{
-	list-style: none;
 }
 
 .carrocompras{ /*Estilos y posicionamiento del botï¿½n de carro de compras*/
@@ -59,12 +52,6 @@ header{
     border: none;
     margin-left: -5rem;
     margin-top: 12px;
-}
-
-.micuenta:hover{ /*Estilos para el hover del botï¿½n de iniciar sesiï¿½n*/
-    color: #1883ba;
-    background-color: #ffffff;
-    transition: 300ms;
 }
 
 .carrocompras:hover{ /*Estilos para el hover del botï¿½n de registro*/
