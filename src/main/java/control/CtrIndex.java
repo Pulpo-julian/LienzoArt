@@ -52,6 +52,9 @@ public class CtrIndex extends HttpServlet {
 		//cuando arranque la aplicacion por primera vez la accion sera null
 		//ya que no se envia ningun paramertro 
 		String accion = request.getParameter("accion");
+		
+		
+		
 			
 			try {
 				
@@ -78,8 +81,8 @@ public class CtrIndex extends HttpServlet {
 					
 					productos = daoPro.listarProductosBusqueda(buscar);
 					request.setAttribute("buscar", buscar);
-				}
-				
+					
+				}				
 				
 				List<Categoria> categorias = daoCat.listar();
 				
@@ -94,7 +97,10 @@ public class CtrIndex extends HttpServlet {
 				
 				e.printStackTrace(System.out);
 				
-			}			
+			}
+			
+			
+			
 		
 		
 	}

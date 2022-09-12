@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import modelos.Categoria;
+import modelos.Producto;
 import modelos.Usuario;
 
 import java.io.IOException;
@@ -13,6 +15,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import dao.DaoCategoria;
+import dao.DaoProducto;
 import dao.DaoUsuario;
 
 //import dao.DaoUsuario;
@@ -73,10 +77,45 @@ public class CtrUsuario extends HttpServlet {
 		
 		
 		String decision = request.getParameter("crud");
+		
+		String sesion = request.getParameter("botonsesion");
 
 		PrintWriter out = response.getWriter();
 		
 		
+		// validacion provisional de sesion
+		if(sesion != null) {
+			
+			String correo = request.getParameter("correo");
+			
+			String password = request.getParameter("password");
+			
+			
+			// se debe renderizar productos y categorias otra vez
+			try {
+				
+				DaoProducto daoPro = new DaoProducto();
+				DaoCategoria daoCat = new DaoCategoria();
+				
+				List<Producto> productos = null;			
+				
+				List<Categoria> categorias = daoCat.listar();
+				
+				request.setAttribute("productos", productos);
+				request.setAttribute("categorias", categorias);
+				
+				
+				
+				getServletContext().getRequestDispatcher("/vistaSesionIniciada/vistasesioniniciada.jsp").forward(request, response);
+				
+			} catch (Exception e) {
+				
+				e.printStackTrace(System.out);
+				
+			}
+			
+			
+		}
 		
 		if(decision.equals("Crear")) {
 			
