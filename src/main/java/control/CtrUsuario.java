@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import modelos.Categoria;
+import modelos.Producto;
 import modelos.Usuario;
 
 import java.io.IOException;
@@ -13,6 +15,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import dao.DaoCategoria;
+import dao.DaoProducto;
 import dao.DaoUsuario;
 
 //import dao.DaoUsuario;
@@ -76,9 +80,11 @@ public class CtrUsuario extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 		
+		String btnsesion = request.getParameter("botonsesion");
 		
 		
-		if(decision.equals("Crear")) {
+		
+		if(decision != null && decision.equals("Crear")) {
 			
 			
 			
@@ -191,7 +197,7 @@ public class CtrUsuario extends HttpServlet {
 		
 		
 		
-		if (decision.equals("eliminar")) {
+		if (decision != null && decision.equals("eliminar")) {
 			
 			String cedula = request.getParameter("cedula");
 			
@@ -212,7 +218,7 @@ public class CtrUsuario extends HttpServlet {
 		}
 		
 		
-		if(decision.equals("listar")) {
+		if(decision != null && decision.equals("listar")) {
 			
 			try {
 
@@ -233,7 +239,7 @@ public class CtrUsuario extends HttpServlet {
 		
 		
 		
-		if(decision.equals("actualizar")) {
+		if(decision != null && decision.equals("actualizar")) {
 			
 			try {
 				
@@ -257,7 +263,7 @@ public class CtrUsuario extends HttpServlet {
 			
 		}
 		
-		if(decision.equals("mostrar")) {
+		if(decision != null && decision.equals("mostrar")) {
 			
 			try {
 				
@@ -279,6 +285,40 @@ public class CtrUsuario extends HttpServlet {
 				e.printStackTrace(System.out);
 				
 			}
+			
+		}
+		
+		
+		if(btnsesion != null && btnsesion.equalsIgnoreCase("Iniciar sesión")) {
+			
+			
+			try {
+				
+				DaoProducto daoPro = new DaoProducto();
+				DaoCategoria daoCat = new DaoCategoria();
+				
+				List<Producto> productos = null;
+				
+				
+				List<Categoria> categorias = daoCat.listar();
+				productos = daoPro.listar();
+				
+				request.setAttribute("productos", productos);
+				request.setAttribute("categorias", categorias);
+				
+				getServletContext().getRequestDispatcher("/vistaSesionIniciada/vistasesioniniciada.jsp").forward(request, response);
+				
+				
+				
+			} catch (Exception e) {
+				
+				e.printStackTrace(System.out);
+				
+			}
+			
+			
+			
+			
 			
 		}
 		

@@ -16,11 +16,13 @@
 			<h2><b>Categorias</b></h2>
 		
 			<ul class="lista">
-				<%for(Categoria categoria: categorias) { %>			
-					<li>
-						<a href="/CrudNuevoLienzoArt/controlprincipal?idcategoria=<% out.print(categoria.getCodigo()); %>&accion=listarporcategoria"><% out.print(categoria.getNombre()); %></a>				
-					</li>
-				<%} %>		
+				<%if(categorias != null) {%>
+					<%for(Categoria categoria: categorias) { %>			
+						<li>
+							<a href="/CrudNuevoLienzoArt/controlprincipal?idcategoria=<% out.print(categoria.getCodigo()); %>&accion=listarporcategoria"><% out.print(categoria.getNombre()); %></a>				
+						</li>
+					<%} %>
+				<%}%>	
 			</ul>	
 			
 		</blockquote>
