@@ -77,11 +77,46 @@ public class CtrUsuario extends HttpServlet {
 		
 		
 		String decision = request.getParameter("crud");
+		
+		String sesion = request.getParameter("botonsesion");
 
 		PrintWriter out = response.getWriter();
 		
 		String btnsesion = request.getParameter("botonsesion");
 		
+		// validacion provisional de sesion
+		if(sesion != null) {
+			
+			String correo = request.getParameter("correo");
+			
+			String password = request.getParameter("password");
+			
+			
+			// se debe renderizar productos y categorias otra vez
+			try {
+				
+				DaoProducto daoPro = new DaoProducto();
+				DaoCategoria daoCat = new DaoCategoria();
+				
+				List<Producto> productos = null;			
+				
+				List<Categoria> categorias = daoCat.listar();
+				
+				request.setAttribute("productos", productos);
+				request.setAttribute("categorias", categorias);
+				
+				
+				
+				getServletContext().getRequestDispatcher("/vistaSesionIniciada/vistasesioniniciada.jsp").forward(request, response);
+				
+			} catch (Exception e) {
+				
+				e.printStackTrace(System.out);
+				
+			}
+			
+			
+		}
 		
 		
 		if(decision != null && decision.equals("Crear")) {
